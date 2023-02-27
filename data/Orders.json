@@ -1,0 +1,423 @@
+[
+    {
+        "_id": {
+            "$oid": "639180c7978e764a7e2c6dd3"
+        },
+        "userId": "customer@gmail.com0",
+        "paymentStatus": "processed",
+        "status": "shipped",
+        "shippingAdress": {
+            "country": "Hungary",
+            "street": "4 Bolyai Farkas utca",
+            "city": "Győr",
+            "zip": "9023"
+        },
+        "billingAddress": {
+            "country": "Hungary",
+            "street": "4 Földes Gábor u.",
+            "city": "Győr",
+            "zip": "9023"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6396d6fb9bd7d89ca308eb3f"
+        },
+        "userId": "akac456@gmail.com",
+        "paymentStatus": "processed",
+        "status": "shipped",
+        "shippingAdress": {
+            "country": "Hungary",
+            "street": "4 Drótos Ferenc u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        },
+        "billingAddress": {
+            "country": "Hungary",
+            "street": "4 Drótos Ferenc u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "639757ec0c5330c7405f764d"
+        },
+        "userId": "fuzfa25@gmail.com",
+        "paymentStatus": "processed",
+        "status": "shipped",
+        "shippingAdress": {
+            "country": "Zedónia",
+            "street": "154 Körkör u.",
+            "city": "Villámkert",
+            "zip": "43122"
+        },
+        "billingAddress": {
+            "country": "Zedónia",
+            "street": "154 Körkör u.",
+            "city": "Villámkert",
+            "zip": "43122"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "63997f45e82b7d2d7c505b0f"
+        },
+        "userId": "Csavargo333@citromail.com",
+        "paymentStatus": "processed",
+        "status": "shipped",
+        "shippingAdress": {
+            "country": "Hungary",
+            "street": "63 Bérlet u.",
+            "city": "Kerekvárad",
+            "zip": "9712"
+        },
+        "billingAddress": {
+            "country": "Hungary",
+            "street": "63 Bérlet u.",
+            "city": "Kerekvárad",
+            "zip": "9712"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "63b80cce0285e34e8dd0fa3e"
+        },
+        "userId": "pokroc96@gmail.com",
+        "paymentStatus": "processed",
+        "status": "shipped",
+        "shippingAdress": {
+            "country": "Hungary",
+            "street": "87 Sietős u.",
+            "city": "Kerekvárad",
+            "zip": "9712"
+        },
+        "billingAddress": {
+            "country": "Hungary",
+            "street": "87 Sietős u.",
+            "city": "Kerekvárad",
+            "zip": "9712"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "63b80d880285e34e8dd0fa3f"
+        },
+        "userId": "asdfgh@gmail.com",
+        "paymentStatus": "processed",
+        "status": "shipped",
+
+        "shippingAdress": {
+            "country": "Hungary",
+            "street": "10 Lék u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        },
+        "billingAddress": {
+            "country": "Hungary",
+            "street": "10 Lék u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "63b80ff20285e34e8dd0fa40"
+        },
+        "userId": "masni6431@gmail.com",
+        "paymentStatus": "processed",
+        "status": "shipped",
+        "shippingAdress": {
+            "country": "Hungary",
+            "street": "35 Spirál u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        },
+        "billingAddress": {
+            "country": "Hungary",
+            "street": "35 Spirál u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "63b810400285e34e8dd0fa41"
+        },
+        "userId": "bubbleenjoyer241@gmail.com",
+        "paymentStatus": "processed",
+        "status": "shipped",
+        "shippingAdress": {
+            "country": "Hungary",
+            "street": "17 Lék u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        },
+        "billingAddress": {
+            "country": "Hungary",
+            "street": "17 Lék u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "63b814250285e34e8dd0fa42"
+        },
+        "userId": "k3r3k3s523@gmail.com",
+        "paymentStatus": "processed",
+        "status": "shipped",
+        "shippingAdress": {
+            "country": "Hungary",
+            "street": "5 Kikötő tér",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        },
+        "billingAddress": {
+            "country": "Hungary",
+            "street": "5 Kikötő tér",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "63b81ae70285e34e8dd0fa43"
+        },
+        "userId": "hajo936@gmail.com",
+        "paymentStatus": "processed",
+        "status": "shipped",
+        "shippingAdress": {
+            "country": "Hungary",
+            "street": "73 Asztalos u.",
+            "city": "Debrecen",
+            "zip": "4002"
+        },
+        "billingAddress": {
+            "country": "Hungary",
+            "street": "73 Asztalos u.",
+            "city": "Debrecen",
+            "zip": "4002"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "63b81b070285e34e8dd0fa44"
+        },
+        "userId": "hajo936@gmail.com",
+        "paymentStatus": "processed",
+        "status": "shipped",
+        "shippingAdress": {
+            "country": "Hungary",
+            "street": "73 Asztalos u.",
+            "city": "Debrecen",
+            "zip": "4002"
+        },
+        "billingAddress": {
+            "country": "Hungary",
+            "street": "73 Asztalos u.",
+            "city": "Debrecen",
+            "zip": "4002"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "63b81b5d0285e34e8dd0fa45"
+        },
+        "userId": "ep3rg6u@gmail.com",
+        "paymentStatus": "processed",
+        "status": "shipped",
+        "shippingAdress": {
+            "country": "Hungary",
+            "street": "31 Kikötő tér",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        },
+        "billingAddress": {
+            "country": "Hungary",
+            "street": "31 Kikötő tér",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "63b821ae0285e34e8dd0fa46"
+        },
+        "userId": "asdfgh@gmail.com",
+        "paymentStatus": "processed",
+        "status": "shipped",
+        "shippingAdress": {
+            "country": "Hungary",
+            "street": "10 Lék u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        },
+        "billingAddress": {
+            "country": "Hungary",
+            "street": "10 Lék u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "63b822b60285e34e8dd0fa47"
+        },
+        "userId": "asdfgh@gmail.com",
+        "paymentStatus": "processed",
+        "status": "shipped",
+        "shippingAdress": {
+            "country": "Hungary",
+            "street": "10 Lék u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        },
+        "billingAddress": {
+            "country": "Hungary",
+            "street": "10 Lék u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "63b822c70285e34e8dd0fa48"
+        },
+        "userId": "asdfgh@gmail.com",
+        "paymentStatus": "processed",
+        "status": "shipped",
+        "shippingAdress": {
+            "country": "Hungary",
+            "street": "10 Lék u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        },
+        "billingAddress": {
+            "country": "Hungary",
+            "street": "10 Lék u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "63b8230d0285e34e8dd0fa49"
+        },
+        "userId": "ang0lna19@gmail.com",
+        "paymentStatus": "processed",
+        "status": "shipped",
+        "shippingAdress": {
+            "country": "Hungary",
+            "street": "19 Lógós u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        },
+        "billingAddress": {
+            "country": "Hungary",
+            "street": "19 Lógós u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "63b8251d0285e34e8dd0fa4a"
+        },
+        "userId": "ang0lna19@gmail.com",
+        "paymentStatus": "processed",
+        "status": "shipped",
+        "shippingAdress": {
+            "country": "Hungary",
+            "street": "19 Lógós u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        },
+        "billingAddress": {
+            "country": "Hungary",
+            "street": "19 Lógós u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "63b8255c0285e34e8dd0fa4b"
+        },
+        "userId": "ep3rg6u@gmail.com",
+        "paymentStatus": "processed",
+        "status": "shipped",
+        "shippingAdress": {
+            "country": "Hungary",
+            "street": "31 Kikötő tér",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        },
+        "billingAddress": {
+            "country": "Hungary",
+            "street": "31 Kikötő tér",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "63b825a90285e34e8dd0fa4c"
+        },
+        "userId": "ep3rg6u@gmail.com",
+        "paymentStatus": "processed",
+        "status": "shipped",
+        "shippingAdress": {
+            "country": "Hungary",
+            "street": "31 Kikötő tér",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        },
+        "billingAddress": {
+            "country": "Hungary",
+            "street": "31 Kikötő tér",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "63b8266b0285e34e8dd0fa4d"
+        },
+        "userId": "ukulul5331@gmail.com",
+        "paymentStatus": "processed",
+        "status": "shipped",
+        "shippingAdress": {
+            "country": "Hungary",
+            "street": "9 Spirál u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        },
+        "billingAddress": {
+            "country": "Hungary",
+            "street": "9 Spirál u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "63b826b30285e34e8dd0fa4e"
+        },
+        "userId": "ukulul5331@gmail.com",
+        "paymentStatus": "processed",
+        "status": "shipped",
+        "shippingAdress": {
+            "country": "Hungary",
+            "street": "9 Spirál u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        },
+        "billingAddress": {
+            "country": "Hungary",
+            "street": "9 Spirál u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        }
+    }
+]

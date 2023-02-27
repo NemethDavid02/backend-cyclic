@@ -47,6 +47,7 @@ export default class AuthenticationController implements IController {
 
                 const user = await this.user.create({
                     ...userData,
+                    roles: ["user"],
                     password: hashedPassword,
                 });
                 user.password = undefined;
@@ -182,7 +183,7 @@ export default class AuthenticationController implements IController {
                                     ...googleUser,
                                     password: "stored at Google",
                                     auto_login: true,
-                                    roles: ["admin"],
+                                    roles: ["user"],
                                 })
                                 .then(user => {
                                     req.session.regenerate(error => {

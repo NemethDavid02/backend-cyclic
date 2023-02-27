@@ -1,4 +1,4 @@
-import { Types, Schema, model } from "mongoose";
+import { Schema, model } from "mongoose";
 import IUser from "./user.interface";
 
 const addressSchema = new Schema(
@@ -12,7 +12,7 @@ const addressSchema = new Schema(
 
 const userSchema = new Schema<IUser>(
     {
-        _id: Types.ObjectId,
+        _id: Schema.Types.ObjectId,
         address: addressSchema,
         email: {
             type: String,

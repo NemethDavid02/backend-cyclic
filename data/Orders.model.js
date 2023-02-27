@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const ordersSchema = new Schema({
@@ -16,27 +16,29 @@ const ordersSchema = new Schema({
         type: String,
         required: true,
     },
-    items: [{
-        productName: {
-            type: String,
-            required: true,
-            unique: true,
+    items: [
+        {
+            productName: {
+                type: String,
+                required: true,
+                unique: true,
+            },
+            quantity: {
+                type: Number,
+                required: true,
+                min: [1],
+            },
+            price: {
+                type: Number,
+                required: true,
+            },
+            discounts: {
+                type: Number,
+                required: false,
+                min: [100],
+            },
         },
-        quantity: {
-            type: Number,
-            required: true,
-            min: [1],
-        },
-        price: {
-            type: Number,
-            required: true,
-        },
-        discounts: {
-            type: Number,
-            required: false,
-            min: [100],
-        },
-    }],
+    ],
     shippingAdress: {
         country: {
             type: String,
@@ -53,7 +55,7 @@ const ordersSchema = new Schema({
         zip: {
             type: Number,
             required: true,
-        }
+        },
     },
     billingAddress: {
         country: {
@@ -71,8 +73,8 @@ const ordersSchema = new Schema({
         zip: {
             type: Number,
             required: true,
-        }
-    }
+        },
+    },
 });
 
-module.exports = mongoose.module('Orders', ordersSchema);
+module.exports = mongoose.module("Orders", ordersSchema);

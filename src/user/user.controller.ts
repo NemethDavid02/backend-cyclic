@@ -11,6 +11,7 @@ import HttpException from "../exceptions/HttpException";
 import userModel from "./user.model";
 import postModel from "../post/post.model";
 import IUser from "./user.interface";
+import roleCheckMiddleware from "../middleware/roleCheckMiddleware";
 
 export default class UserController implements IController {
     public path = "/users";
@@ -28,9 +29,9 @@ export default class UserController implements IController {
         this.router.get(`${this.path}/:id`, authMiddleware, this.getUserById);
         this.router.get(this.path, authMiddleware, this.getAllUsers);
 
-        this.router.patch(`${this.path}/:id`, [authMiddleware, validationMiddleware(CreateUserDto, true)], this.modifyUser);
+        this.router.patch(`${this.path}/:id`, [authMiddleware, roleCheckMiddleware(["admin"]), validationMiddleware(CreateUserDto, true)], this.modifyUser);
 
-        this.router.delete(`${this.path}/:id`, authMiddleware, this.deleteUser);
+        this.router.delete(`${this.path}/:id`, [authMiddleware, roleCheckMiddleware(["admin"])], this.deleteUser);
     }
 
     private getAllUsers = async (req: Request, res: Response, next: NextFunction) => {
