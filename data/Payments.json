@@ -1,0 +1,273 @@
+{
+    "_id" : ObjectId("63917f60978e764a7e2c6dd1"),
+    "userId" : "coustumer@gmail.com",
+    "type" : "credit",
+    "status" : "verified",
+    "card" : {
+        "type" : "visa",
+        "lastFourNumbers" : "1212",
+        "expiryMonth" : NumberInt(12),
+        "expiryYear" : NumberInt(2024),
+        "cbbVerified" : true
+    }
+}
+{
+    "_id" : ObjectId("639756310c5330c7405f764a"),
+    "userId" : "akac456@gmail.com",
+    "type" : "credit",
+    "status" : "verified",
+    "card" : {
+        "type" : "visa",
+        "lastFourNumbers" : "3218",
+        "expiryMonth" : NumberInt(10),
+        "expiryYear" : NumberInt(2023),
+        "cbbVerified" : true
+    }
+}
+{
+    "_id" : ObjectId("639756310c5330c7405f764c"),
+    "userId" : "candyconsumer23@gmail.com",
+    "type" : "credit",
+    "status" : "verified",
+    "card" : {
+        "type" : "visa",
+        "lastFourNumbers" : "2315",
+        "expiryMonth" : NumberInt(7),
+        "expiryYear" : NumberInt(2024),
+        "cbbVerified" : true
+    }
+}
+{
+    "_id" : ObjectId("639756310c5330c7405f764b"),
+    "userId" : "csavargo333@citromail.com",
+    "type" : "credit",
+    "status" : "verified",
+    "card" : {
+        "type" : "mastercard",
+        "lastFourNumbers" : "1634",
+        "expiryMonth" : NumberInt(2),
+        "expiryYear" : NumberInt(2024),
+        "cbbVerified" : true
+    }
+}
+{
+    "_id" : ObjectId("63b7fb66ab702fdfd32851e6"),
+    "userId" : "fuzfa25@gmail.com",
+    "type" : "credit",
+    "status" : "verified",
+    "card" : {
+        "type" : "visa",
+        "lastFourNumbers" : "6423",
+        "expiryMonth" : NumberInt(3),
+        "expiryYear" : NumberInt(2024),
+        "cbbVerified" : true
+    }
+}
+{
+    "_id" : ObjectId("63b7fb96ab702fdfd32851e7"),
+    "userId" : "loopdelooper@gmail.com",
+    "type" : "credit",
+    "status" : "verified",
+    "card" : {
+        "type" : "visa",
+        "lastFourNumbers" : "1394",
+        "expiryMonth" : NumberInt(6),
+        "expiryYear" : NumberInt(2025),
+        "cbbVerified" : true
+    }
+}
+{
+    "_id" : ObjectId("63b7fbc4ab702fdfd32851e8"),
+    "userId" : "asztalos4321@gmail.com",
+    "type" : "credit",
+    "status" : "verified",
+    "card" : {
+        "type" : "visa",
+        "lastFourNumbers" : "5084",
+        "expiryMonth" : NumberInt(1),
+        "expiryYear" : NumberInt(2024),
+        "cbbVerified" : true
+    }
+}
+{
+    "_id" : ObjectId("63b7fd17ab702fdfd32851e9"),
+    "userId" : "tekercs523@gmail.com",
+    "type" : "credit",
+    "status" : "verified",
+    "card" : {
+        "type" : "mastercard",
+        "lastFourNumbers" : "1353",
+        "expiryMonth" : NumberInt(4),
+        "expityYear" : NumberInt(2024),
+        "cbbVerified" : true
+    }
+}
+{
+    "_id" : ObjectId("63b7fd40ab702fdfd32851ea"),
+    "userId" : "ang0lna19@gmail.com",
+    "type" : "credit",
+    "status" : "verified",
+    "card" : {
+        "type" : "mastercard",
+        "lastFourNumbers" : "2521",
+        "expiryMonth" : NumberInt(1),
+        "expityYear" : NumberInt(2025),
+        "cbbVerified" : true
+    }
+}
+{
+    "_id" : ObjectId("63b7fd7dab702fdfd32851eb"),
+    "userId" : "k3r3k3s523@gmail.com",
+    "type" : "credit",
+    "status" : "verified",
+    "card" : {
+        "type" : "mastercard",
+        "lastFourNumbers" : "1173",
+        "expiryMonth" : NumberInt(7),
+        "expityYear" : NumberInt(2024),
+        "cbbVerified" : true
+    }
+}
+{
+    "_id" : ObjectId("63b7fdafab702fdfd32851ec"),
+    "userId" : "pokroc96@gmail.com",
+    "type" : "credit",
+    "status" : "verified",
+    "card" : {
+        "type" : "mastercard",
+        "lastFourNumbers" : "8619",
+        "expiryMonth" : NumberInt(11),
+        "expityYear" : NumberInt(2025),
+        "cbbVerified" : true
+    }
+}
+{
+    "_id" : ObjectId("63b80180ab702fdfd32851ed"),
+    "userId" : "hajo936@gmail.com",
+    "type" : "credit",
+    "status" : "verified",
+    "card" : {
+        "type" : "mastercard",
+        "lastFourNumbers" : "7421",
+        "expiryMonth" : NumberInt(12),
+        "expityYear" : NumberInt(2024),
+        "cbbVerified" : true
+    }
+}
+{
+    "_id" : ObjectId("63b8055cab702fdfd32851ee"),
+    "userId" : "csonakos57@gmail.com",
+    "type" : "credit",
+    "status" : "verified",
+    "card" : {
+        "type" : "visa",
+        "lastFourNumbers" : "6534",
+        "expiryMonth" : NumberInt(9),
+        "expityYear" : NumberInt(2025),
+        "cbbVerified" : true
+    }
+}
+{
+    "_id" : ObjectId("63b80572ab702fdfd32851ef"),
+    "userId" : "afonya632@gmail.com",
+    "type" : "credit",
+    "status" : "verified",
+    "card" : {
+        "type" : "visa",
+        "lastFourNumbers" : "3385",
+        "expiryMonth" : NumberInt(11),
+        "expityYear" : NumberInt(2024),
+        "cbbVerified" : true
+    }
+}
+{
+    "_id" : ObjectId("63b80591ab702fdfd32851f0"),
+    "userId" : "ep3rg6u@gmail.com",
+    "type" : "credit",
+    "status" : "verified",
+    "card" : {
+        "type" : "mastercard",
+        "lastFourNumbers" : "1957",
+        "expiryMonth" : NumberInt(3),
+        "expityYear" : NumberInt(2025),
+        "cbbVerified" : true
+    }
+}
+{
+    "_id" : ObjectId("63b805aaab702fdfd32851f1"),
+    "userId" : "asdfgh@gmail.com",
+    "type" : "credit",
+    "status" : "verified",
+    "card" : {
+        "type" : "mastercard",
+        "lastFourNumbers" : "8429",
+        "expiryMonth" : NumberInt(5),
+        "expityYear" : NumberInt(2026),
+        "cbbVerified" : true
+    }
+}
+{
+    "_id" : ObjectId("63b805c0ab702fdfd32851f2"),
+    "userId" : "bubbleenjoyer241@gmail.com",
+    "type" : "credit",
+    "status" : "verified",
+    "card" : {
+        "type" : "mastercard",
+        "lastFourNumbers" : "3153",
+        "expiryMonth" : NumberInt(8),
+        "expityYear" : NumberInt(2026),
+        "cbbVerified" : true
+    }
+}
+{
+    "_id" : ObjectId("63b805f2ab702fdfd32851f3"),
+    "userId" : "roadsier421@gmail.com",
+    "type" : "credit",
+    "status" : "verified",
+    "card" : {
+        "type" : "mastercard",
+        "lastFourNumbers" : "1746",
+        "expiryMonth" : NumberInt(10),
+        "expityYear" : NumberInt(2026),
+        "cbbVerified" : true
+    }
+}
+{
+    "_id" : ObjectId("63b8076dab702fdfd32851f4"),
+    "userId" : "ukulul5331@gmail.com",
+    "type" : "credit",
+    "status" : "verified",
+    "card" : {
+        "type" : "mastercard",
+        "lastFourNumbers" : "3384",
+        "expiryMonth" : NumberInt(3),
+        "expityYear" : NumberInt(2026),
+        "cbbVerified" : true
+    }
+}
+{
+    "_id" : ObjectId("63b807c5ab702fdfd32851f5"),
+    "userId" : "pokroc0k@gmail.com",
+    "type" : "credit",
+    "status" : "verified",
+    "card" : {
+        "type" : "mastercard",
+        "lastFourNumbers" : "1943",
+        "expiryMonth" : NumberInt(6),
+        "expityYear" : NumberInt(2026),
+        "cbbVerified" : true
+    }
+}
+{
+    "_id" : ObjectId("63b807ddab702fdfd32851f6"),
+    "userId" : "masni6431@gmail.com",
+    "type" : "credit",
+    "status" : "verified",
+    "card" : {
+        "type" : "mastercard",
+        "lastFourNumbers" : "5096",
+        "expiryMonth" : NumberInt(8),
+        "expityYear" : NumberInt(2026),
+        "cbbVerified" : true
+    }
+}

@@ -1,0 +1,1 @@
+"c:\Program Files\MongoDB\Server\6.0\bin\mongoimport.exe" --uri="mongodb+srv://david:Jedlik20010224@cluster0.pceqyue.mongodb.net/test" --collection=Orders --drop --file=Orders.json --jsonArray
