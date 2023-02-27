@@ -86,7 +86,7 @@
             "name" : "A varsói tanár",
             "quantity" : 1.0,
             "price" : 4000.0,
-            "discounts" : "800"
+            "discounts" : 800
         },
         {
             "name" : "The October List",
