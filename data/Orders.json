@@ -1,0 +1,618 @@
+{
+    "_id" : ObjectId("639180c7978e764a7e2c6dd3"),
+    "userId" : "customer@gmail.com0",
+    "paymentStatus" : "processed",
+    "status" : "shipped",
+    "items" : [
+        {
+            "productName" : "The Lord of the Rings",
+            "quantity" : NumberInt(1),
+            "price" : NumberInt(9000),
+            "discounts" : "800"
+        }
+    ],
+    "shippingAdress" : {
+        "country" : "Hungary",
+        "street" : "4 Bolyai Farkas utca",
+        "city" : "Győr",
+        "zip" : "9023"
+    },
+    "billingAddress" : {
+        "country" : "Hungary",
+        "street" : "4 Földes Gábor u.",
+        "city" : "Győr",
+        "zip" : "9023"
+    }
+}
+{
+    "_id" : ObjectId("6396d6fb9bd7d89ca308eb3f"),
+    "userId" : "akac456@gmail.com",
+    "paymentStatus" : "processed",
+    "status" : "shipped",
+    "items" : [
+        {
+            "name" : "A pál utcai fiúk",
+            "quantity" : NumberInt(1),
+            "price" : NumberInt(1999),
+            "discounts" : "0"
+        }
+    ],
+    "shippingAdress" : {
+        "country" : "Hungary",
+        "street" : "4 Drótos Ferenc u.",
+        "city" : "Szalmaharmad",
+        "zip" : "9464"
+    },
+    "billingAddress" : {
+        "country" : "Hungary",
+        "street" : "4 Drótos Ferenc u.",
+        "city" : "Szalmaharmad",
+        "zip" : "9464"
+    }
+}
+{
+    "_id" : ObjectId("639757ec0c5330c7405f764d"),
+    "userId" : "fuzfa25@gmail.com",
+    "paymentStatus" : "processed",
+    "status" : "shipped",
+    "items" : [
+        {
+            "name" : "A pál utcai fiúk",
+            "quantity" : NumberInt(1),
+            "price" : NumberInt(1999),
+            "discounts" : "0"
+        }
+    ],
+    "shippingAdress" : {
+        "country" : "Zedónia",
+        "street" : "154 Körkör u.",
+        "city" : "Villámkert",
+        "zip" : "43122"
+    },
+    "billingAddress" : {
+        "country" : "Zedónia",
+        "street" : "154 Körkör u.",
+        "city" : "Villámkert",
+        "zip" : "43122"
+    }
+}
+{
+    "_id" : ObjectId("63997f45e82b7d2d7c505b0f"),
+    "userId" : "Csavargo333@citromail.com",
+    "paymentStatus" : "processed",
+    "status" : "shipped",
+    "items" : [
+        {
+            "name" : "A varsói tanár",
+            "quantity" : 1.0,
+            "price" : 4000.0,
+            "discounts" : "800"
+        },
+        {
+            "name" : "The October List",
+            "quantity" : 1.0,
+            "price" : 1000.0,
+            "discounts" : "0"
+        },
+        {
+            "name" : "Oxford Advanced Learner's dictionary 10Th edition",
+            "quantity" : 1.0,
+            "price" : 21230.0,
+            "discounts" : "0"
+        }
+    ],
+    "shippingAdress" : {
+        "country" : "Hungary",
+        "street" : "63 Bérlet u.",
+        "city" : "Kerekvárad",
+        "zip" : "9712"
+    },
+    "billingAddress" : {
+        "country" : "Hungary",
+        "street" : "63 Bérlet u.",
+        "city" : "Kerekvárad",
+        "zip" : "9712"
+    }
+}
+{
+    "_id" : ObjectId("63b80cce0285e34e8dd0fa3e"),
+    "userId" : "pokroc96@gmail.com",
+    "paymentStatus" : "processed",
+    "status" : "shipped",
+    "items" : [
+        {
+            "name" : "Less is Lost",
+            "quantity" : NumberInt(1),
+            "price" : NumberInt(9990),
+            "discounts" : "0"
+        }
+    ],
+    "shippingAdress" : {
+        "country" : "Hungary",
+        "street" : "87 Sietős u.",
+        "city" : "Kerekvárad",
+        "zip" : "9712"
+    },
+    "billingAddress" : {
+        "country" : "Hungary",
+        "street" : "87 Sietős u.",
+        "city" : "Kerekvárad",
+        "zip" : "9712"
+    }
+}
+{
+    "_id" : ObjectId("63b80d880285e34e8dd0fa3f"),
+    "userId" : "asdfgh@gmail.com",
+    "paymentStatus" : "processed",
+    "status" : "shipped",
+    "items" : [
+        {
+            "name" : "Assassin's Creed: Last Descendants - A New York-i felkelés",
+            "quantity" : NumberInt(1),
+            "price" : NumberInt(2690),
+            "discounts" : "0"
+        },
+        {
+            "name" : "Assassin's Creed: Last Descendants - A kán sírja",
+            "quantity" : NumberInt(1),
+            "price" : NumberInt(2690),
+            "discounts" : "0"
+        },
+        {
+            "name" : "Assassin's Creed: Last Descendants - Az Istenek végzetze",
+            "quantity" : NumberInt(1),
+            "price" : NumberInt(2690),
+            "discounts" : "0"
+        }
+    ],
+    "shippingAdress" : {
+        "country" : "Hungary",
+        "street" : "10 Lék u.",
+        "city" : "Szalmaharmad",
+        "zip" : "9464"
+    },
+    "billingAddress" : {
+        "country" : "Hungary",
+        "street" : "10 Lék u.",
+        "city" : "Szalmaharmad",
+        "zip" : "9464"
+    }
+}
+{
+    "_id" : ObjectId("63b80ff20285e34e8dd0fa40"),
+    "userId" : "masni6431@gmail.com",
+    "paymentStatus" : "processed",
+    "status" : "shipped",
+    "items" : [
+        {
+            "name" : "Stalker - Piknik az árokparton",
+            "quantity" : NumberInt(1),
+            "price" : NumberInt(2990),
+            "discounts" : "0"
+        },
+        {
+            "name" : "Jane Austen - Színezőkönyv",
+            "quantity" : NumberInt(1),
+            "price" : NumberInt(2200),
+            "discounts" : "0"
+        }
+    ],
+    "shippingAdress" : {
+        "country" : "Hungary",
+        "street" : "35 Spirál u.",
+        "city" : "Szalmaharmad",
+        "zip" : "9464"
+    },
+    "billingAddress" : {
+        "country" : "Hungary",
+        "street" : "35 Spirál u.",
+        "city" : "Szalmaharmad",
+        "zip" : "9464"
+    }
+}
+{
+    "_id" : ObjectId("63b810400285e34e8dd0fa41"),
+    "userId" : "bubbleenjoyer241@gmail.com",
+    "paymentStatus" : "processed",
+    "status" : "shipped",
+    "items" : [
+        {
+            "name" : "The Ballad Of Songbirds And Snakes",
+            "quantity" : NumberInt(1),
+            "price" : NumberInt(9990),
+            "discounts" : "0"
+        }
+    ],
+    "shippingAdress" : {
+        "country" : "Hungary",
+        "street" : "17 Lék u.",
+        "city" : "Szalmaharmad",
+        "zip" : "9464"
+    },
+    "billingAddress" : {
+        "country" : "Hungary",
+        "street" : "17 Lék u.",
+        "city" : "Szalmaharmad",
+        "zip" : "9464"
+    }
+}
+{
+    "_id" : ObjectId("63b814250285e34e8dd0fa42"),
+    "userId" : "k3r3k3s523@gmail.com",
+    "paymentStatus" : "processed",
+    "status" : "shipped",
+    "items" : [
+        {
+            "name" : "Egri csillagok",
+            "quantity" : NumberInt(1),
+            "price" : NumberInt(330),
+            "discounts" : "0"
+        },
+        {
+            "name" : "A kis makrancos",
+            "quantity" : NumberInt(1),
+            "price" : NumberInt(990),
+            "discounts" : "0"
+        }
+    ],
+    "shippingAdress" : {
+        "country" : "Hungary",
+        "street" : "5 Kikötő tér",
+        "city" : "Szalmaharmad",
+        "zip" : "9464"
+    },
+    "billingAddress" : {
+        "country" : "Hungary",
+        "street" : "5 Kikötő tér",
+        "city" : "Szalmaharmad",
+        "zip" : "9464"
+    }
+}
+{
+    "_id" : ObjectId("63b81ae70285e34e8dd0fa43"),
+    "userId" : "hajo936@gmail.com",
+    "paymentStatus" : "processed",
+    "status" : "shipped",
+    "items" : [
+        {
+            "name" : "Hamuba rajzolt föld",
+            "quantity" : NumberInt(1),
+            "price" : NumberInt(3499),
+            "discounts" : "0"
+        }
+    ],
+    "shippingAdress" : {
+        "country" : "Hungary",
+        "street" : "73 Asztalos u.",
+        "city" : "Debrecen",
+        "zip" : "4002"
+    },
+    "billingAddress" : {
+        "country" : "Hungary",
+        "street" : "73 Asztalos u.",
+        "city" : "Debrecen",
+        "zip" : "4002"
+    }
+}
+{
+    "_id" : ObjectId("63b81b070285e34e8dd0fa44"),
+    "userId" : "hajo936@gmail.com",
+    "paymentStatus" : "processed",
+    "status" : "shipped",
+    "items" : [
+        {
+            "name" : "Ne! Érints meg!",
+            "quantity" : NumberInt(1),
+            "price" : NumberInt(3399),
+            "discounts" : "0"
+        }
+    ],
+    "shippingAdress" : {
+        "country" : "Hungary",
+        "street" : "73 Asztalos u.",
+        "city" : "Debrecen",
+        "zip" : "4002"
+    },
+    "billingAddress" : {
+        "country" : "Hungary",
+        "street" : "73 Asztalos u.",
+        "city" : "Debrecen",
+        "zip" : "4002"
+    }
+}
+{
+    "_id" : ObjectId("63b81b5d0285e34e8dd0fa45"),
+    "userId" : "ep3rg6u@gmail.com",
+    "paymentStatus" : "processed",
+    "status" : "shipped",
+    "items" : [
+        {
+            "name" : "Ne! Érints meg!",
+            "quantity" : NumberInt(1),
+            "price" : NumberInt(3399),
+            "discounts" : "0"
+        },
+        {
+            "name" : "A nap és az ő virágai",
+            "quantity" : NumberInt(1),
+            "price" : NumberInt(3499),
+            "discounts" : "0"
+        }
+    ],
+    "shippingAdress" : {
+        "country" : "Hungary",
+        "street" : "31 Kikötő tér",
+        "city" : "Szalmaharmad",
+        "zip" : "9464"
+    },
+    "billingAddress" : {
+        "country" : "Hungary",
+        "street" : "31 Kikötő tér",
+        "city" : "Szalmaharmad",
+        "zip" : "9464"
+    }
+}
+{
+    "_id" : ObjectId("63b821ae0285e34e8dd0fa46"),
+    "userId" : "asdfgh@gmail.com",
+    "paymentStatus" : "processed",
+    "status" : "shipped",
+    "items" : [
+        {
+            "name" : "Minecraft: A túlélő mód kézikönyve",
+            "quantity" : NumberInt(1),
+            "price" : NumberInt(3999),
+            "discounts" : "0"
+        },
+        {
+            "name" : "Minecraft: Harcosok kézikönyve",
+            "quantity" : NumberInt(1),
+            "price" : NumberInt(3599),
+            "discounts" : "0"
+        },
+        {
+            "name" : "Minecraft: Guide to Redstone (Updated and revised)",
+            "quantity" : NumberInt(1),
+            "price" : NumberInt(3273),
+            "discounts" : "0"
+        }
+    ],
+    "shippingAdress" : {
+        "country" : "Hungary",
+        "street" : "10 Lék u.",
+        "city" : "Szalmaharmad",
+        "zip" : "9464"
+    },
+    "billingAddress" : {
+        "country" : "Hungary",
+        "street" : "10 Lék u.",
+        "city" : "Szalmaharmad",
+        "zip" : "9464"
+    }
+}
+{
+    "_id" : ObjectId("63b822b60285e34e8dd0fa47"),
+    "userId" : "asdfgh@gmail.com",
+    "paymentStatus" : "processed",
+    "status" : "shipped",
+    "items" : [
+        {
+            "name" : "Otthon test",
+            "quantity" : NumberInt(1),
+            "price" : NumberInt(2999),
+            "discounts" : "0"
+        }
+    ],
+    "shippingAdress" : {
+        "country" : "Hungary",
+        "street" : "10 Lék u.",
+        "city" : "Szalmaharmad",
+        "zip" : "9464"
+    },
+    "billingAddress" : {
+        "country" : "Hungary",
+        "street" : "10 Lék u.",
+        "city" : "Szalmaharmad",
+        "zip" : "9464"
+    }
+}
+{
+    "_id" : ObjectId("63b822c70285e34e8dd0fa48"),
+    "userId" : "asdfgh@gmail.com",
+    "paymentStatus" : "processed",
+    "status" : "shipped",
+    "items" : [
+        {
+            "name" : "A lány hét névvel",
+            "quantity" : NumberInt(1),
+            "price" : NumberInt(4084),
+            "discounts" : "0"
+        }
+    ],
+    "shippingAdress" : {
+        "country" : "Hungary",
+        "street" : "10 Lék u.",
+        "city" : "Szalmaharmad",
+        "zip" : "9464"
+    },
+    "billingAddress" : {
+        "country" : "Hungary",
+        "street" : "10 Lék u.",
+        "city" : "Szalmaharmad",
+        "zip" : "9464"
+    }
+}
+{
+    "_id" : ObjectId("63b8230d0285e34e8dd0fa49"),
+    "userId" : "ang0lna19@gmail.com",
+    "paymentStatus" : "processed",
+    "status" : "shipped",
+    "items" : [
+        {
+            "name" : "KPOP szigorúan bizalmas",
+            "quantity" : NumberInt(1),
+            "price" : NumberInt(3499),
+            "discounts" : "0"
+        }
+    ],
+    "shippingAdress" : {
+        "country" : "Hungary",
+        "street" : "19 Lógós u.",
+        "city" : "Szalmaharmad",
+        "zip" : "9464"
+    },
+    "billingAddress" : {
+        "country" : "Hungary",
+        "street" : "19 Lógós u.",
+        "city" : "Szalmaharmad",
+        "zip" : "9464"
+    }
+}
+{
+    "_id" : ObjectId("63b8251d0285e34e8dd0fa4a"),
+    "userId" : "ang0lna19@gmail.com",
+    "paymentStatus" : "processed",
+    "status" : "shipped",
+    "items" : [
+        {
+            "name" : "Stalker - Piknik az árokparton",
+            "quantity" : NumberInt(1),
+            "price" : NumberInt(2990),
+            "discounts" : "0"
+        },
+        {
+            "name" : "Mariposa mozgalon",
+            "quantity" : NumberInt(1),
+            "price" : NumberInt(4990),
+            "discounts" : "0"
+        }
+    ],
+    "shippingAdress" : {
+        "country" : "Hungary",
+        "street" : "19 Lógós u.",
+        "city" : "Szalmaharmad",
+        "zip" : "9464"
+    },
+    "billingAddress" : {
+        "country" : "Hungary",
+        "street" : "19 Lógós u.",
+        "city" : "Szalmaharmad",
+        "zip" : "9464"
+    }
+}
+{
+    "_id" : ObjectId("63b8255c0285e34e8dd0fa4b"),
+    "userId" : "ep3rg6u@gmail.com",
+    "paymentStatus" : "processed",
+    "status" : "shipped",
+    "items" : [
+        {
+            "name" : "Stalker - Piknik az árokparton",
+            "quantity" : NumberInt(1),
+            "price" : NumberInt(2990),
+            "discounts" : "0"
+        }
+    ],
+    "shippingAdress" : {
+        "country" : "Hungary",
+        "street" : "31 Kikötő tér",
+        "city" : "Szalmaharmad",
+        "zip" : "9464"
+    },
+    "billingAddress" : {
+        "country" : "Hungary",
+        "street" : "31 Kikötő tér",
+        "city" : "Szalmaharmad",
+        "zip" : "9464"
+    }
+}
+{
+    "_id" : ObjectId("63b825a90285e34e8dd0fa4c"),
+    "userId" : "ep3rg6u@gmail.com",
+    "paymentStatus" : "processed",
+    "status" : "shipped",
+    "items" : [
+        {
+            "name" : "Dallmayr - A szép élet álma",
+            "quantity" : NumberInt(1),
+            "price" : NumberInt(4990),
+            "discounts" : "0"
+        },
+        {
+            "name" : "The October List",
+            "quantity" : NumberInt(1),
+            "price" : NumberInt(1000),
+            "discounts" : "0"
+        }
+    ],
+    "shippingAdress" : {
+        "country" : "Hungary",
+        "street" : "31 Kikötő tér",
+        "city" : "Szalmaharmad",
+        "zip" : "9464"
+    },
+    "billingAddress" : {
+        "country" : "Hungary",
+        "street" : "31 Kikötő tér",
+        "city" : "Szalmaharmad",
+        "zip" : "9464"
+    }
+}
+{
+    "_id" : ObjectId("63b8266b0285e34e8dd0fa4d"),
+    "userId" : "ukulul5331@gmail.com",
+    "paymentStatus" : "processed",
+    "status" : "shipped",
+    "items" : [
+        {
+            "name" : "A széthullott birodalom - Tövisek Hercege, Tövisek királya, Tövisek császára",
+            "quantity" : NumberInt(1),
+            "price" : NumberInt(11995),
+            "discounts" : "0"
+        }
+    ],
+    "shippingAdress" : {
+        "country" : "Hungary",
+        "street" : "9 Spirál u.",
+        "city" : "Szalmaharmad",
+        "zip" : "9464"
+    },
+    "billingAddress" : {
+        "country" : "Hungary",
+        "street" : "9 Spirál u.",
+        "city" : "Szalmaharmad",
+        "zip" : "9464"
+    }
+}
+{
+    "_id" : ObjectId("63b826b30285e34e8dd0fa4e"),
+    "userId" : "ukulul5331@gmail.com",
+    "paymentStatus" : "processed",
+    "status" : "shipped",
+    "items" : [
+        {
+            "name" : "Az óranév",
+            "quantity" : NumberInt(1),
+            "price" : NumberInt(2999),
+            "discounts" : "0"
+        },
+        {
+            "name" : "g.A.I.a.",
+            "quantity" : NumberInt(1),
+            "price" : NumberInt(3250),
+            "discounts" : "0"
+        }
+    ],
+    "shippingAdress" : {
+        "country" : "Hungary",
+        "street" : "9 Spirál u.",
+        "city" : "Szalmaharmad",
+        "zip" : "9464"
+    },
+    "billingAddress" : {
+        "country" : "Hungary",
+        "street" : "9 Spirál u.",
+        "city" : "Szalmaharmad",
+        "zip" : "9464"
+    }
+}
