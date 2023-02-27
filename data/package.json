@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "mongoose": "^6.8.2",
-    "validator": "^13.7.0"
-  }
-}

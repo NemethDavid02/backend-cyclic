@@ -3,7 +3,8 @@
         "_id": {
             "$oid": "639180c7978e764a7e2c6dd3"
         },
-        "userId": "customer@gmail.com0",
+        // todo: userId-ket Javítani a következő 2db minta szerint, de létező és kapcsolódó ObjectID-ket használva!!!!
+        "userId": { "$oid": "63fc807e3f944579a10703b5" },
         "paymentStatus": "processed",
         "status": "shipped",
         "shippingAdress": {
@@ -23,7 +24,7 @@
         "_id": {
             "$oid": "6396d6fb9bd7d89ca308eb3f"
         },
-        "userId": "akac456@gmail.com",
+        "userId": { "$oid": "63fc807e3f944579a10703b7" },
         "paymentStatus": "processed",
         "status": "shipped",
         "shippingAdress": {
