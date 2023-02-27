@@ -1,0 +1,422 @@
+[
+    {
+        "_id": { "$oid": "63fc807e3f944579a10703b5" },
+        "email": "coustumer@gmail.com",
+        "firstName": "Takács",
+        "lastName": "Dávid",
+        "password": "dwqwrsad",
+        "roles": ["user", "admin"],
+        "address": {
+            "country": "Hungary",
+            "street": "4 Földes Gábor u.",
+            "city": "Győr",
+            "zip": "9023"
+        },
+        "shippingAddress": {
+            "country": "Hungary",
+            "street": "4 Bolyai Farkas utca",
+            "city": "Győr",
+            "zip": "9023"
+        }
+    },
+    {
+        "_id": { "$oid": "63fc807e3f944579a10703b6" },
+        "email": "candyconsumer23@gmail.com",
+        "firstName": "Techno",
+        "lastName": "Kolos",
+        "password": "d8a7sdti2gi2",
+        "roles": ["user"],
+        "address": {
+            "country": "Hungary",
+            "street": "5 Karikatúra u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        },
+        "shippingAddress": {
+            "country": "Hungary",
+            "street": "5 Karikatúra u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        }
+    },
+    {
+        "_id": { "$oid": "63fc807e3f944579a10703b7" },
+        "email": "akac456@gmail.com",
+        "firstName": "Erdei",
+        "lastName": "Tulipán",
+        "password": "sfewfe221sda",
+        "roles": ["user"],
+        "address": {
+            "country": "Hungary",
+            "street": "4 Drótós Ferenc u.",
+            "city": "Kerekvárad",
+            "zip": "9712"
+        },
+        "shippingAddress": {
+            "country": "Hungary",
+            "street": "4 Drótós Ferenc u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        }
+    },
+    {
+        "_id": { "$oid": "63fc807e3f944579a10703b8" },
+        "email": "Csavargo333@citromail.com",
+        "firstName": "Úti",
+        "lastName": "Olivér",
+        "password": "s214sdsaf432f",
+        "roles": ["user", "admin"],
+        "address": {
+            "country": "Hungary",
+            "street": "6 Asztalos u.",
+            "city": "Debrecen",
+            "zip": "4002"
+        },
+        "shippingAddress": {
+            "country": "Hungary",
+            "street": "63 Bérlet u.",
+            "city": "Kerekvárad",
+            "zip": "9712"
+        }
+    },
+    {
+        "_id": { "$oid": "63fc807e3f944579a10703b9" },
+        "email": "fuzfa25@gmail.com",
+        "firstName": "Kis",
+        "lastName": "Albert",
+        "password": "asd2fxdsh32235g",
+        "roles": ["user"],
+        "address": {
+            "country": "Zedország",
+            "street": "154 Körkör u.",
+            "city": "Villámkert",
+            "zip": "43122"
+        },
+        "shippingAddress": {
+            "country": "Zedország",
+            "street": "154 Körkör u.",
+            "city": "Villámkert",
+            "zip": "43122"
+        }
+    },
+    {
+        "_id": { "$oid": "63fc807e3f944579a10703ba" },
+        "email": "loopdelooper@gmail.com",
+        "firstName": "Fekete",
+        "lastName": "Erzsébet",
+        "password": "d6a1se8qw325dsw32f2345fs",
+        "roles": ["user"],
+        "address": {
+            "country": "Zedország",
+            "street": "12 Liliom u.",
+            "city": "Villámkert",
+            "zip": "43122"
+        },
+        "shippingAddress": {
+            "country": "Zedország",
+            "street": "12 Liliom u.",
+            "city": "Villámkert",
+            "zip": "43122"
+        }
+    },
+    {
+        "_id": { "$oid": "63fc807e3f944579a10703bb" },
+        "email": "asztalos4321@gmail.com",
+        "firstName": "Tavi",
+        "lastName": "Liliom",
+        "password": "de2534rewae124erdf",
+        "roles": ["user"],
+        "address": {
+            "country": "Hungary",
+            "street": "45 Sietős u.",
+            "city": "Kerekvárad",
+            "zip": "9712"
+        },
+        "shippingAddress": {
+            "country": "Hungary",
+            "street": "45 Sietős u.",
+            "city": "Kerekvárad",
+            "zip": "9712"
+        }
+    },
+    {
+        "_id": { "$oid": "63fc807e3f944579a10703bc" },
+        "email": "tekercs523@gmail.com",
+        "firstName": "Nagy",
+        "lastName": "András Márton",
+        "password": "4123sdw1sdsdf1gt",
+        "roles": ["user"],
+        "address": {
+            "country": "Hungary",
+            "street": "3 Lógós u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        },
+        "shippingAddress": {
+            "country": "Hungary",
+            "street": "3 Lógós u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        }
+    },
+    {
+        "_id": { "$oid": "63fc807e3f944579a10703bd" },
+        "email": "ang0lna19@gmail.com",
+        "firstName": "Szabó",
+        "lastName": "Péter",
+        "password": "a7c23hchfrt432",
+        "roles": ["user"],
+        "address": {
+            "country": "Hungary",
+            "street": "19 Lógós u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        },
+        "shippingAddress": {
+            "country": "Hungary",
+            "street": "19 Lógós u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        }
+    },
+    {
+        "_id": { "$oid": "63fc807e3f944579a10703be" },
+        "email": "k3r3k3s523@gmail.com",
+        "firstName": "Kerekes",
+        "lastName": "Eszter",
+        "password": "a4zr5hn75cf6",
+        "roles": ["user"],
+        "address": {
+            "country": "Hungary",
+            "street": "5 Kikötő tér",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        },
+        "shippingAddress": {
+            "country": "Hungary",
+            "street": "5 Kikötő tér",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        }
+    },
+    {
+        "_id": { "$oid": "63fc807e3f944579a10703bf" },
+        "email": "pokroc96@gmail.com",
+        "firstName": "Illyés",
+        "lastName": "András",
+        "password": "tzdsl214ghx9qw7dh",
+        "roles": ["user", "admin"],
+        "address": {
+            "country": "Hungary",
+            "street": "87 Sietős u.",
+            "city": "Kerekvárad",
+            "zip": "9712"
+        },
+        "shippingAddress": {
+            "country": "Hungary",
+            "street": "87 Sietős u.",
+            "city": "Kerekvárad",
+            "zip": "9712"
+        }
+    },
+    {
+        "_id": { "$oid": "63fc807e3f944579a10703c0" },
+        "email": "hajo936@gmail.com",
+        "firstName": "Gál",
+        "lastName": "Szabolcs",
+        "password": "h83ldfhx723h12lb",
+        "roles": ["user"],
+        "address": {
+            "country": "Hungary",
+            "street": "73 Asztalos u.",
+            "city": "Debrecen",
+            "zip": "4002"
+        },
+        "shippingAddress": {
+            "country": "Hungary",
+            "street": "73 Asztalos u.",
+            "city": "Debrecen",
+            "zip": "4002"
+        }
+    },
+    {
+        "_id": { "$oid": "63fc807e3f944579a10703c1" },
+        "email": "csonakos57@gmail.com",
+        "firstName": "Csonkos",
+        "lastName": "Tibor",
+        "password": "fhjeudsk2gzigx",
+        "roles": ["user"],
+        "address": {
+            "country": "Hungary",
+            "street": "25 Asztalos u.",
+            "city": "Debrecen",
+            "zip": "4002"
+        },
+        "shippingAddress": {
+            "country": "Hungary",
+            "street": "25 Asztalos u.",
+            "city": "Debrecen",
+            "zip": "4002"
+        }
+    },
+    {
+        "_id": { "$oid": "63fc807e3f944579a10703c2" },
+        "email": "afonya632@gmail.com",
+        "firstName": "Kiss",
+        "lastName": "János",
+        "password": "25cv2fgh3566asdw",
+        "roles": ["user"],
+        "address": {
+            "country": "Hungary",
+            "street": "54 Kikötő tér",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        },
+        "shippingAddress": {
+            "country": "Hungary",
+            "street": "54 Kikötő tér",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        }
+    },
+    {
+        "_id": { "$oid": "63fc807e3f944579a10703c3" },
+        "email": "ep3rg6u@gmail.com",
+        "firstName": "Hegedüs",
+        "lastName": "Norbert",
+        "password": "f94zhfiudhs",
+        "roles": ["user"],
+        "address": {
+            "country": "Hungary",
+            "street": "31 Kikötő tér",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        },
+        "shippingAddress": {
+            "country": "Hungary",
+            "street": "31 Kikötő tér",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        }
+    },
+    {
+        "_id": { "$oid": "63fc807e3f944579a10703c4" },
+        "email": "asdfgh@gmail.com",
+        "firstName": "Boros",
+        "lastName": "Márton",
+        "password": "1254dssax",
+        "roles": ["user"],
+        "address": {
+            "country": "Hungary",
+            "street": "10 Lék u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        },
+        "shippingAddress": {
+            "country": "Hungary",
+            "street": "10 Lék u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        }
+    },
+    {
+        "_id": { "$oid": "63fc807e3f944579a10703c5" },
+        "email": "bubbleenjoyer241@gmail.com",
+        "firstName": "Sárközi",
+        "lastName": "Botond",
+        "password": "ab8rkcol7fduz5",
+        "roles": ["user"],
+        "address": {
+            "country": "Hungary",
+            "street": "17 Lék u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        },
+        "shippingAddress": {
+            "country": "Hungary",
+            "street": "17 Lék u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        }
+    },
+    {
+        "_id": { "$oid": "63fc807e3f944579a10703c6" },
+        "email": "roadsier421@gmail.com",
+        "firstName": "Novák",
+        "lastName": "János",
+        "password": "bgt5kz1uvx7d24",
+        "roles": ["user"],
+        "address": {
+            "country": "Hungary",
+            "street": "31 Lék u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        },
+        "shippingAddress": {
+            "country": "Hungary",
+            "street": "31 Lék u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        }
+    },
+    {
+        "_id": { "$oid": "63fc807e3f944579a10703c7" },
+        "email": "ukulul5331@gmail.com",
+        "firstName": "Kozma",
+        "lastName": "Endre",
+        "password": "b7zdhsdsfse8d4f1dx6asdd4",
+        "roles": ["user"],
+        "address": {
+            "country": "Hungary",
+            "street": "9 Spirál u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        },
+        "shippingAddress": {
+            "country": "Hungary",
+            "street": "9 Spirál u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        }
+    },
+    {
+        "_id": { "$oid": "63fc807e3f944579a10703c8" },
+        "email": "pokroc0k@gmail.com",
+        "firstName": "Mezei",
+        "lastName": "gábor",
+        "password": "z897461df9684dsfcv",
+        "roles": ["user"],
+        "address": {
+            "country": "Hungary",
+            "street": "43 Spirál u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        },
+        "shippingAddress": {
+            "country": "Hungary",
+            "street": "43 Spirál u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        }
+    },
+    {
+        "_id": { "$oid": "63fc807e3f944579a10703c9" },
+        "email": "masni6431@gmail.com",
+        "firstName": "Barna",
+        "lastName": "Orsolya",
+        "password": "bgtzjugadsa345trdfgs",
+        "roles": ["user"],
+        "address": {
+            "country": "Hungary",
+            "street": "35 Spirál u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        },
+        "shippingAddress": {
+            "country": "Hungary",
+            "street": "35 Spirál u.",
+            "city": "Szalmaharmad",
+            "zip": "9464"
+        }
+    }
+]
