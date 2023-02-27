@@ -1,224 +1,226 @@
-{
-    "_id" : ObjectId("639183c1978e764a7e2c6dd5"),
-    "name" : "The Lord of the Rings",
-    "author" : "J. R. R. Tolkien",
-    "price" : NumberInt(9000),
-    "quantity" : NumberInt(100)
-}
-{
-    "_id" : ObjectId("6395d09ab8f84c79593f4291"),
-    "name" : "The October List",
-    "author" : "Jeffrey Deaver",
-    "price" : NumberInt(1000),
-    "quantity" : NumberInt(230)
-}
-{
-    "_id" : ObjectId("6395d17cb8f84c79593f4292"),
-    "name" : "A pál utcai fiúk",
-    "author" : "Molnár Ferenc",
-    "price" : NumberInt(1999),
-    "quantity" : NumberInt(400)
-}
-{
-    "_id" : ObjectId("6395d223b8f84c79593f4293"),
-    "name" : "Oxford Advanced Learner's dictionary 10Th edition",
-    "author" : "Jennifer Bradbery - Diana Lea",
-    "price" : NumberInt(21230),
-    "quantity" : NumberInt(150)
-}
-{
-    "_id" : ObjectId("6395d2e6b8f84c79593f4294"),
-    "name" : "Jane Austen - Színezőkönyv",
-    "author" : "Jane Austen",
-    "price" : NumberInt(2200),
-    "quantity" : NumberInt(150)
-}
-{
-    "_id" : ObjectId("6395d320b8f84c79593f4295"),
-    "name" : "Az eredeti Sudoku könyv - 2022/23 tél",
-    "author" : "Tim Bender",
-    "price" : NumberInt(1095),
-    "quantity" : NumberInt(420)
-}
-{
-    "_id" : ObjectId("6395d3a3b8f84c79593f4296"),
-    "name" : "Dallmayr - A szép élet álma",
-    "author" : "Lisa Graf",
-    "price" : NumberInt(4990),
-    "quantity" : NumberInt(145)
-}
-{
-    "_id" : ObjectId("6395d44db8f84c79593f4297"),
-    "name" : "A varsói tanár",
-    "author" : "Mario Escobar",
-    "price" : NumberInt(4800),
-    "quantity" : NumberInt(173)
-}
-{
-    "_id" : ObjectId("6395da3fb8f84c79593f4298"),
-    "name" : "A széthullott birodalom - Tövisek Hercege, Tövisek királya, Tövisek császára",
-    "author" : "Lawrence Mark",
-    "price" : NumberInt(11995),
-    "quantity" : NumberInt(70)
-}
-{
-    "_id" : ObjectId("6395db0cb8f84c79593f4299"),
-    "name" : "The Ballad Of Songbirds And Snakes",
-    "author" : "Suzanne Collins",
-    "price" : NumberInt(9990),
-    "quantity" : NumberInt(142)
-}
-{
-    "_id" : ObjectId("6395dbbdb8f84c79593f429a"),
-    "name" : "Less is Lost",
-    "author" : "Andrew Sean Greer",
-    "price" : NumberInt(9990),
-    "quantity" : NumberInt(351)
-}
-{
-    "_id" : ObjectId("6395dc2eb8f84c79593f429b"),
-    "name" : "The Evening and the Morning",
-    "author" : "Ken Follett",
-    "price" : NumberInt(9990),
-    "quantity" : NumberInt(114)
-}
-{
-    "_id" : ObjectId("63997ce5e82b7d2d7c505b0e"),
-    "name" : "Mariposa mozgalon",
-    "author" : "Gert Nygardshaug",
-    "price" : 4990.0,
-    "quantity" : 0.0
-}
-{
-    "_id" : ObjectId("63b53db2d18321524471f789"),
-    "name" : "Stalker - Piknik az árokparton",
-    "author" : " Borisz Sztrugackij - Arkagyij Sztrugackij ",
-    "price" : NumberInt(2990),
-    "quantity" : NumberInt(86)
-}
-{
-    "_id" : ObjectId("63b7652a238bb18199518a49"),
-    "name" : "Assassin's Creed: Last Descendants - A New York-i felkelés",
-    "author" : "Matthew J. Kirby",
-    "price" : NumberInt(2690),
-    "quantity" : NumberInt(145)
-}
-{
-    "_id" : ObjectId("63b768d7238bb18199518a4a"),
-    "name" : "Assassin's Creed: Last Descendants - A kán sírja ",
-    "author" : "Matthew J. Kirby",
-    "price" : NumberInt(2690),
-    "quantity" : NumberInt(145)
-}
-{
-    "_id" : ObjectId("63b768e5238bb18199518a4b"),
-    "name" : "Assassin's Creed: Last Descendants - Az istenek végzete",
-    "author" : "Matthew J. Kirby",
-    "price" : NumberInt(2690),
-    "quantity" : NumberInt(145)
-}
-{
-    "_id" : ObjectId("63b76b29238bb18199518a4c"),
-    "name" : "Víkend a pokolban",
-    "author" : "Rejtő Jenő",
-    "price" : NumberInt(799),
-    "quantity" : NumberInt(46)
-}
-{
-    "_id" : ObjectId("63b76c17238bb18199518a4d"),
-    "name" : "Az óranév",
-    "author" : "Natalia Sherba",
-    "price" : NumberInt(2999),
-    "quantity" : NumberInt(152)
-}
-{
-    "_id" : ObjectId("63b76c71238bb18199518a4e"),
-    "name" : "A kis makrancos",
-    "author" : "Margaret Hungerford",
-    "price" : NumberInt(990),
-    "quantity" : NumberInt(100)
-}
-{
-    "_id" : ObjectId("63b76d52238bb18199518a4f"),
-    "name" : "Hamuba rajzolt föld",
-    "author" : "Petra Rautiainen",
-    "price" : NumberInt(3499),
-    "quantity" : NumberInt(130)
-}
-{
-    "_id" : ObjectId("63b76ddb238bb18199518a50"),
-    "name" : "g.A.I.a.",
-    "author" : "Rafal Kosik",
-    "price" : NumberInt(3250),
-    "quantity" : NumberInt(89)
-}
-{
-    "_id" : ObjectId("63b76e45238bb18199518a51"),
-    "name" : "Ne! Érints meg!",
-    "author" : "Laura Kneidl",
-    "price" : NumberInt(3399),
-    "quantity" : NumberInt(175)
-}
-{
-    "_id" : ObjectId("63b7f789ff22501440b2d4c0"),
-    "name" : "Egri csillagok",
-    "author" : "Gárdonyi Géza",
-    "price" : NumberInt(330),
-    "quantity" : NumberInt(318)
-}
-{
-    "_id" : ObjectId("63b7f7d6ff22501440b2d4c1"),
-    "name" : "Minecraft: A túlélő mód kézikönyve",
-    "author" : "Thomas Mcbrien",
-    "price" : NumberInt(3999),
-    "quantity" : NumberInt(256)
-}
-{
-    "_id" : ObjectId("63b7f820ff22501440b2d4c2"),
-    "name" : "Minecraft: Harcosok kézikönyve",
-    "author" : "Stephanie Milton",
-    "price" : NumberInt(3599),
-    "quantity" : NumberInt(256)
-}
-{
-    "_id" : ObjectId("63b7f8b2ff22501440b2d4c3"),
-    "name" : "Minecraft: Guide to Redstone (Updated and revised)",
-    "author" : "Mojang AB",
-    "price" : NumberInt(3273),
-    "quantity" : NumberInt(256)
-}
-{
-    "_id" : ObjectId("63b7f8d3ff22501440b2d4c4"),
-    "name" : "Tej és méz",
-    "author" : "Rupi Kaur",
-    "price" : NumberInt(2999),
-    "quantity" : NumberInt(137)
-}
-{
-    "_id" : ObjectId("63b7f8e5ff22501440b2d4c5"),
-    "name" : "Otthon test",
-    "author" : "Rupi Kaur",
-    "price" : NumberInt(2999),
-    "quantity" : NumberInt(137)
-}
-{
-    "_id" : ObjectId("63b7f909ff22501440b2d4c6"),
-    "name" : "A nap és az ő virágai",
-    "author" : "Rupi Kaur",
-    "price" : NumberInt(3499),
-    "quantity" : NumberInt(53)
-}
-{
-    "_id" : ObjectId("63b7f946ff22501440b2d4c7"),
-    "name" : "A lány hét névvel",
-    "author" : "Hyeosseon Lee, David John",
-    "price" : NumberInt(4084),
-    "quantity" : NumberInt(61)
-}
-{
-    "_id" : ObjectId("63b7f97fff22501440b2d4c8"),
-    "name" : "KPOP szigorúan bizalmas",
-    "author" : "Stephan Lee",
-    "price" : NumberInt(3499),
-    "quantity" : NumberInt(0)
-}
+[
+    {
+        "_id": { "$oid": "639183c1978e764a7e2c6dd5" },
+        "name": "The Lord of the Rings",
+        "author": "J. R. R. Tolkien",
+        "price": 9000,
+        "quantity": 100
+    },
+    {
+        "_id": { "$oid": "6395d09ab8f84c79593f4291" },
+        "name": "The October List",
+        "author": "Jeffrey Deaver",
+        "price": 1000,
+        "quantity": 230
+    },
+    {
+        "_id": { "$oid": "6395d17cb8f84c79593f4292" },
+        "name": "A pál utcai fiúk",
+        "author": "Molnár Ferenc",
+        "price": 1999,
+        "quantity": 400
+    },
+    {
+        "_id": { "$oid": "6395d223b8f84c79593f4293" },
+        "name": "Oxford Advanced Learner's dictionary 10Th edition",
+        "author": "Jennifer Bradbery - Diana Lea",
+        "price": 21230,
+        "quantity": 150
+    },
+    {
+        "_id": { "$oid": "6395d2e6b8f84c79593f4294" },
+        "name": "Jane Austen - Színezőkönyv",
+        "author": "Jane Austen",
+        "price": 2200,
+        "quantity": 150
+    },
+    {
+        "_id": { "$oid": "6395d320b8f84c79593f4295" },
+        "name": "Az eredeti Sudoku könyv - 2022/23 tél",
+        "author": "Tim Bender",
+        "price": 1095,
+        "quantity": 420
+    },
+    {
+        "_id": { "$oid": "6395d3a3b8f84c79593f4296" },
+        "name": "Dallmayr - A szép élet álma",
+        "author": "Lisa Graf",
+        "price": 4990,
+        "quantity": 145
+    },
+    {
+        "_id": { "$oid": "6395d44db8f84c79593f4297" },
+        "name": "A varsói tanár",
+        "author": "Mario Escobar",
+        "price": 4800,
+        "quantity": 173
+    },
+    {
+        "_id": { "$oid": "6395da3fb8f84c79593f4298" },
+        "name": "A széthullott birodalom - Tövisek Hercege, Tövisek királya, Tövisek császára",
+        "author": "Lawrence Mark",
+        "price": 11995,
+        "quantity": 70
+    },
+    {
+        "_id": { "$oid": "6395db0cb8f84c79593f4299" },
+        "name": "The Ballad Of Songbirds And Snakes",
+        "author": "Suzanne Collins",
+        "price": 9990,
+        "quantity": 142
+    },
+    {
+        "_id": { "$oid": "6395dbbdb8f84c79593f429a" },
+        "name": "Less is Lost",
+        "author": "Andrew Sean Greer",
+        "price": 9990,
+        "quantity": 351
+    },
+    {
+        "_id": { "$oid": "6395dc2eb8f84c79593f429b" },
+        "name": "The Evening and the Morning",
+        "author": "Ken Follett",
+        "price": 9990,
+        "quantity": 114
+    },
+    {
+        "_id": { "$oid": "63997ce5e82b7d2d7c505b0e" },
+        "name": "Mariposa mozgalon",
+        "author": "Gert Nygardshaug",
+        "price": 4990.0,
+        "quantity": 0.0
+    },
+    {
+        "_id": { "$oid": "63b53db2d18321524471f789" },
+        "name": "Stalker - Piknik az árokparton",
+        "author": " Borisz Sztrugackij - Arkagyij Sztrugackij ",
+        "price": 2990,
+        "quantity": 86
+    },
+    {
+        "_id": { "$oid": "63b7652a238bb18199518a49" },
+        "name": "Assassin's Creed: Last Descendants - A New York-i felkelés",
+        "author": "Matthew J. Kirby",
+        "price": 2690,
+        "quantity": 145
+    },
+    {
+        "_id": { "$oid": "63b768d7238bb18199518a4a" },
+        "name": "Assassin's Creed: Last Descendants - A kán sírja ",
+        "author": "Matthew J. Kirby",
+        "price": 2690,
+        "quantity": 145
+    },
+    {
+        "_id": { "$oid": "63b768e5238bb18199518a4b" },
+        "name": "Assassin's Creed: Last Descendants - Az istenek végzete",
+        "author": "Matthew J. Kirby",
+        "price": 2690,
+        "quantity": 145
+    },
+    {
+        "_id": { "$oid": "63b76b29238bb18199518a4c" },
+        "name": "Víkend a pokolban",
+        "author": "Rejtő Jenő",
+        "price": 799,
+        "quantity": 46
+    },
+    {
+        "_id": { "$oid": "63b76c17238bb18199518a4d" },
+        "name": "Az óranév",
+        "author": "Natalia Sherba",
+        "price": 2999,
+        "quantity": 152
+    },
+    {
+        "_id": { "$oid": "63b76c71238bb18199518a4e" },
+        "name": "A kis makrancos",
+        "author": "Margaret Hungerford",
+        "price": 990,
+        "quantity": 100
+    },
+    {
+        "_id": { "$oid": "63b76d52238bb18199518a4f" },
+        "name": "Hamuba rajzolt föld",
+        "author": "Petra Rautiainen",
+        "price": 3499,
+        "quantity": 130
+    },
+    {
+        "_id": { "$oid": "63b76ddb238bb18199518a50" },
+        "name": "g.A.I.a.",
+        "author": "Rafal Kosik",
+        "price": 3250,
+        "quantity": 89
+    },
+    {
+        "_id": { "$oid": "63b76e45238bb18199518a51" },
+        "name": "Ne! Érints meg!",
+        "author": "Laura Kneidl",
+        "price": 3399,
+        "quantity": 175
+    },
+    {
+        "_id": { "$oid": "63b7f789ff22501440b2d4c0" },
+        "name": "Egri csillagok",
+        "author": "Gárdonyi Géza",
+        "price": 330,
+        "quantity": 318
+    },
+    {
+        "_id": { "$oid": "63b7f7d6ff22501440b2d4c1" },
+        "name": "Minecraft: A túlélő mód kézikönyve",
+        "author": "Thomas Mcbrien",
+        "price": 3999,
+        "quantity": 256
+    },
+    {
+        "_id": { "$oid": "63b7f820ff22501440b2d4c2" },
+        "name": "Minecraft: Harcosok kézikönyve",
+        "author": "Stephanie Milton",
+        "price": 3599,
+        "quantity": 256
+    },
+    {
+        "_id": { "$oid": "63b7f8b2ff22501440b2d4c3" },
+        "name": "Minecraft: Guide to Redstone (Updated and revised",
+        "author": "Mojang AB",
+        "price": 3273,
+        "quantity": 256
+    },
+    {
+        "_id": { "$oid": "63b7f8d3ff22501440b2d4c4" },
+        "name": "Tej és méz",
+        "author": "Rupi Kaur",
+        "price": 2999,
+        "quantity": 137
+    },
+    {
+        "_id": { "$oid": "63b7f8e5ff22501440b2d4c5" },
+        "name": "Otthon test",
+        "author": "Rupi Kaur",
+        "price": 2999,
+        "quantity": 137
+    },
+    {
+        "_id": { "$oid": "63b7f909ff22501440b2d4c6" },
+        "name": "A nap és az ő virágai",
+        "author": "Rupi Kaur",
+        "price": 3499,
+        "quantity": 53
+    },
+    {
+        "_id": { "$oid": "63b7f946ff22501440b2d4c7" },
+        "name": "A lány hét névvel",
+        "author": "Hyeosseon Lee, David John",
+        "price": 4084,
+        "quantity": 61
+    },
+    {
+        "_id": { "$oid": "63b7f97fff22501440b2d4c8" },
+        "name": "KPOP szigorúan bizalmas",
+        "author": "Stephan Lee",
+        "price": 3499,
+        "quantity": 0
+    }
+]
