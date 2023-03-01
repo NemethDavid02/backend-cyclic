@@ -1,10 +1,18 @@
-import { ArrayNotEmpty, IsArray, IsBoolean, IsEmail, IsOptional, IsString, ValidateNested } from "class-validator";
+import "reflect-metadata";
+
+import { Type } from "class-transformer";
+import { ArrayNotEmpty, IsArray, IsBoolean, IsEmail, IsMongoId, IsOptional, IsString, ValidateNested } from "class-validator";
+import { Schema } from "mongoose";
 
 // import { Match } from "./match.decorator";
 import CreateAddressDto from "./address.dto";
 import IUser from "./user.interface";
 
 export default class CreateUserDto implements IUser {
+    @IsMongoId()
+    @IsOptional()
+    public _id: Schema.Types.ObjectId;
+
     @IsString()
     public name: string;
 
@@ -34,6 +42,8 @@ export default class CreateUserDto implements IUser {
     public roles: string[];
 
     @IsOptional()
+    // For validating nested object you must import reflect-metadata and define @Type:
     @ValidateNested()
-    public address?: CreateAddressDto;
+    @Type(() => CreateAddressDto)
+    public address: CreateAddressDto;
 }
