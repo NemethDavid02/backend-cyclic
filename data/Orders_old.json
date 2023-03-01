@@ -114,6 +114,7 @@
         "zip" : "9712"
     }
 }
+//"bookmark"
 {
     "_id" : ObjectId("63b80cce0285e34e8dd0fa3e"),
     "userId" : "pokroc96@gmail.com",

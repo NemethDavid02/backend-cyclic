@@ -1,9 +1,6 @@
 // ObjectId-k generálása:
 // https://nddapp.com/object-id-generator.html
 
-// 63fc89a53f944579a10727d2
-// 63fc89a53f944579a10727d3
-// 63fc89a53f944579a10727d4
 // 63fc89a53f944579a10727d5
 // 63fc89a53f944579a10727d6
 // 63fc89a53f944579a10727d7
@@ -112,6 +109,46 @@
         "productId": { "$oid": "639183c1978e764a7e2c6dd5" },
         "orderId": { "$oid": "6396d6fb9bd7d89ca308eb3f" },
         "archived_price": 12345,
+        "discount": 0,
+        "quantity": 1
+    },
+    {
+        "_id": { "$oid": "63fc89a53f944579a10727d2" },
+        "productId": { "$oid": "6395d17cb8f84c79593f4292" },
+        "orderId": { "$oid": "6396d6fb9bd7d89ca308eb3f" },
+        "archived_price": 1999,
+        "discount": 0,
+        "quantity": 1
+    },
+    {
+        "_id": { "$oid": "63fc89a53f944579a10727d3" },
+        "productId": { "$oid": "6395d17cb8f84c79593f4292" },
+        "orderId": { "$oid": "639757ec0c5330c7405f764d" },
+        "archived_price": 1999,
+        "discount": 0,
+        "quantity": 1
+    },
+    {
+        "_id": { "$oid": "63fc89a53f944579a10727d4" },
+        "productId": { "$oid": "6395d44db8f84c79593f4297" },
+        "orderId": { "$oid": "63997f45e82b7d2d7c505b0f" },
+        "archived_price": 4000,
+        "discount": 800,
+        "quantity": 1
+    },
+    {
+        "_id": { "$oid": "63fc89a53f944579a10727d4" },
+        "productId": { "$oid": "6395d09ab8f84c79593f4291" },
+        "orderId": { "$oid": "63997f45e82b7d2d7c505b0f" },
+        "archived_price": 1000,
+        "discount": 0,
+        "quantity": 1
+    },
+    {
+        "_id": { "$oid": "63fc89a53f944579a10727d4" },
+        "productId": { "$oid": "6395d223b8f84c79593f4293" },
+        "orderId": { "$oid": "63997f45e82b7d2d7c505b0f" },
+        "archived_price": 2130,
         "discount": 0,
         "quantity": 1
     }
