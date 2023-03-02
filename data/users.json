@@ -6,6 +6,8 @@
         "lastName": "Dávid",
         "password": "dwqwrsad",
         "roles": ["user", "admin"],
+        "email_verified": true,
+        "auto_login": true,
         "address": {
             "country": "Hungary",
             "street": "4 Földes Gábor u.",
@@ -26,6 +28,8 @@
         "lastName": "Kolos",
         "password": "d8a7sdti2gi2",
         "roles": ["user"],
+        "email_verified": true,
+        "auto_login": true,
         "address": {
             "country": "Hungary",
             "street": "5 Karikatúra u.",
@@ -46,6 +50,8 @@
         "lastName": "Tulipán",
         "password": "sfewfe221sda",
         "roles": ["user"],
+        "email_verified": true,
+        "auto_login": true,
         "address": {
             "country": "Hungary",
             "street": "4 Drótós Ferenc u.",
@@ -66,6 +72,8 @@
         "lastName": "Olivér",
         "password": "s214sdsaf432f",
         "roles": ["user", "admin"],
+        "email_verified": true,
+        "auto_login": true,
         "address": {
             "country": "Hungary",
             "street": "6 Asztalos u.",
@@ -86,6 +94,8 @@
         "lastName": "Albert",
         "password": "asd2fxdsh32235g",
         "roles": ["user"],
+        "email_verified": true,
+        "auto_login": true,
         "address": {
             "country": "Zedország",
             "street": "154 Körkör u.",
@@ -106,6 +116,8 @@
         "lastName": "Erzsébet",
         "password": "d6a1se8qw325dsw32f2345fs",
         "roles": ["user"],
+        "email_verified": true,
+        "auto_login": true,
         "address": {
             "country": "Zedország",
             "street": "12 Liliom u.",
@@ -126,6 +138,8 @@
         "lastName": "Liliom",
         "password": "de2534rewae124erdf",
         "roles": ["user"],
+        "email_verified": true,
+        "auto_login": true,
         "address": {
             "country": "Hungary",
             "street": "45 Sietős u.",
@@ -146,6 +160,8 @@
         "lastName": "András Márton",
         "password": "4123sdw1sdsdf1gt",
         "roles": ["user"],
+        "email_verified": true,
+        "auto_login": true,
         "address": {
             "country": "Hungary",
             "street": "3 Lógós u.",
@@ -166,6 +182,8 @@
         "lastName": "Péter",
         "password": "a7c23hchfrt432",
         "roles": ["user"],
+        "email_verified": true,
+        "auto_login": true,
         "address": {
             "country": "Hungary",
             "street": "19 Lógós u.",
@@ -186,6 +204,8 @@
         "lastName": "Eszter",
         "password": "a4zr5hn75cf6",
         "roles": ["user"],
+        "email_verified": true,
+        "auto_login": true,
         "address": {
             "country": "Hungary",
             "street": "5 Kikötő tér",
@@ -206,6 +226,8 @@
         "lastName": "András",
         "password": "tzdsl214ghx9qw7dh",
         "roles": ["user", "admin"],
+        "email_verified": true,
+        "auto_login": true,
         "address": {
             "country": "Hungary",
             "street": "87 Sietős u.",
@@ -226,6 +248,8 @@
         "lastName": "Szabolcs",
         "password": "h83ldfhx723h12lb",
         "roles": ["user"],
+        "email_verified": true,
+        "auto_login": true,
         "address": {
             "country": "Hungary",
             "street": "73 Asztalos u.",
@@ -246,6 +270,8 @@
         "lastName": "Tibor",
         "password": "fhjeudsk2gzigx",
         "roles": ["user"],
+        "email_verified": true,
+        "auto_login": true,
         "address": {
             "country": "Hungary",
             "street": "25 Asztalos u.",
@@ -266,6 +292,8 @@
         "lastName": "János",
         "password": "25cv2fgh3566asdw",
         "roles": ["user"],
+        "email_verified": true,
+        "auto_login": true,
         "address": {
             "country": "Hungary",
             "street": "54 Kikötő tér",
@@ -286,6 +314,8 @@
         "lastName": "Norbert",
         "password": "f94zhfiudhs",
         "roles": ["user"],
+        "email_verified": true,
+        "auto_login": true,
         "address": {
             "country": "Hungary",
             "street": "31 Kikötő tér",
@@ -306,6 +336,8 @@
         "lastName": "Márton",
         "password": "1254dssax",
         "roles": ["user"],
+        "email_verified": true,
+        "auto_login": true,
         "address": {
             "country": "Hungary",
             "street": "10 Lék u.",
@@ -326,6 +358,8 @@
         "lastName": "Botond",
         "password": "ab8rkcol7fduz5",
         "roles": ["user"],
+        "email_verified": true,
+        "auto_login": true,
         "address": {
             "country": "Hungary",
             "street": "17 Lék u.",
@@ -346,6 +380,8 @@
         "lastName": "János",
         "password": "bgt5kz1uvx7d24",
         "roles": ["user"],
+        "email_verified": true,
+        "auto_login": true,
         "address": {
             "country": "Hungary",
             "street": "31 Lék u.",
@@ -366,6 +402,8 @@
         "lastName": "Endre",
         "password": "b7zdhsdsfse8d4f1dx6asdd4",
         "roles": ["user"],
+        "email_verified": true,
+        "auto_login": true,
         "address": {
             "country": "Hungary",
             "street": "9 Spirál u.",
@@ -386,6 +424,8 @@
         "lastName": "gábor",
         "password": "z897461df9684dsfcv",
         "roles": ["user"],
+        "email_verified": true,
+        "auto_login": true,
         "address": {
             "country": "Hungary",
             "street": "43 Spirál u.",
@@ -406,6 +446,8 @@
         "lastName": "Orsolya",
         "password": "bgtzjugadsa345trdfgs",
         "roles": ["user"],
+        "email_verified": true,
+        "auto_login": true,
         "address": {
             "country": "Hungary",
             "street": "35 Spirál u.",

@@ -7,6 +7,7 @@ const addressSchema = new Schema(
         city: String,
         country: String,
         street: String,
+        zip: String
     },
     { versionKey: false },
 );
@@ -31,10 +32,6 @@ const userSchema = new Schema<IUser>(
             type: String,
             required: true,
         },
-        picture: {
-            type: String,
-            required: true,
-        },
         password: {
             type: String,
             required: true,
@@ -47,17 +44,17 @@ const userSchema = new Schema<IUser>(
     { versionKey: false, id: false, toJSON: { virtuals: true }, toObject: { virtuals: true } },
 );
 
-userSchema.virtual("recipes", {
-    ref: "Recipes",
+userSchema.virtual("orders", {
+    ref: "Orders",
     localField: "_id",
-    foreignField: "user_id", // ref_Field
+    foreignField: "userId", // ref_Field
     justOne: false,
 });
 
-userSchema.virtual("posts", {
-    ref: "Posts",
+userSchema.virtual("payments", {
+    ref: "Payments",
     localField: "_id",
-    foreignField: "user_id", // ref_Field
+    foreignField: "userId", // ref_Field
     justOne: false,
 });
 

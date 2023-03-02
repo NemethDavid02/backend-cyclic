@@ -31,9 +31,6 @@ export default class CreateUserDto implements IUser {
     public auto_login: boolean;
 
     @IsString()
-    public picture: string;
-
-    @IsString()
     public password: string;
 
     @IsArray()
