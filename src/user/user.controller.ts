@@ -26,9 +26,11 @@ export default class UserController implements IController {
     private initializeRoutes() {
         this.router.get(`${this.path}/:id`, authMiddleware, this.getUserById);
         this.router.get(this.path, this.getAllUsers);
-
-        this.router.patch(`${this.path}/:id`, [authMiddleware, roleCheckMiddleware(["admin"]), validationMiddleware(CreateUserDto, true)], this.modifyUser);
-
+        this.router.patch(
+            `${this.path}/:id`,
+            [authMiddleware, roleCheckMiddleware(["admin"]), validationMiddleware(CreateUserDto, true)],
+            this.modifyUser,
+        );
         this.router.delete(`${this.path}/:id`, [authMiddleware, roleCheckMiddleware(["admin"])], this.deleteUser);
     }
 
@@ -50,7 +52,7 @@ export default class UserController implements IController {
                 // if (request.query.withPosts === "true") {
                 //     userQuery.populate("posts").exec();
                 // }
-                const user = await this.user.findById(id).populate("posts");
+                const user = await this.user.findById(id);
                 if (user) {
                     res.send(user);
                 } else {
