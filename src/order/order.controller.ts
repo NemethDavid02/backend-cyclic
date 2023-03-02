@@ -5,7 +5,7 @@ import HttpException from "../exceptions/HttpException";
 import IdNotValidException from "../exceptions/IdNotValidException";
 import UserNotFoundException from "../exceptions/UserNotFoundException";
 import IController from "../interfaces/controller.interface";
-import IRequestWithUser from "../interfaces/requestWithUser.interface";
+// import IRequestWithUser from "../interfaces/requestWithUser.interface";
 import authMiddleware from "../middleware/auth.middleware";
 import roleCheckMiddleware from "../middleware/roleCheckMiddleware";
 import validationMiddleware from "../middleware/validation.middleware";
@@ -24,7 +24,7 @@ export default class OrderController implements IController {
 
     private initializeRoutes() {
         this.router.get(`${this.path}/:id`, authMiddleware, this.getOrderById);
-        this.router.get(this.path, authMiddleware, this.getAllOrders);
+        this.router.get(this.path, this.getAllOrders);
 
         this.router.patch(`${this.path}/:id`, [authMiddleware, roleCheckMiddleware(["admin"]), validationMiddleware(CreateOrderDto, true)], this.modifyOrder);
 

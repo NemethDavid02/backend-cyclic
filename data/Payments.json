@@ -1,7 +1,6 @@
 [
     {
         "_id": { "$oid": "63917f60978e764a7e2c6dd1" },
-         // todo: userId-ket Javítani a következő 2db minta szerint, de létező és kapcsolódó ObjectID-ket használva!!!!
         "userId": { "$oid": "63fc807e3f944579a10703b5" },
         "type": "credit",
         "status": "verified",

@@ -88,7 +88,7 @@ export default class App {
             unset: "destroy",
             store: MongoStore.create({
                 mongoUrl: process.env.MONGO_URI,
-                dbName: "BackendTemplateDB",
+                dbName: process.env.MONGO_DB,
                 stringify: false,
             }),
         };

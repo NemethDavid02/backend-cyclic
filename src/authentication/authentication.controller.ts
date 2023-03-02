@@ -19,7 +19,7 @@ import LogInDto from "./logIn.dto";
 export default class AuthenticationController implements IController {
     public path = "/auth";
     public router = Router();
-    private user = userModel;
+    private userM = userModel;
 
     constructor() {
         this.initializeRoutes();
@@ -40,12 +40,12 @@ export default class AuthenticationController implements IController {
     private registration = async (req: Request, res: Response, next: NextFunction) => {
         try {
             const userData: IUser = req.body;
-            if (await this.user.findOne({ email: userData.email })) {
+            if (await this.userM.findOne({ email: userData.email })) {
                 next(new UserWithThatEmailAlreadyExistsException(userData.email));
             } else {
                 const hashedPassword = await bcrypt.hash(userData.password, 10);
 
-                const user = await this.user.create({
+                const user = await this.userM.create({
                     ...userData,
                     roles: ["user"],
                     password: hashedPassword,
@@ -94,7 +94,8 @@ export default class AuthenticationController implements IController {
     private login = async (req: Request, res: Response, next: NextFunction) => {
         try {
             const logInData: IUser = req.body;
-            const user = await this.user.findOne({ email: logInData.email });
+            console.log(await bcrypt.hash(logInData.password, 10));
+            const user = await this.userM.findOne({ email: logInData.email });
             if (user) {
                 const isPasswordMatching = await bcrypt.compare(logInData.password, user.password);
                 if (isPasswordMatching) {
@@ -163,7 +164,7 @@ export default class AuthenticationController implements IController {
             verifyToken(req.body.atoken)
                 .then(userInfo => {
                     const googleUser = userInfo as IGoogleUserInfo;
-                    this.user.findOne({ email: googleUser.email }).then(user => {
+                    this.userM.findOne({ email: googleUser.email }).then(user => {
                         if (user) {
                             req.session.regenerate(error => {
                                 if (error) {
@@ -178,7 +179,7 @@ export default class AuthenticationController implements IController {
                             });
                         } else {
                             // Register as new Google user
-                            this.user
+                            this.userM
                                 .create({
                                     ...googleUser,
                                     password: "stored at Google",

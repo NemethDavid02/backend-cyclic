@@ -15,5 +15,5 @@ export default interface IOrder {
         city: string;
         country: string;
         zip: string;
-    }
+    };
 }

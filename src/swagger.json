@@ -34,8 +34,8 @@
                                 }
                             },
                             "example": {
-                                "email": "student005@jedlik.eu",
-                                "password": "student005"
+                                "email": "customer@gmail.com",
+                                "password": "dwqwrsad"
                             }
                         }
                     }
@@ -87,11 +87,11 @@
                 }
             }
         },
-        "/posts": {
+        "/orders": {
             "get": {
-                "tags": ["posts"],
-                "summary": "Összes post lekérdezése.",
-                "description": "Az összes post adatát tudjuk lekérdezni.",
+                "tags": ["orders"],
+                "summary": "Összes rendelés lekérdezése.",
+                "description": "Az összes rendelés adatát tudjuk lekérdezni.",
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -119,7 +119,7 @@
                 }
             },
             "post": {
-                "tags": ["posts"],
+                "tags": ["orders"],
                 "summary": "Új post mentése.",
                 "description": "Új post mentése a 'post' táblában",
                 "requestBody": {
@@ -157,9 +157,9 @@
                 }
             }
         },
-        "/posts/{id}": {
+        "/orders/{id}": {
             "get": {
-                "tags": ["posts"],
+                "tags": ["orders"],
                 "summary": "Egy post lekérdezése.",
                 "description": "Az id paraméterben megadott post adatait kérdezhetjük le.",
                 "parameters": [
@@ -215,7 +215,7 @@
                 }
             },
             "patch": {
-                "tags": ["posts"],
+                "tags": ["orders"],
                 "summary": "post módosítása (PATCH).",
                 "description": "A paraméterben megadott post adatait módosítja a végpont.",
                 "parameters": [
@@ -271,7 +271,7 @@
                 }
             },
             "put": {
-                "tags": ["posts"],
+                "tags": ["orders"],
                 "summary": "post módosítása (PUT).",
                 "description": "A paraméterben megadott post adatait módosítja a végpont PUT metódussal.",
                 "parameters": [
@@ -327,7 +327,7 @@
                 }
             },
             "delete": {
-                "tags": ["posts"],
+                "tags": ["orders"],
                 "summary": "post törlése.",
                 "description": "A paraméterben megadott postot törli a végpont.",
                 "parameters": [
@@ -373,9 +373,9 @@
                 }
             }
         },
-        "/posts/{kategoriaNev}/hirdetesek": {
+        "/orders/{kategoriaNev}/hirdetesek": {
             "get": {
-                "tags": ["posts"],
+                "tags": ["orders"],
                 "summary": "receptek lekérdezése postnév szerint.",
                 "description": "A 'kategoriaNev' paraméterben megadott kategóriával és a post összes receptével tér vissza a végpont.",
                 "parameters": [

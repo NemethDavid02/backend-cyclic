@@ -5,11 +5,11 @@ import HttpException from "../exceptions/HttpException";
 import IdNotValidException from "../exceptions/IdNotValidException";
 import UserNotFoundException from "../exceptions/UserNotFoundException";
 import IController from "../interfaces/controller.interface";
-import IRequestWithUser from "../interfaces/requestWithUser.interface";
+// import IRequestWithUser from "../interfaces/requestWithUser.interface";
 import authMiddleware from "../middleware/auth.middleware";
 import roleCheckMiddleware from "../middleware/roleCheckMiddleware";
 import validationMiddleware from "../middleware/validation.middleware";
-import postModel from "../post/post.model";
+// import postModel from "../post/post.model";
 import CreateUserDto from "./user.dto";
 import IUser from "./user.interface";
 import userModel from "./user.model";
@@ -25,7 +25,7 @@ export default class UserController implements IController {
 
     private initializeRoutes() {
         this.router.get(`${this.path}/:id`, authMiddleware, this.getUserById);
-        this.router.get(this.path, authMiddleware, this.getAllUsers);
+        this.router.get(this.path, this.getAllUsers);
 
         this.router.patch(`${this.path}/:id`, [authMiddleware, roleCheckMiddleware(["admin"]), validationMiddleware(CreateUserDto, true)], this.modifyUser);
 

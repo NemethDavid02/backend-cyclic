@@ -7,25 +7,28 @@ const shippingAddressSchema = new Schema(
         city: String,
         country: String,
         street: String,
-        zip: String
+        zip: String,
     },
     { versionKey: false },
-    );
+);
 
-    const billingAddressSchema = new Schema(
-        {
-            city: String,
-            country: String,
-            street: String,
-            zip: String
-        },
-        { versionKey: false },
-    );
-    
+const billingAddressSchema = new Schema(
+    {
+        city: String,
+        country: String,
+        street: String,
+        zip: String,
+    },
+    { versionKey: false },
+);
+
 const orderSchema = new Schema<IOrder>(
     {
-        _id: Schema.Types.ObjectId,
-        userId: Schema.Types.ObjectId,
+        // _id: Schema.Types.ObjectId,
+        userId: {
+            type: Schema.Types.ObjectId,
+            ref: "Users",
+        },
         paymentStatus: {
             type: String,
             required: true,
@@ -40,13 +43,13 @@ const orderSchema = new Schema<IOrder>(
     { versionKey: false, id: false, toJSON: { virtuals: true }, toObject: { virtuals: true } },
 );
 
-orderSchema.virtual("orderDetails", {
-    ref: "OrderDetails",
-    localField: "_id",
-    foreignField: "orderId", // ref_Field
-    justOne: false,
+orderSchema.virtual("user", {
+    ref: "Users",
+    localField: "userId",
+    foreignField: "_id", // ref_Field
+    justOne: true,
 });
 
-const orderModel = model<IOrder>("Orders", orderSchema, "orders");
+const orderModel = model<IOrder>("Orders", orderSchema, "Orders");
 
 export default orderModel;

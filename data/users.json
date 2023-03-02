@@ -1,10 +1,10 @@
 [
     {
         "_id": { "$oid": "63fc807e3f944579a10703b5" },
-        "email": "coustumer@gmail.com",
+        "email": "customer@gmail.com",
         "firstName": "Takács",
         "lastName": "Dávid",
-        "password": "dwqwrsad",
+        "password": "$2b$10$l3atfp1ej0baBorwX991DuEYf1jiIuf/SGvd4Uska8xH4NqII4Iri",
         "roles": ["user", "admin"],
         "email_verified": true,
         "auto_login": true,
