@@ -6,6 +6,7 @@ import { Schema } from "mongoose";
 
 // import { Match } from "./match.decorator";
 import CreateAddressDto from "./address.dto";
+import CreateShippingAddressDto from "./address.dto";
 import IUser from "./user.interface";
 
 export default class CreateUserDto implements IUser {
@@ -14,7 +15,10 @@ export default class CreateUserDto implements IUser {
     public _id: Schema.Types.ObjectId;
 
     @IsString()
-    public name: string;
+    public firstName: string;
+
+    @IsString()
+    public lastName: string;
 
     @IsEmail()
     public email: string;
@@ -38,9 +42,14 @@ export default class CreateUserDto implements IUser {
     @IsString({ each: true })
     public roles: string[];
 
-    @IsOptional()
     // For validating nested object you must import reflect-metadata and define @Type:
+    @IsOptional()
     @ValidateNested()
     @Type(() => CreateAddressDto)
     public address: CreateAddressDto;
+
+    @IsOptional()
+    @ValidateNested()
+    @Type(() => CreateShippingAddressDto)
+    public shippingAddress: CreateShippingAddressDto;
 }

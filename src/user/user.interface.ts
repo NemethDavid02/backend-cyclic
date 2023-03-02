@@ -14,4 +14,10 @@ export default interface IUser {
         country: string;
         zip: string;
     };
+    shippingAddress?: {
+        street: string;
+        city: string;
+        country: string;
+        zip: string;
+    };
 }

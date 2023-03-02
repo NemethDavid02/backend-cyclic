@@ -1,8 +1,19 @@
 import { Schema } from "mongoose";
-export default interface IRecipe {
+export default interface IOrder {
     _id?: Schema.Types.ObjectId;
-    user_id?: Schema.Types.ObjectId;
-    paymaentStatus: string;
-    description: string;
-    ingredients: string[];
+    userId?: Schema.Types.ObjectId;
+    paymentStatus: string;
+    status: string;
+    shippingAddress?: {
+        street: string;
+        city: string;
+        country: string;
+        zip: string;
+    };
+    billingAddress?: {
+        street: string;
+        city: string;
+        country: string;
+        zip: string;
+    }
 }
