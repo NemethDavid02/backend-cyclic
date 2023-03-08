@@ -1,7 +1,7 @@
 import "reflect-metadata";
 
 import { Type } from "class-transformer";
-import { IsMongoId, IsOptional, IsString, isInt,ValidateNested } from "class-validator";
+import { IsInt, IsMongoId, IsOptional, IsString, ValidateNested } from "class-validator";
 import { Schema } from "mongoose";
 
 import IProduct from "./product.interface";
@@ -9,7 +9,7 @@ import IProduct from "./product.interface";
 export default class CreateProductDto implements IProduct {
     @IsMongoId()
     @IsOptional()
-    public _id: Schema.Types.objectId;
+    public _id: Schema.Types.ObjectId;
 
     @IsString()
     public name: string;
@@ -17,9 +17,9 @@ export default class CreateProductDto implements IProduct {
     @IsString()
     public author: string;
 
-    @isInt()
-    public price:number;
-    
-    @isInt()
-    public quantity:number;
+    @IsInt()
+    public price: number;
+
+    @IsInt()
+    public quantity: number;
 }

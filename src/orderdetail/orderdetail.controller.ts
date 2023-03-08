@@ -13,35 +13,41 @@ import CreateOrderDetailDto from "./orderdetail.dto";
 import IOrderDetail from "./orderdetail.interface";
 import orderdetailmodel from "./orderdetail.model";
 
-export default class OrderDetailController implements IController{
-    public path="/orderdetails";
-    public router=Router();
-    public orderdetail=orderdetailmodel;
+export default class OrderDetailController implements IController {
+    public path = "/orderdetails";
+    public router = Router();
+    public orderdetail = orderdetailmodel;
 
-    constructor(){
+    constructor() {
         this.initalizeRoutes();
     }
 
-    private initalizeRoutes(){
+    private initalizeRoutes() {
         this.router.get(`${this.path}/:id`, authMiddleware, this.getOrderDetailById);
         this.router.get(this.path, this.getAllOrderDetails);
 
-        this.router.patch(`${this.path}/:id`, [authMiddleware, roleCheckMiddleware(["admin"]), validationMiddleware(CreateOrderDetailDto, true)], this.modifyOrderDetail);
+        this.router.patch(
+            `${this.path}/:id`,
+            [authMiddleware, roleCheckMiddleware(["admin"]), validationMiddleware(CreateOrderDetailDto, true)],
+            this.modifyOrderDetail,
+        );
 
-        this.router.delete(`${this.path}/:id`, [authMiddleware, roleCheckMiddleware(["admin"])], this.deleteOrderDetail);
+        this.router.delete(
+            `${this.path}/:id`,
+            [authMiddleware, roleCheckMiddleware(["admin"])],
+            this.deleteOrderDetail,
+        );
     }
 
-    private getAllOrderDetails=async(req:Request,res:Response, next: NextFunction)=>{
-        try{
-            this.orderdetail.find().then(orderdetails=>{
-                res.send(orderdetails)
+    private getAllOrderDetails = async (req: Request, res: Response, next: NextFunction) => {
+        try {
+            this.orderdetail.find().then(orderdetails => {
+                res.send(orderdetails);
             });
-        } catch(error){
-
-        }
+        } catch (error) {}
     };
 
-    private getOrderDetailById=async(req:Request,res:Response, next: NextFunction)=>{
+    private getOrderDetailById = async (req: Request, res: Response, next: NextFunction) => {
         try {
             const id = req.params.id;
             if (Types.ObjectId.isValid(id)) {
@@ -59,7 +65,7 @@ export default class OrderDetailController implements IController{
         }
     };
 
-    private modifyOrderDetail=async(req:Request,res:Response, next: NextFunction)=>{
+    private modifyOrderDetail = async (req: Request, res: Response, next: NextFunction) => {
         try {
             const id = req.params.id;
             if (Types.ObjectId.isValid(id)) {
@@ -78,7 +84,7 @@ export default class OrderDetailController implements IController{
         }
     };
 
-    private deleteOrderDetail=async(req:Request,res:Response, next: NextFunction)=>{
+    private deleteOrderDetail = async (req: Request, res: Response, next: NextFunction) => {
         try {
             const id = req.params.id;
             if (Types.ObjectId.isValid(id)) {

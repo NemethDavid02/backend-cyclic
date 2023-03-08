@@ -1,16 +1,15 @@
 import "reflect-metadata";
 
 import { Type } from "class-transformer";
-import { IsMongoId, IsOptional, IsString, isInt,ValidateNested } from "class-validator";
+import { IsInt, IsMongoId, IsOptional, IsString, ValidateNested } from "class-validator";
 import { Schema } from "mongoose";
- 
+
 import IOrderDetail from "./orderdetail.interface";
 
-export default class CreateOrderDetailDto implements IOrderDetail
-{
+export default class CreateOrderDetailDto implements IOrderDetail {
     @IsMongoId()
     @IsOptional()
-    public _id: Schema.Types.objectId;
+    public _id: Schema.Types.ObjectId;
 
     @IsMongoId()
     public productId: Schema.Types.ObjectId;
@@ -18,12 +17,12 @@ export default class CreateOrderDetailDto implements IOrderDetail
     @IsMongoId()
     public orderId: Schema.Types.ObjectId;
 
-    @isInt()
+    @IsInt()
     public archived_price: number;
 
-    @isInt()
+    @IsInt()
     public discount: number;
-    
-    @isInt()
-    public quantity:number;
+
+    @IsInt()
+    public quantity: number;
 }

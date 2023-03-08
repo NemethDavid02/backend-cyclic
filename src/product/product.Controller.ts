@@ -13,34 +13,36 @@ import CreateProductDto from "./product.dto";
 import IProduct from "./product.interface";
 import productModel from "./products.model";
 
-export default class ProductController implements IController{
-    public path="/products";
-    public router=Router();
-    private product=productModel;
+export default class ProductController implements IController {
+    public path = "/products";
+    public router = Router();
+    private product = productModel;
 
-    constructor(){
+    constructor() {
         this.initalizeRoutes();
     }
-    private initalizeRoutes(){
+    private initalizeRoutes() {
         this.router.get(`${this.path}/:id`, authMiddleware, this.getProductById);
         this.router.get(this.path, this.getAllProducts);
 
-        this.router.patch(`${this.path}/:id`, [authMiddleware, roleCheckMiddleware(["admin"]), validationMiddleware(CreateProductDto, true)], this.modifyProduct);
+        this.router.patch(
+            `${this.path}/:id`,
+            [authMiddleware, roleCheckMiddleware(["admin"]), validationMiddleware(CreateProductDto, true)],
+            this.modifyProduct,
+        );
 
         this.router.delete(`${this.path}/:id`, [authMiddleware, roleCheckMiddleware(["admin"])], this.deleteProduct);
     }
 
-    private getAllProducts=async(req:Request,res:Response, next: NextFunction)=>{
-        try{
-            this.product.find().then(products=>{
-                res.send(products)
+    private getAllProducts = async (req: Request, res: Response, next: NextFunction) => {
+        try {
+            this.product.find().then(products => {
+                res.send(products);
             });
-        } catch(error){
-
-        }
+        } catch (error) {}
     };
 
-    private getProductById=async(req:Request,res:Response, next: NextFunction)=>{
+    private getProductById = async (req: Request, res: Response, next: NextFunction) => {
         try {
             const id = req.params.id;
             if (Types.ObjectId.isValid(id)) {
@@ -58,7 +60,7 @@ export default class ProductController implements IController{
         }
     };
 
-    private modifyProduct=async(req:Request,res:Response, next: NextFunction)=>{
+    private modifyProduct = async (req: Request, res: Response, next: NextFunction) => {
         try {
             const id = req.params.id;
             if (Types.ObjectId.isValid(id)) {
@@ -77,7 +79,7 @@ export default class ProductController implements IController{
         }
     };
 
-    private deleteProduct=async(req:Request,res:Response, next: NextFunction)=>{
+    private deleteProduct = async (req: Request, res: Response, next: NextFunction) => {
         try {
             const id = req.params.id;
             if (Types.ObjectId.isValid(id)) {
