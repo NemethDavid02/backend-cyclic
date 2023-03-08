@@ -1,4 +1,4 @@
-import {Model, Schema} from "mongoose";
+import {model, Schema} from "mongoose";
 
 import IOrderDetail from "./orderdetail.interface";
 const OrderDetailSchema=new Schema<IOrderDetail>(
@@ -19,3 +19,7 @@ const OrderDetailSchema=new Schema<IOrderDetail>(
         }
     }
 )
+
+const orderdetailmodel=model<IOrderDetail>("Orderdetails",OrderDetailSchema,"Orderdetails");
+
+export default orderdetailmodel;

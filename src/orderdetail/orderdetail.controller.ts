@@ -9,42 +9,43 @@ import IController from "../interfaces/controller.interface";
 import authMiddleware from "../middleware/auth.middleware";
 import roleCheckMiddleware from "../middleware/roleCheckMiddleware";
 import validationMiddleware from "../middleware/validation.middleware";
-import CreateProductDto from "./product.dto";
-import IProduct from "./product.interface";
-import productModel from "./products.model";
+import CreateOrderDetailDto from "./orderdetail.dto";
+import IOrderDetail from "./orderdetail.interface";
+import orderdetailmodel from "./orderdetail.model";
 
-export default class ProductController implements IController{
-    public path="/products";
+export default class OrderDetailController implements IController{
+    public path="/orderdetails";
     public router=Router();
-    private product=productModel;
+    public orderdetail=orderdetailmodel;
 
     constructor(){
         this.initalizeRoutes();
     }
+
     private initalizeRoutes(){
-        this.router.get(`${this.path}/:id`, authMiddleware, this.getProductById);
-        this.router.get(this.path, this.getAllProducts);
+        this.router.get(`${this.path}/:id`, authMiddleware, this.getOrderDetailById);
+        this.router.get(this.path, this.getAllOrderDetails);
 
-        this.router.patch(`${this.path}/:id`, [authMiddleware, roleCheckMiddleware(["admin"]), validationMiddleware(CreateProductDto, true)], this.modifyProduct);
+        this.router.patch(`${this.path}/:id`, [authMiddleware, roleCheckMiddleware(["admin"]), validationMiddleware(CreateOrderDetailDto, true)], this.modifyOrderDetail);
 
-        this.router.delete(`${this.path}/:id`, [authMiddleware, roleCheckMiddleware(["admin"])], this.deleteProduct);
+        this.router.delete(`${this.path}/:id`, [authMiddleware, roleCheckMiddleware(["admin"])], this.deleteOrderDetail);
     }
 
-    private getAllProducts=async(req:Request,res:Response, next: NextFunction)=>{
+    private getAllOrderDetails=async(req:Request,res:Response, next: NextFunction)=>{
         try{
-            this.product.find().then(products=>{
-                res.send(products)
+            this.orderdetail.find().then(orderdetails=>{
+                res.send(orderdetails)
             });
         } catch(error){
 
         }
     };
 
-    private getProductById=async(req:Request,res:Response, next: NextFunction)=>{
+    private getOrderDetailById=async(req:Request,res:Response, next: NextFunction)=>{
         try {
             const id = req.params.id;
             if (Types.ObjectId.isValid(id)) {
-                const product = await this.product.findById(id).populate("posts");
+                const product = await this.orderdetail.findById(id).populate("posts");
                 if (product) {
                     res.send(product);
                 } else {
@@ -58,14 +59,14 @@ export default class ProductController implements IController{
         }
     };
 
-    private modifyProduct=async(req:Request,res:Response, next: NextFunction)=>{
+    private modifyOrderDetail=async(req:Request,res:Response, next: NextFunction)=>{
         try {
             const id = req.params.id;
             if (Types.ObjectId.isValid(id)) {
-                const productData: IProduct = req.body;
-                const product = await this.product.findByIdAndUpdate(id, productData, { new: true });
-                if (product) {
-                    res.send(product);
+                const orderdetailData: IOrderDetail = req.body;
+                const orderdetail = await this.orderdetail.findByIdAndUpdate(id, orderdetailData, { new: true });
+                if (orderdetail) {
+                    res.send(orderdetail);
                 } else {
                     next(new UserNotFoundException(id));
                 }
@@ -77,11 +78,11 @@ export default class ProductController implements IController{
         }
     };
 
-    private deleteProduct=async(req:Request,res:Response, next: NextFunction)=>{
+    private deleteOrderDetail=async(req:Request,res:Response, next: NextFunction)=>{
         try {
             const id = req.params.id;
             if (Types.ObjectId.isValid(id)) {
-                const successResponse = await this.product.findByIdAndDelete(id);
+                const successResponse = await this.orderdetail.findByIdAndDelete(id);
                 if (successResponse) {
                     res.sendStatus(200);
                 } else {
