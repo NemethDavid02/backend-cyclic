@@ -44,14 +44,16 @@ export default class OrderDetailController implements IController {
             this.orderdetail.find().then(orderdetails => {
                 res.send(orderdetails);
             });
-        } catch (error) {}
+        } catch (error) {
+            next(new HttpException(400, error.message));
+        }
     };
 
     private getOrderDetailById = async (req: Request, res: Response, next: NextFunction) => {
         try {
             const id = req.params.id;
             if (Types.ObjectId.isValid(id)) {
-                const product = await this.orderdetail.findById(id).populate("posts");
+                const product = await this.orderdetail.findById(id).populate("Orders, Products");
                 if (product) {
                     res.send(product);
                 } else {

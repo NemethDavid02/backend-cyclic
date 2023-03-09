@@ -11,7 +11,7 @@ import roleCheckMiddleware from "../middleware/roleCheckMiddleware";
 import validationMiddleware from "../middleware/validation.middleware";
 import CreateProductDto from "./product.dto";
 import IProduct from "./product.interface";
-import productModel from "./products.model";
+import productModel from "./product.model";
 
 export default class ProductController implements IController {
     public path = "/products";
@@ -39,14 +39,16 @@ export default class ProductController implements IController {
             this.product.find().then(products => {
                 res.send(products);
             });
-        } catch (error) {}
+        } catch (error) {
+            next(new HttpException(400, error.message));
+        }
     };
 
     private getProductById = async (req: Request, res: Response, next: NextFunction) => {
         try {
             const id = req.params.id;
             if (Types.ObjectId.isValid(id)) {
-                const product = await this.product.findById(id).populate("posts");
+                const product = await (await this.product.findById(id)).populated("posts");
                 if (product) {
                     res.send(product);
                 } else {

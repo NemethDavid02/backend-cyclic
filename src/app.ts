@@ -68,7 +68,13 @@ export default class App {
         // Enabled CORS (Cross-Origin Resource Sharing):
         this.app.use(
             cors({
-                origin: ["https://minimal-dialogs.netlify.app", "https://jedlik-vite-quasar-template.netlify.app", "https://jedlik-vite-ts-template.netlify.app", "http://localhost:8080", "http://127.0.0.1:8080"],
+                origin: [
+                    "https://minimal-dialogs.netlify.app",
+                    "https://jedlik-vite-quasar-template.netlify.app",
+                    "https://jedlik-vite-ts-template.netlify.app",
+                    "http://localhost:8080",
+                    "http://127.0.0.1:8080",
+                ],
                 credentials: true,
             }),
         );
@@ -100,7 +106,8 @@ export default class App {
         this.app.use(session(mySessionOptions));
 
         // Morgan logger:
-        if (["development", "test"].includes(process.env.NODE_ENV)) this.app.use(morgan(":method :url status=:status :date[iso] rt=:response-time ms"));
+        if (["development", "test"].includes(process.env.NODE_ENV))
+            this.app.use(morgan(":method :url status=:status :date[iso] rt=:response-time ms"));
         if (process.env.NODE_ENV == "deployment") this.app.use(morgan("tiny"));
     }
 

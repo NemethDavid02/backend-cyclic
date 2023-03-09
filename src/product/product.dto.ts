@@ -1,7 +1,6 @@
 import "reflect-metadata";
 
-import { Type } from "class-transformer";
-import { IsInt, IsMongoId, IsOptional, IsString, ValidateNested } from "class-validator";
+import { IsInt, IsMongoId, IsOptional, IsString } from "class-validator";
 import { Schema } from "mongoose";
 
 import IProduct from "./product.interface";
