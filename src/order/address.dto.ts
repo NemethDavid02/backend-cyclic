@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { IsString } from "class-validator";
 
-import IBillingAddress from "./billingAddress.interface";
+import IAddress from "./address.interface";
 
-export default class CreateBillingAddressDto implements IBillingAddress {
+export default class CreateBillingAddressDto implements IAddress {
     @IsString()
     public street: string;
     @IsString()

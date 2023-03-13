@@ -1,25 +1,26 @@
 import { model, Schema } from "mongoose";
 
+import IAddress from "../user/address.interface";
 import IOrder from "./order.interface";
 
-const shippingAddressSchema = new Schema(
+const shippingAddressSchema = new Schema<IAddress>(
     {
         city: String,
         country: String,
         street: String,
         zip: String,
     },
-    { versionKey: false },
+    { versionKey: false, id: false, toJSON: { virtuals: true }, toObject: { virtuals: true } },
 );
 
-const billingAddressSchema = new Schema(
+const billingAddressSchema = new Schema<IAddress>(
     {
         city: String,
         country: String,
         street: String,
         zip: String,
     },
-    { versionKey: false },
+    { versionKey: false, id: false, toJSON: { virtuals: true }, toObject: { virtuals: true } },
 );
 
 const orderSchema = new Schema<IOrder>(
