@@ -5,8 +5,9 @@ import AuthenticationController from "./authentication/authentication.controller
 // import ReportController from "./report/report.controller";
 import OrderController from "./order/order.controller";
 import OrderDetailController from "./orderdetail/orderdetail.controller";
-import ProductController from "./product/product.controller";
+import ProductController from "./product/product.Controller";
 import UserController from "./user/user.controller";
+
 new App([
     new AuthenticationController(),
     new UserController(),
