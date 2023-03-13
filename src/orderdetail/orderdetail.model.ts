@@ -18,6 +18,6 @@ const OrderDetailSchema = new Schema<IOrderDetail>({
     },
 });
 
-const orderdetailmodel = model<IOrderDetail>("Orderdetails", OrderDetailSchema, "Orderdetails");
+const orderdetailmodel = model<IOrderDetail>("Orderdetails", OrderDetailSchema, "OrderDetails");
 
 export default orderdetailmodel;
