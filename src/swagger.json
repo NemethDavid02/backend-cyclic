@@ -1414,7 +1414,9 @@
                     },
                     "shippingAddress": {
                         "type": "object",
-                        "$ref": ""
+                        "$ref": "#/components/schemas/shippingAddress",
+                        "description" : "A felhasználó szálitási címe.",
+                        "example": true
                     }
                 }
             },
