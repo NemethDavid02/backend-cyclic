@@ -1,9 +1,10 @@
 import { NextFunction, Request, Response, Router } from "express";
 import { Types } from "mongoose";
+import { runInThisContext } from "vm";
 
 import HttpException from "../exceptions/HttpException";
 import IdNotValidException from "../exceptions/IdNotValidException";
-import UserNotFoundException from "../exceptions/UserNotFoundException";
+import ProductNotFoundException from "../exceptions/ProductNotFoundException";
 import IController from "../interfaces/controller.interface";
 // import IRequestWithUser from "../interfaces/requestWithUser.interface";
 import authMiddleware from "../middleware/auth.middleware";
@@ -23,6 +24,7 @@ export default class ProductController implements IController {
     }
     private initalizeRoutes() {
         this.router.get(`${this.path}/:id`, authMiddleware, this.getProductById);
+        //this.router.get(`${this.path}/:num`, authMiddleware, this.getProductArray);
         this.router.get(this.path, this.getAllProducts);
 
         this.router.patch(
@@ -43,7 +45,17 @@ export default class ProductController implements IController {
             next(new HttpException(400, error.message));
         }
     };
-
+    private getProductArray = async (req: Request, res: Response, next: NextFunction) => {
+        const num = parseInt(req.params.first);
+        if (num >= 0) {
+            const product = await this.product.find().skip(num).limit(20);
+            if (product) {
+                res.send(product);
+            }
+        } else {
+            next(new ProductNotFoundException("" + num));
+        }
+    };
     private getProductById = async (req: Request, res: Response, next: NextFunction) => {
         try {
             const id = req.params.id;
@@ -52,7 +64,7 @@ export default class ProductController implements IController {
                 if (product) {
                     res.send(product);
                 } else {
-                    next(new UserNotFoundException(id));
+                    next(new ProductNotFoundException(id));
                 }
             } else {
                 next(new IdNotValidException(id));
@@ -71,7 +83,7 @@ export default class ProductController implements IController {
                 if (product) {
                     res.send(product);
                 } else {
-                    next(new UserNotFoundException(id));
+                    next(new ProductNotFoundException(id));
                 }
             } else {
                 next(new IdNotValidException(id));
@@ -89,7 +101,7 @@ export default class ProductController implements IController {
                 if (successResponse) {
                     res.sendStatus(200);
                 } else {
-                    next(new UserNotFoundException(id));
+                    next(new ProductNotFoundException(id));
                 }
             } else {
                 next(new IdNotValidException(id));

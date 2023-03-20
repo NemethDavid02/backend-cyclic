@@ -3,7 +3,7 @@ import { Types } from "mongoose";
 
 import HttpException from "../exceptions/HttpException";
 import IdNotValidException from "../exceptions/IdNotValidException";
-import UserNotFoundException from "../exceptions/UserNotFoundException";
+import PaymentNotFoundException from "../exceptions/PaymentNotFoundException";
 import IController from "../interfaces/controller.interface";
 // import IRequestWithUser from "../interfaces/requestWithUser.interface";
 import authMiddleware from "../middleware/auth.middleware";
@@ -56,7 +56,7 @@ export default class PaymentController implements IController {
                 if (payment) {
                     res.send(payment);
                 } else {
-                    next(new UserNotFoundException(id));
+                    next(new PaymentNotFoundException(id));
                 }
             } else {
                 next(new IdNotValidException(id));
@@ -75,7 +75,7 @@ export default class PaymentController implements IController {
                 if (payment) {
                     res.send(payment);
                 } else {
-                    next(new UserNotFoundException(id));
+                    next(new PaymentNotFoundException(id));
                 }
             } else {
                 next(new IdNotValidException(id));
@@ -93,7 +93,7 @@ export default class PaymentController implements IController {
                 if (successResponse) {
                     res.sendStatus(200);
                 } else {
-                    next(new UserNotFoundException(id));
+                    next(new PaymentNotFoundException(id));
                 }
             } else {
                 next(new IdNotValidException(id));

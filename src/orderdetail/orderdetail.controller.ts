@@ -3,7 +3,7 @@ import { Types } from "mongoose";
 
 import HttpException from "../exceptions/HttpException";
 import IdNotValidException from "../exceptions/IdNotValidException";
-import UserNotFoundException from "../exceptions/UserNotFoundException";
+import OrderDetailNotFoundException from "../exceptions/OrderDetailNotFoundException";
 import IController from "../interfaces/controller.interface";
 // import IRequestWithUser from "../interfaces/requestWithUser.interface";
 import authMiddleware from "../middleware/auth.middleware";
@@ -57,7 +57,7 @@ export default class OrderDetailController implements IController {
                 if (product) {
                     res.send(product);
                 } else {
-                    next(new UserNotFoundException(id));
+                    next(new OrderDetailNotFoundException(id));
                 }
             } else {
                 next(new IdNotValidException(id));
@@ -76,7 +76,7 @@ export default class OrderDetailController implements IController {
                 if (orderdetail) {
                     res.send(orderdetail);
                 } else {
-                    next(new UserNotFoundException(id));
+                    next(new OrderDetailNotFoundException(id));
                 }
             } else {
                 next(new IdNotValidException(id));
@@ -94,7 +94,7 @@ export default class OrderDetailController implements IController {
                 if (successResponse) {
                     res.sendStatus(200);
                 } else {
-                    next(new UserNotFoundException(id));
+                    next(new OrderDetailNotFoundException(id));
                 }
             } else {
                 next(new IdNotValidException(id));
