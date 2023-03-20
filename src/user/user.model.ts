@@ -7,7 +7,7 @@ const addressSchema = new Schema(
         city: String,
         country: String,
         street: String,
-        zip: String,
+        zip: Number,
     },
     { versionKey: false },
 );
@@ -17,7 +17,7 @@ const shippingAddressSchema = new Schema(
         city: String,
         country: String,
         street: String,
-        zip: String,
+        zip: Number,
     },
     { versionKey: false },
 );

@@ -12,12 +12,12 @@ export default interface IUser {
         street: string;
         city: string;
         country: string;
-        zip: string;
+        zip: number;
     };
     shippingAddress?: {
         street: string;
         city: string;
         country: string;
-        zip: string;
+        zip: number;
     };
 }
