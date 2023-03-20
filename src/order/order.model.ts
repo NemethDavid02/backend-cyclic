@@ -8,7 +8,7 @@ const shippingAddressSchema = new Schema<IAddress>(
         city: String,
         country: String,
         street: String,
-        zip: String,
+        zip: Number,
     },
     { versionKey: false, id: false, toJSON: { virtuals: true }, toObject: { virtuals: true } },
 );
@@ -18,7 +18,7 @@ const billingAddressSchema = new Schema<IAddress>(
         city: String,
         country: String,
         street: String,
-        zip: String,
+        zip: Number,
     },
     { versionKey: false, id: false, toJSON: { virtuals: true }, toObject: { virtuals: true } },
 );
