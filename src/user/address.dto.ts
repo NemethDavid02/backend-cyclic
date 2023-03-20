@@ -11,5 +11,5 @@ export default class CreateAddressDto implements IAddress {
     @IsString()
     public country: string;
     @IsString()
-    public zip: string;
+    public zip: number;
 }

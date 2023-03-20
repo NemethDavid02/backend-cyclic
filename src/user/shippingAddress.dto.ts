@@ -11,5 +11,5 @@ export default class CreateShippingAddressDto implements IShippingAddress {
     @IsString()
     public country: string;
     @IsString()
-    public zip: string;
+    public zip: number;
 }
