@@ -183,7 +183,7 @@
     },
     {
         "_id": { "$oid": "63b7f8b2ff22501440b2d4c3" },
-        "name": "Minecraft: Guide to Redstone (Updated and revised",
+        "name": "Minecraft: Guide to Redstone (Updated and revised)",
         "author": "Mojang AB",
         "price": 3273,
         "quantity": 256
