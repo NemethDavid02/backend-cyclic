@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { IsString } from "class-validator";
+import { IsString, IsInt } from "class-validator";
 
 import IAddress from "./address.interface";
 
@@ -10,6 +10,6 @@ export default class CreateAddressDto implements IAddress {
     public city: string;
     @IsString()
     public country: string;
-    @IsString()
-    public zip: string;
+    @IsInt()
+    public zip: number;
 }

@@ -87,6 +87,46 @@
                 }
             }
         },
+        "/auth/register": {
+            "post": {
+                "tags": ["authentication"],
+                "summary": "Regisztrácio",
+                "description": "Regisztrácio. új felhasználó létrehozása",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "$ref": "#/components/schemas/user"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK (Az új, elmentett felhasználótal tér vissza.)",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/user"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/users": {
             "get": {
                 "tags": ["users"],
@@ -1291,22 +1331,57 @@
                         "type": "string",
                         "description": "Az ország, ahol a felhasználó él.",
                         "example": "Hungary"
+                    },
+                    "zip": {
+                        "type": "number",
+                        "decription": "A települé zip-codja",
+                        "example": "9023"
+                    }
+                }
+            },
+            "shippingAddress": {
+                "type": "object",
+                "properties": {
+                    "street": {
+                        "type": "string",
+                        "description": "A közterület neve és száma.",
+                        "example": "Szent István út 7."
+                    },
+                    "city": {
+                        "type": "string",
+                        "description": "A település, ahol felhasználó lakik.",
+                        "example": "Győr"
+                    },
+                    "country": {
+                        "type": "string",
+                        "description": "Az ország, ahol a felhasználó él.",
+                        "example": "Hungary"
+                    },
+                    "zip": {
+                        "type": "number",
+                        "decription": "A települé zip-codja",
+                        "example": "9023"
                     }
                 }
             },
             "user": {
                 "type": "object",
-                "required": ["name", "email", "email_verified", "auto_login", "picture", "roles"],
+                "required": ["firstName", "lastName", "email", "email_verified", "auto_login", "roles"],
                 "properties": {
                     "_id": {
                         "type": "string",
                         "description": "PK - A felhasználó azonosítója (ObjectID).",
                         "example": "61b5f0c1f39e4edcf5b8a3d8"
                     },
-                    "name": {
+                    "firstName": {
                         "type": "string",
                         "description": "A felhasználó neve",
                         "example": "student005"
+                    },
+                    "lastName": {
+                        "type": "string",
+                        "description": "A felhasználó neve",
+                        "example": "valaki"
                     },
                     "email": {
                         "type": "string",
@@ -1322,11 +1397,6 @@
                         "type": "boolean",
                         "description": "Igaz értékű, ha a felhasználónál be van kapcsolva az automatikus bejelentkezés.",
                         "example": true
-                    },
-                    "picture": {
-                        "type": "string",
-                        "description": "A felhasználó avatarja/fényképe.",
-                        "example": "https://lh3.googleusercontent.com/a/ALm5wu1tqlumAaDE2djCuUE2s4ubsOs6HOkdwfU6ftci=s96-c"
                     },
                     "password": {
                         "type": "string",
@@ -1345,6 +1415,12 @@
                         "type": "object",
                         "$ref": "#/components/schemas/address",
                         "description": "A felhasználó lakcíme.",
+                        "example": true
+                    },
+                    "shippingAddress": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/shippingAddress",
+                        "description" : "A felhasználó szálitási címe.",
                         "example": true
                     }
                 }
