@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { IsString, IsInt } from "class-validator";
+import { IsInt, IsString } from "class-validator";
 
 import IShippingAddress from "./shippingAddress.interface";
 

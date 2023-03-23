@@ -404,7 +404,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "OK (Az új, elmentett posttal tér vissza.)",
+                        "description": "OK (Az új, elmentett rendelésel tér vissza.)",
                         "content": {
                             "application/json": {
                                 "schema": {
