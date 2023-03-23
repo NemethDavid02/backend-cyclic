@@ -370,7 +370,7 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/post"
+                                        "$ref": "#/components/schemas/order"
                                     }
                                 }
                             }
@@ -390,26 +390,26 @@
             },
             "post": {
                 "tags": ["orders"],
-                "summary": "Új post mentése.",
-                "description": "Új post mentése a 'post' táblában",
+                "summary": "Új order mentése.",
+                "description": "Új post mentése a 'order' táblában",
                 "requestBody": {
                     "content": {
                         "application/json": {
                             "schema": {
                                 "type": "object",
-                                "$ref": "#/components/schemas/post"
+                                "$ref": "#/components/schemas/order"
                             }
                         }
                     }
                 },
                 "responses": {
                     "200": {
-                        "description": "OK (Az új, elmentett posttal tér vissza.)",
+                        "description": "OK (Az új, elmentett rendelésel tér vissza.)",
                         "content": {
                             "application/json": {
                                 "schema": {
                                     "type": "object",
-                                    "$ref": "#/components/schemas/post"
+                                    "$ref": "#/components/schemas/order"
                                 }
                             }
                         }
@@ -439,7 +439,7 @@
                         "in": "path",
                         "schema": {
                             "type": "string",
-                            "example": "61b5f28df39e4edcf5b8a3e7"
+                            "example": "63b80ff20285e34e8dd0fa40"
                         },
                         "required": true
                     }
@@ -451,7 +451,7 @@
                             "application/json": {
                                 "schema": {
                                     "type": "object",
-                                    "$ref": "#/components/schemas/post"
+                                    "$ref": "#/components/schemas/order"
                                 }
                             }
                         }
@@ -475,7 +475,7 @@
                                     "properties": {
                                         "message": {
                                             "type": "string",
-                                            "example": "Ezzel az azonosítóval (id) nincs post!"
+                                            "example": "Ezzel az azonosítóval (id) nincs order!"
                                         }
                                     }
                                 }
@@ -505,7 +505,7 @@
                         "application/json": {
                             "schema": {
                                 "type": "object",
-                                "$ref": "#/components/schemas/post"
+                                "$ref": "#/components/schemas/order"
                             }
                         }
                     }
@@ -517,7 +517,7 @@
                             "application/json": {
                                 "schema": {
                                     "type": "object",
-                                    "$ref": "#/components/schemas/post"
+                                    "$ref": "#/components/schemas/order"
                                 }
                             }
                         }
@@ -561,7 +561,7 @@
                         "application/json": {
                             "schema": {
                                 "type": "object",
-                                "$ref": "#/components/schemas/post"
+                                "$ref": "#/components/schemas/order"
                             }
                         }
                     }
@@ -573,7 +573,7 @@
                             "application/json": {
                                 "schema": {
                                     "type": "object",
-                                    "$ref": "#/components/schemas/post"
+                                    "$ref": "#/components/schemas/order"
                                 }
                             }
                         }
@@ -599,11 +599,11 @@
             "delete": {
                 "tags": ["orders"],
                 "summary": "post törlése.",
-                "description": "A paraméterben megadott postot törli a végpont.",
+                "description": "A paraméterben megadott rendelés törli a végpont.",
                 "parameters": [
                     {
                         "name": "id",
-                        "description": "A törlendő post azonosítója (PK).",
+                        "description": "A törlendő rendelés azonosítója (PK).",
                         "in": "path",
                         "schema": {
                             "type": "string",
@@ -614,7 +614,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK (A post törölve.)",
+                        "description": "OK (A rendelés törölve.)",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -633,65 +633,7 @@
                                     "properties": {
                                         "message": {
                                             "type": "string",
-                                            "example": "A megadott post (id) nem létezik."
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/orders/{kategoriaNev}/hirdetesek": {
-            "get": {
-                "tags": ["orders"],
-                "summary": "receptek lekérdezése postnév szerint.",
-                "description": "A 'kategoriaNev' paraméterben megadott kategóriával és a post összes receptével tér vissza a végpont.",
-                "parameters": [
-                    {
-                        "name": "kategoriaNev",
-                        "description": "A post neve.",
-                        "in": "path",
-                        "schema": {
-                            "type": "string",
-                            "example": "Személyautó"
-                        },
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "$ref": "#/components/schemas/recipe"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorSchema"
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Not Found",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "message": {
-                                            "type": "string",
-                                            "example": "Ebben a kategóriában nem találtam receptt!"
+                                            "example": "A megadott rendelés (id) nem létezik."
                                         }
                                     }
                                 }
@@ -1317,30 +1259,41 @@
     ],
     "components": {
         "schemas": {
-            "post": {
+            "order": {
                 "type": "object",
-                "required": ["title"],
+                "required": ["paymentStatus", "status"],
                 "properties": {
                     "_id": {
                         "type": "string",
-                        "description": "PK - A post azonosítója (ObjectID).",
-                        "example": "61b5f28df39e4edcf5b8a3e7"
+                        "description": "PK - A order azonosítója (ObjectID).",
+                        "example": "639180c7978e764a7e2c6dd3"
                     },
                     "user_id": {
                         "type": "string",
-                        "description": "FK - A post szerzője (ObjectID).",
-                        "example": "61b5e9c0f39e4edcf5b8a3b9"
+                        "description": "FK - A order rendelöje (ObjectID).",
+                        "example": "63fc807e3f944579a10703b5"
                     },
-                    "content": {
+                    "paymentStatus": {
                         "type": "string",
-                        "description": "A post tartalma.",
-                        "example": "Frankie Dunn pályája során számos fantasztikus bunyóst edzett és menedzselt. Legfőbb tanítása, mely vezérli az életét is, hogy a legfontosabb az, hogy mindig védd magad. Mióta elidegenedett a lányától, Frankie jó ideje senkit sem engedett közel magához. Egyetlen barátja Hepaj, az egykori bokszoló, aki rendben tartja Frankie edzőtermét, és tudja, hogy a mogorva külső olyan embert takar, aki az elmúlt 23 évben szinte minden nap misére járt, keresve a megbocsátást, amely valahogy mégsem adatik meg neki. Aztán egy nap Maggie Fitzgerald besétál az edzőterembe. Maggie-nek sosem jutott sok semmiből, de van benne valami, ami csak keveseknek adatik meg: tudja, mit akar, és bármit hajlandó megtenni érte. Az élete állandó küzdelem, amit nyers tehetségével, kizökkenthetetlen koncentrálásával és elképesztő akaraterejével képes túlélni."
+                        "description": "FK - A order füzetésének státusza (ObjectID).",
+                        "example": "processed"
                     },
-                    "title": {
+                    "status": {
                         "type": "string",
-                        "maxLength": 50,
-                        "description": "A post címe címe.",
-                        "example": "Millió dolláros bébi 2004"
+                        "description": "FK - A order státusza (ObjectID).",
+                        "example": "shipped"
+                    },
+                    "shippingAdress": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/shippingAddress",
+                        "description": "A felhasználó szálitási címe.",
+                        "example": true
+                    },
+                    "billingAddress": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/shippingAddress",
+                        "description": "A felhasználó számlázási lakcíme.",
+                        "example": true
                     }
                 }
             },
