@@ -430,12 +430,12 @@
         "/orders/{id}": {
             "get": {
                 "tags": ["orders"],
-                "summary": "Egy post lekérdezése.",
-                "description": "Az id paraméterben megadott post adatait kérdezhetjük le.",
+                "summary": "Egy rendelés lekérdezése.",
+                "description": "Az id paraméterben megadott rendelés adatait kérdezhetjük le.",
                 "parameters": [
                     {
                         "name": "id",
-                        "description": "A post azonosítója.",
+                        "description": "A rendelés azonosítója.",
                         "in": "path",
                         "schema": {
                             "type": "string",
@@ -694,6 +694,76 @@
                                             "example": "Ebben a kategóriában nem találtam receptt!"
                                         }
                                     }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/products": {
+            "get": {
+                "tags": ["products"],
+                "summary": "Összes termék lekérdezése.",
+                "description": "Az összes rendelés adatát tudjuk lekérdezni.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/product"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": ["orders"],
+                "summary": "Új post mentése.",
+                "description": "Új post mentése a 'post' táblában",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "$ref": "#/components/schemas/product"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK (Az új, elmentett posttal tér vissza.)",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/product"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
                                 }
                             }
                         }
@@ -1420,23 +1490,54 @@
                     "shippingAddress": {
                         "type": "object",
                         "$ref": "#/components/schemas/shippingAddress",
-                        "description" : "A felhasználó szálitási címe.",
+                        "description": "A felhasználó szálitási címe.",
                         "example": true
                     }
                 }
             },
-            "ErrorSchema": {
-              "type": "object",
-              "properties": {
-                "message": {
-                  "type": "string",
-                  "example": "error.message value"
-                },
-                "status": {
-                  "type": "integer",
-                  "example": 400
+            "product": {
+                "type": "object",
+                "required": ["name", "author", "price", "quantity"],
+                "properties": {
+                    "_id": {
+                        "type": "string",
+                        "description": "PK - A termék azonosítója (ObjectID).",
+                        "example": "63b53db2d18321524471f789"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "A termék neve",
+                        "example": "Stalker - Piknik az árokparton"
+                    },
+                    "author": {
+                        "type": "string",
+                        "description": "A termék szerzőjének neve",
+                        "example": "Borisz Sztrugackij - Arkagyij Sztrugackij"
+                    },
+                    "price": {
+                        "type": "integer",
+                        "description": "A termék ára",
+                        "example": "2990"
+                    },
+                    "quantity": {
+                        "type": "integer",
+                        "description": "A termék raktárban lévő példányszáma",
+                        "example": "86"
+                    }
                 }
-              }
+            },
+            "ErrorSchema": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string",
+                        "example": "error.message value"
+                    },
+                    "status": {
+                        "type": "integer",
+                        "example": 400
+                    }
+                }
             }
         }
     }
