@@ -430,16 +430,16 @@
         "/orders/{id}": {
             "get": {
                 "tags": ["orders"],
-                "summary": "Egy post lekérdezése.",
-                "description": "Az id paraméterben megadott order adatait kérdezhetjük le.",
+                "summary": "Egy rendelés lekérdezése.",
+                "description": "Az id paraméterben megadott rendelés adatait kérdezhetjük le.",
                 "parameters": [
                     {
                         "name": "id",
-                        "description": "A post azonosítója.",
+                        "description": "A rendelés azonosítója.",
                         "in": "path",
                         "schema": {
                             "type": "string",
-                            "example": "61b5f28df39e4edcf5b8a3e7"
+                            "example": "63b80ff20285e34e8dd0fa40"
                         },
                         "required": true
                     }
@@ -1249,7 +1249,7 @@
         "schemas": {
             "order": {
                 "type": "object",
-                "required": ["title"],
+                "required": ["paymentStatus", "status", "shippingAdress", "billingAddress"],
                 "properties": {
                     "_id": {
                         "type": "string",
