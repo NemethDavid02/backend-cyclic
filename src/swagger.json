@@ -1249,7 +1249,7 @@
         "schemas": {
             "order": {
                 "type": "object",
-                "required": ["paymentStatus", "status", "shippingAdress", "billingAddress"],
+                "required": ["paymentStatus", "status"],
                 "properties": {
                     "_id": {
                         "type": "string",
