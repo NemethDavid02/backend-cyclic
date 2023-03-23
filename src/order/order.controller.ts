@@ -25,7 +25,6 @@ export default class OrderController implements IController {
     private initializeRoutes() {
         this.router.get(`${this.path}/:id`, authMiddleware, this.getOrderById);
         this.router.get(this.path, this.getAllOrders);
-
         this.router.patch(
             `${this.path}/:id`,
             [authMiddleware, roleCheckMiddleware(["admin"]), validationMiddleware(CreateOrderDto, true)],
@@ -53,7 +52,7 @@ export default class OrderController implements IController {
                 // if (request.query.withPosts === "true") {
                 //     userQuery.populate("posts").exec();
                 // }
-                const order = await this.order.findById(id).populate("posts");
+                const order = await this.order.findById(id);
                 if (order) {
                     res.send(order);
                 } else {
