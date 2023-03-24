@@ -707,11 +707,11 @@
                 }
             }
         },
-        "/recipes": {
+        "/orderdetails": {
             "get": {
-                "tags": ["recipes"],
-                "summary": "Összes recept lekérdezése.",
-                "description": "Az összes recept adatát tudjuk lekérdezni.",
+                "tags": ["orderdetails"],
+                "summary": "Összes rendelésrészleteinek lekérdezése.",
+                "description": "Az összes rendelés adatát tudjuk lekérdezni.",
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -720,7 +720,7 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/recipe"
+                                        "$ref": "#/components/schemas/orderdetails"
                                     }
                                 }
                             }
@@ -739,15 +739,15 @@
                 }
             },
             "post": {
-                "tags": ["recipes"],
-                "summary": "Új recept mentése.",
-                "description": "Az új recept mentése a 'hirdetesek' táblában",
+                "tags": ["orderdetails"],
+                "summary": "Új rendelésrészlet mentése.",
+                "description": "Az új rendelés mentése a 'orderdetails' táblában",
                 "requestBody": {
                     "content": {
                         "application/json": {
                             "schema": {
                                 "type": "object",
-                                "$ref": "#/components/schemas/recipe"
+                                "$ref": "#/components/schemas/orderdetails"
                             }
                         }
                     }
@@ -759,7 +759,7 @@
                             "application/json": {
                                 "schema": {
                                     "type": "object",
-                                    "$ref": "#/components/schemas/recipe"
+                                    "$ref": "#/components/schemas/orderdetails"
                                 }
                             }
                         }
@@ -777,19 +777,19 @@
                 }
             }
         },
-        "/recipes/{id}": {
+        "/orderdetails/{id}": {
             "get": {
-                "tags": ["recipes"],
-                "summary": "Egy recept lekérdezése.",
-                "description": "Az id paraméterben megadott recept adatait kérdezhetjük le.",
+                "tags": ["orderdetails"],
+                "summary": "Egy rendelésnek részletének lekérdezése.",
+                "description": "Az id paraméterben megadott rendelés adatait kérdezhetjük le.",
                 "parameters": [
                     {
                         "name": "id",
-                        "description": "A recept azonosítója.",
+                        "description": "A rendelés azonosítója.",
                         "in": "path",
                         "schema": {
-                            "type": "number",
-                            "example": 2
+                            "type": "string",
+                            "example": "63b53db2d18321524471f789"
                         },
                         "required": true
                     }
@@ -834,6 +834,53 @@
                     }
                 }
             },
+            "delete": {
+                "tags": ["orderdetails"],
+                "summary": "rendelés törlése.",
+                "description": "A paraméterben megadott rendelés törli a végpont.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "A törlendő rendelés azonosítója (PK).",
+                        "in": "path",
+                        "schema": {
+                            "type": "string",
+                            "example": "63b53db2d18321524471f789"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK (A rendelés törölve.)",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "OK"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "A megadott rendelés (id) nem létezik."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
             "patch": {
                 "tags": ["recipes"],
                 "summary": "recept módosítása (PATCH).",
@@ -1442,6 +1489,42 @@
                     }
                 }
             },
+            "orderdetails": {
+                "type": "object",
+                "required": ["archived_price", "discount", "quantity"],
+                "properties": {
+                    "_id": {
+                        "type": "string",
+                        "description": "PK - A rendelés azonosítója (ObjectID).",
+                        "example": "63b53db2d18321524471f789"
+                    },
+                    "product_id": {
+                        "type": "string",
+                        "description": "FK - A termék id (ObjectID).",
+                        "example": "6395d17cb8f84c79593f4292"
+                    },
+                    "order_id": {
+                        "type": "string",
+                        "description": "FK - A order id (ObjectID).",
+                        "example": "6396d6fb9bd7d89ca308eb3f"
+                    },
+                    "archived_price": {
+                        "type": "number",
+                        "description": "A termék ára",
+                        "example": "1999"
+                    },
+                    "discount": {
+                        "type": "number",
+                        "description": "A termék leárazása",
+                        "example": "0"
+                    },
+                    "quantity": {
+                        "type": "number",
+                        "description": "A termék raktárban lévő példányszáma",
+                        "example": "1"
+                    }
+                }
+            },
             "product": {
                 "type": "object",
                 "required": ["name", "author", "price", "quantity"],
@@ -1467,7 +1550,7 @@
                         "example": "2990"
                     },
                     "quantity": {
-                        "type": "integer",
+                        "type": "number",
                         "description": "A termék raktárban lévő példányszáma",
                         "example": "86"
                     }
