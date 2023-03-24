@@ -1,5 +1,8 @@
+import OrderWithThatIdAlreadyExistsException from "exceptions/OrderWithThatIdAlreadyExistsException";
 import { NextFunction, Request, Response, Router } from "express";
+import ISession from "interfaces/session.interface";
 import { Types } from "mongoose";
+import { stringify } from "querystring";
 
 import HttpException from "../exceptions/HttpException";
 import IdNotValidException from "../exceptions/IdNotValidException";
@@ -25,7 +28,7 @@ export default class OrderController implements IController {
     private initializeRoutes() {
         this.router.get(`${this.path}/:id`, authMiddleware, this.getOrderById);
         this.router.get(this.path, this.getAllOrders);
-
+        this.router.post(`${this.path}/orderSave`, validationMiddleware(CreateOrderDto), this.orderSave);
         this.router.patch(
             `${this.path}/:id`,
             [authMiddleware, roleCheckMiddleware(["admin"]), validationMiddleware(CreateOrderDto, true)],
@@ -61,6 +64,28 @@ export default class OrderController implements IController {
                 }
             } else {
                 next(new IdNotValidException(id));
+            }
+        } catch (error) {
+            next(new HttpException(400, error.message));
+        }
+    };
+
+    private orderSave = async (req: Request, res: Response, next: NextFunction) => {
+        try {
+            const orderData: IOrder = req.body;
+            if (await this.order.findOne({ _id: orderData._id })) {
+                next(new OrderWithThatIdAlreadyExistsException(orderData._id));
+            } else {
+                const order = await this.order.create({
+                    ...orderData,
+                    roles: ["user"],
+                });
+                req.session.regenerate(error => {
+                    if (error) {
+                        next(new HttpException(400, error.message)); // to do
+                    }
+                });
+                res.send(order);
             }
         } catch (error) {
             next(new HttpException(400, error.message));

@@ -158,45 +158,6 @@
                     }
                 }
             },
-            "post": {
-                "tags": ["users"],
-                "summary": "Új felhasználó mentése.",
-                "description": "Új felhasználó mentése a 'felhasználó' táblában",
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "type": "object",
-                                "$ref": "#/components/schemas/user"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "OK (Az új, elmentett felhasználótal tér vissza.)",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "$ref": "#/components/schemas/user"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorSchema"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
         "/users/{id}": {
             "get": {
                 "tags": ["users"],
@@ -387,7 +348,9 @@
                         }
                     }
                 }
-            },
+            }
+        },
+        "/orders/orderSave": {
             "post": {
                 "tags": ["orders"],
                 "summary": "Új order mentése.",
