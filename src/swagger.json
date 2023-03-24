@@ -615,7 +615,8 @@
                         }
                     }
                 }
-            },
+            }
+        },
         "/products/{id}": {
             "get": {
                 "tags": ["products"],
