@@ -158,31 +158,181 @@
                     }
                 }
             },
-            "/users/{id}": {
-                "get": {
-                    "tags": ["users"],
-                    "summary": "Egy felhasználó lekérdezése.",
-                    "description": "Az id paraméterben megadott felhasználó adatait kérdezhetjük le.",
-                    "parameters": [
-                        {
-                            "name": "id",
-                            "description": "A felhasználó azonosítója.",
-                            "in": "path",
-                            "schema": {
-                                "type": "string",
-                                "example": "61b5f28df39e4edcf5b8a3e7"
-                            },
-                            "required": true
+        "/users/{id}": {
+            "get": {
+                "tags": ["users"],
+                "summary": "Egy felhasználó lekérdezése.",
+                "description": "Az id paraméterben megadott felhasználó adatait kérdezhetjük le.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "A felhasználó azonosítója.",
+                        "in": "path",
+                        "schema": {
+                            "type": "string",
+                            "example": "61b5f28df39e4edcf5b8a3e7"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/user"
+                                }
+                            }
                         }
-                    ],
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Ezzel az azonosítóval (id) nincs felhasználó!"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": ["users"],
+                "summary": "felhasználó módosítása (PATCH).",
+                "description": "A paraméterben megadott felhasználó adatait módosítja a végpont.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "A PATCH metódussal módosítandó felhasználó azonosítója (PK).",
+                        "in": "path",
+                        "schema": {
+                            "type": "string",
+                            "example": "61b5f28df39e4edcf5b8a3e7"
+                        },
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "$ref": "#/components/schemas/user"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK (A módosított felhasználó adatokkal tér vissza.)",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/user"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "A megadott felhasználó (id) nem létezik."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["users"],
+                "summary": "felhasználó törlése.",
+                "description": "A paraméterben megadott felhasználót törli a végpont.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "A törlendő felhasználó azonosítója (PK).",
+                        "in": "path",
+                        "schema": {
+                            "type": "string",
+                            "example": "61b5f28df39e4edcf5b8a3e7"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK (A felhasználó törölve.)",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "OK"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "A megadott felhasználó (id) nem létezik."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/orders": {
+                "get": {
+                    "tags": ["orders"],
+                    "summary": "Összes rendelés lekérdezése.",
+                    "description": "Az összes rendelés adatát tudjuk lekérdezni.",
                     "responses": {
                         "200": {
                             "description": "OK",
                             "content": {
                                 "application/json": {
                                     "schema": {
-                                        "type": "object",
-                                        "$ref": "#/components/schemas/user"
+                                        "type": "array",
+                                        "items": {
+                                            "$ref": "#/components/schemas/order"
+                                        }
                                     }
                                 }
                             }
@@ -196,122 +346,44 @@
                                     }
                                 }
                             }
-                        },
-                        "404": {
-                            "description": "Not Found",
-                            "content": {
-                                "application/json": {
-                                    "schema": {
-                                        "type": "object",
-                                        "properties": {
-                                            "message": {
-                                                "type": "string",
-                                                "example": "Ezzel az azonosítóval (id) nincs felhasználó!"
-                                            }
-                                        }
-                                    }
-                                }
+                        }
+                    }
+                }
+            }
+        },
+        "/orders/orderSave": {
+            "post": {
+                "tags": ["orders"],
+                "summary": "Új rendelés mentése.",
+                "description": "Új rendelés mentése a 'order' táblában",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "$ref": "#/components/schemas/order"
                             }
                         }
                     }
                 },
-                "patch": {
-                    "tags": ["users"],
-                    "summary": "felhasználó módosítása (PATCH).",
-                    "description": "A paraméterben megadott felhasználó adatait módosítja a végpont.",
-                    "parameters": [
-                        {
-                            "name": "id",
-                            "description": "A PATCH metódussal módosítandó felhasználó azonosítója (PK).",
-                            "in": "path",
-                            "schema": {
-                                "type": "string",
-                                "example": "61b5f28df39e4edcf5b8a3e7"
-                            },
-                            "required": true
-                        }
-                    ],
-                    "requestBody": {
+                "responses": {
+                    "200": {
+                        "description": "OK (Az új, elmentett rendelésel tér vissza.)",
                         "content": {
                             "application/json": {
                                 "schema": {
                                     "type": "object",
-                                    "$ref": "#/components/schemas/user"
+                                    "$ref": "#/components/schemas/order"
                                 }
                             }
                         }
                     },
-                    "responses": {
-                        "200": {
-                            "description": "OK (A módosított felhasználó adatokkal tér vissza.)",
-                            "content": {
-                                "application/json": {
-                                    "schema": {
-                                        "type": "object",
-                                        "$ref": "#/components/schemas/user"
-                                    }
-                                }
-                            }
-                        },
-                        "404": {
-                            "description": "Not Found",
-                            "content": {
-                                "application/json": {
-                                    "schema": {
-                                        "type": "object",
-                                        "properties": {
-                                            "message": {
-                                                "type": "string",
-                                                "example": "A megadott felhasználó (id) nem létezik."
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "delete": {
-                    "tags": ["users"],
-                    "summary": "felhasználó törlése.",
-                    "description": "A paraméterben megadott felhasználót törli a végpont.",
-                    "parameters": [
-                        {
-                            "name": "id",
-                            "description": "A törlendő felhasználó azonosítója (PK).",
-                            "in": "path",
-                            "schema": {
-                                "type": "string",
-                                "example": "61b5f28df39e4edcf5b8a3e7"
-                            },
-                            "required": true
-                        }
-                    ],
-                    "responses": {
-                        "200": {
-                            "description": "OK (A felhasználó törölve.)",
-                            "content": {
-                                "application/json": {
-                                    "schema": {
-                                        "type": "string",
-                                        "example": "OK"
-                                    }
-                                }
-                            }
-                        },
-                        "404": {
-                            "description": "Not Found",
-                            "content": {
-                                "application/json": {
-                                    "schema": {
-                                        "type": "object",
-                                        "properties": {
-                                            "message": {
-                                                "type": "string",
-                                                "example": "A megadott felhasználó (id) nem létezik."
-                                            }
-                                        }
-                                    }
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
                                 }
                             }
                         }
@@ -319,11 +391,89 @@
                 }
             }
         },
-        "/orders": {
+        "/orders/{id}": {
             "get": {
                 "tags": ["orders"],
-                "summary": "Összes rendelés lekérdezése.",
-                "description": "Az összes rendelés adatát tudjuk lekérdezni.",
+                "summary": "Egy rendelés lekérdezése.",
+                "description": "Az id paraméterben megadott rendelés adatait kérdezhetjük le.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "A rendelés azonosítója.",
+                        "in": "path",
+                        "schema": {
+                            "type": "string",
+                            "example": "63b80ff20285e34e8dd0fa40"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/order"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Ezzel az azonosítóval (id) nincs order!"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": ["orders"],
+                "summary": "Egy reneléd modositása.",
+                "description": "Egy rendelés adatát tudjuk modositani.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "A rendelés azonosítója.",
+                        "in": "path",
+                        "schema": {
+                            "type": "string",
+                            "example": "639180c7978e764a7e2c6dd3"
+                        },
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "$ref": "#/components/schemas/order"
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -350,194 +500,44 @@
                     }
                 }
             },
-            "/orders/orderSave": {
-                "post": {
-                    "tags": ["orders"],
-                    "summary": "Új rendelés mentése.",
-                    "description": "Új rendelés mentése a 'order' táblában",
-                    "requestBody": {
+            "delete": {
+                "tags": ["orders"],
+                "summary": "rendelés törlése.",
+                "description": "A paraméterben megadott rendelés törli a végpont.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "A törlendő rendelés azonosítója (PK).",
+                        "in": "path",
+                        "schema": {
+                            "type": "string",
+                            "example": "61b5f28df39e4edcf5b8a3e7"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK (A rendelés törölve.)",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "$ref": "#/components/schemas/order"
+                                    "type": "string",
+                                    "example": "OK"
                                 }
                             }
                         }
                     },
-                    "responses": {
-                        "200": {
-                            "description": "OK (Az új, elmentett rendelésel tér vissza.)",
-                            "content": {
-                                "application/json": {
-                                    "schema": {
-                                        "type": "object",
-                                        "$ref": "#/components/schemas/order"
-                                    }
-                                }
-                            }
-                        },
-                        "400": {
-                            "description": "Bad Request",
-                            "content": {
-                                "application/json": {
-                                    "schema": {
-                                        "$ref": "#/components/schemas/ErrorSchema"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "/orders/{id}": {
-                "get": {
-                    "tags": ["orders"],
-                    "summary": "Egy rendelés lekérdezése.",
-                    "description": "Az id paraméterben megadott rendelés adatait kérdezhetjük le.",
-                    "parameters": [
-                        {
-                            "name": "id",
-                            "description": "A rendelés azonosítója.",
-                            "in": "path",
-                            "schema": {
-                                "type": "string",
-                                "example": "63b80ff20285e34e8dd0fa40"
-                            },
-                            "required": true
-                        }
-                    ],
-                    "responses": {
-                        "200": {
-                            "description": "OK",
-                            "content": {
-                                "application/json": {
-                                    "schema": {
-                                        "type": "object",
-                                        "$ref": "#/components/schemas/order"
-                                    }
-                                }
-                            }
-                        },
-                        "400": {
-                            "description": "Bad Request",
-                            "content": {
-                                "application/json": {
-                                    "schema": {
-                                        "$ref": "#/components/schemas/ErrorSchema"
-                                    }
-                                }
-                            }
-                        },
-                        "404": {
-                            "description": "Not Found",
-                            "content": {
-                                "application/json": {
-                                    "schema": {
-                                        "type": "object",
-                                        "properties": {
-                                            "message": {
-                                                "type": "string",
-                                                "example": "Ezzel az azonosítóval (id) nincs order!"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "patch": {
-                    "tags": ["orders"],
-                    "summary": "Egy reneléd modositása.",
-                    "description": "Egy rendelés adatát tudjuk modositani.",
-                    "parameters": [
-                        {
-                            "name": "id",
-                            "description": "A rendelés azonosítója.",
-                            "in": "path",
-                            "schema": {
-                                "type": "string",
-                                "example": "639180c7978e764a7e2c6dd3"
-                            },
-                            "required": true
-                        }
-                    ],
-                    "requestBody": {
+                    "404": {
+                        "description": "Not Found",
                         "content": {
                             "application/json": {
                                 "schema": {
                                     "type": "object",
-                                    "$ref": "#/components/schemas/order"
-                                }
-                            }
-                        }
-                    },
-                    "responses": {
-                        "200": {
-                            "description": "OK",
-                            "content": {
-                                "application/json": {
-                                    "schema": {
-                                        "type": "array",
-                                        "items": {
-                                            "$ref": "#/components/schemas/order"
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        "400": {
-                            "description": "Bad Request",
-                            "content": {
-                                "application/json": {
-                                    "schema": {
-                                        "$ref": "#/components/schemas/ErrorSchema"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "delete": {
-                    "tags": ["orders"],
-                    "summary": "rendelés törlése.",
-                    "description": "A paraméterben megadott rendelés törli a végpont.",
-                    "parameters": [
-                        {
-                            "name": "id",
-                            "description": "A törlendő rendelés azonosítója (PK).",
-                            "in": "path",
-                            "schema": {
-                                "type": "string",
-                                "example": "61b5f28df39e4edcf5b8a3e7"
-                            },
-                            "required": true
-                        }
-                    ],
-                    "responses": {
-                        "200": {
-                            "description": "OK (A rendelés törölve.)",
-                            "content": {
-                                "application/json": {
-                                    "schema": {
-                                        "type": "string",
-                                        "example": "OK"
-                                    }
-                                }
-                            }
-                        },
-                        "404": {
-                            "description": "Not Found",
-                            "content": {
-                                "application/json": {
-                                    "schema": {
-                                        "type": "object",
-                                        "properties": {
-                                            "message": {
-                                                "type": "string",
-                                                "example": "A megadott rendelés (id) nem létezik."
-                                            }
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "A megadott rendelés (id) nem létezik."
                                         }
                                     }
                                 }
