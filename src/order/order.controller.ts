@@ -1,4 +1,3 @@
-import OrderWithThatIdAlreadyExistsException from "exceptions/OrderWithThatIdAlreadyExistsException";
 import { NextFunction, Request, Response, Router } from "express";
 import { Types } from "mongoose";
 
