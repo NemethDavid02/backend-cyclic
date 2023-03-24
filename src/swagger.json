@@ -317,33 +317,33 @@
                         }
                     }
                 }
-            },
-            "/orders": {
-                "get": {
-                    "tags": ["orders"],
-                    "summary": "Összes rendelés lekérdezése.",
-                    "description": "Az összes rendelés adatát tudjuk lekérdezni.",
-                    "responses": {
-                        "200": {
-                            "description": "OK",
-                            "content": {
-                                "application/json": {
-                                    "schema": {
-                                        "type": "array",
-                                        "items": {
-                                            "$ref": "#/components/schemas/order"
-                                        }
+            }
+        },
+        "/orders": {
+            "get": {
+                "tags": ["orders"],
+                "summary": "Összes rendelés lekérdezése.",
+                "description": "Az összes rendelés adatát tudjuk lekérdezni.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/order"
                                     }
                                 }
                             }
-                        },
-                        "400": {
-                            "description": "Bad Request",
-                            "content": {
-                                "application/json": {
-                                    "schema": {
-                                        "$ref": "#/components/schemas/ErrorSchema"
-                                    }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
                                 }
                             }
                         }
@@ -447,6 +447,58 @@
                         }
                     }
                 },
+                "patch": {
+                    "tags": ["orders"],
+                    "summary": "Egy reneléd modositása.",
+                    "description": "Egy rendelés adatát tudjuk modositani.",
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "description": "A rendelés azonosítója.",
+                            "in": "path",
+                            "schema": {
+                                "type": "string",
+                                "example": "639180c7978e764a7e2c6dd3"
+                            },
+                            "required": true
+                        }
+                    ],
+                    "requestBody": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/order"
+                                }
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {
+                            "description": "OK",
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "type": "array",
+                                        "items": {
+                                            "$ref": "#/components/schemas/order"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "400": {
+                            "description": "Bad Request",
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "$ref": "#/components/schemas/ErrorSchema"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "delete": {
                     "tags": ["orders"],
                     "summary": "rendelés törlése.",
@@ -493,137 +545,56 @@
                         }
                     }
                 }
-            },
-            "/products": {
-                "get": {
-                    "tags": ["products"],
-                    "summary": "Összes termék lekérdezése.",
-                    "description": "Az összes rendelés adatát tudjuk lekérdezni.",
-                    "responses": {
-                        "200": {
-                            "description": "OK",
-                            "content": {
-                                "application/json": {
-                                    "schema": {
-                                        "type": "array",
-                                        "items": {
-                                            "$ref": "#/components/schemas/product"
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        "400": {
-                            "description": "Bad Request",
-                            "content": {
-                                "application/json": {
-                                    "schema": {
-                                        "$ref": "#/components/schemas/ErrorSchema"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "post": {
-                    "tags": ["products"],
-                    "summary": "Új termék mentése.",
-                    "description": "Új termék mentése a 'products' táblában",
-                    "requestBody": {
+            }
+        },
+        "/products": {
+            "get": {
+                "tags": ["products"],
+                "summary": "Összes termék lekérdezése.",
+                "description": "Az összes rendelés adatát tudjuk lekérdezni.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "$ref": "#/components/schemas/product"
-                                }
-                            }
-                        }
-                    },
-                    "responses": {
-                        "200": {
-                            "description": "OK (Az új, elmentett posttal tér vissza.)",
-                            "content": {
-                                "application/json": {
-                                    "schema": {
-                                        "type": "object",
+                                    "type": "array",
+                                    "items": {
                                         "$ref": "#/components/schemas/product"
                                     }
                                 }
                             }
-                        },
-                        "400": {
-                            "description": "Bad Request",
-                            "content": {
-                                "application/json": {
-                                    "schema": {
-                                        "$ref": "#/components/schemas/ErrorSchema"
-                                    }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
                                 }
                             }
                         }
                     }
                 }
             },
-            "/products/{id}": {
-                "get": {
-                    "tags": ["products"],
-                    "summary": "Egy termék lekérdezése.",
-                    "description": "Egy termék adatát tudjuk lekérdezni.",
-                    "parameters": [
-                        {
-                            "name": "id",
-                            "description": "A termék azonosítója.",
-                            "in": "path",
+            "post": {
+                "tags": ["products"],
+                "summary": "Új termék mentése.",
+                "description": "Új termék mentése a 'products' táblában",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
                             "schema": {
-                                "type": "string",
-                                "example": "63b53db2d18321524471f789"
-                            },
-                            "required": true
-                        }
-                    ],
-                    "responses": {
-                        "200": {
-                            "description": "OK",
-                            "content": {
-                                "application/json": {
-                                    "schema": {
-                                        "type": "array",
-                                        "items": {
-                                            "$ref": "#/components/schemas/product"
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        "400": {
-                            "description": "Bad Request",
-                            "content": {
-                                "application/json": {
-                                    "schema": {
-                                        "$ref": "#/components/schemas/ErrorSchema"
-                                    }
-                                }
+                                "type": "object",
+                                "$ref": "#/components/schemas/product"
                             }
                         }
                     }
                 },
-                "patch": {
-                    "tags": ["products"],
-                    "summary": "Egy termék modositása.",
-                    "description": "Egy termék adatát tudjuk modositani.",
-                    "parameters": [
-                        {
-                            "name": "id",
-                            "description": "A termék azonosítója.",
-                            "in": "path",
-                            "schema": {
-                                "type": "string",
-                                "example": "63b53db2d18321524471f789"
-                            },
-                            "required": true
-                        }
-                    ],
-                    "requestBody": {
+                "responses": {
+                    "200": {
+                        "description": "OK (Az új, elmentett posttal tér vissza.)",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -633,27 +604,107 @@
                             }
                         }
                     },
-                    "responses": {
-                        "200": {
-                            "description": "OK",
-                            "content": {
-                                "application/json": {
-                                    "schema": {
-                                        "type": "array",
-                                        "items": {
-                                            "$ref": "#/components/schemas/product"
-                                        }
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+        "/products/{id}": {
+            "get": {
+                "tags": ["products"],
+                "summary": "Egy termék lekérdezése.",
+                "description": "Egy termék adatát tudjuk lekérdezni.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "A termék azonosítója.",
+                        "in": "path",
+                        "schema": {
+                            "type": "string",
+                            "example": "63b53db2d18321524471f789"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/product"
                                     }
                                 }
                             }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": ["products"],
+                "summary": "Egy termék modositása.",
+                "description": "Egy termék adatát tudjuk modositani.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "A termék azonosítója.",
+                        "in": "path",
+                        "schema": {
+                            "type": "string",
+                            "example": "63b53db2d18321524471f789"
                         },
-                        "400": {
-                            "description": "Bad Request",
-                            "content": {
-                                "application/json": {
-                                    "schema": {
-                                        "$ref": "#/components/schemas/ErrorSchema"
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "$ref": "#/components/schemas/product"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/product"
                                     }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
                                 }
                             }
                         }
@@ -834,6 +885,58 @@
                     }
                 }
             },
+            "patch": {
+                "tags": ["orderdetails"],
+                "summary": "Egy rendelésrészlet modositása.",
+                "description": "Egy rendelés adatát tudjuk modositani.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "A rendelés azonosítója.",
+                        "in": "path",
+                        "schema": {
+                            "type": "string",
+                            "example": "641ac673f6872fffc607ba89"
+                        },
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "$ref": "#/components/schemas/orderdetails"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/orderdetails"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "delete": {
                 "tags": ["orderdetails"],
                 "summary": "rendelés törlése.",
@@ -991,300 +1094,6 @@
                                             "example": "A megadott recept (id) nem létezik."
                                         }
                                     }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "delete": {
-                "tags": ["recipes"],
-                "summary": "recept törlése.",
-                "description": "A paraméterben megadott receptt törli a végpont.",
-                "parameters": [
-                    {
-                        "name": "id",
-                        "description": "A törlendő recept azonosítója (PK).",
-                        "in": "path",
-                        "schema": {
-                            "type": "number",
-                            "example": 99
-                        },
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK (A recept törölve.)",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "string",
-                                    "example": "OK"
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Not Found",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "message": {
-                                            "type": "string",
-                                            "example": "A megadott recept (id) nem létezik."
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/recipes/order/:mezo": {
-            "get": {
-                "tags": ["recipes"],
-                "summary": "Összes recept lekérdezése rendezéssel.",
-                "description": "Az összes recept adatát tudjuk lekérdezni és a paraméterben megadott mező szerint rendezni.",
-                "parameters": [
-                    {
-                        "name": "mezo",
-                        "description": "Mező, amely szerint rendezni kell, a '-' karakter a mező neve előtt a csökkenő rendezést kódolja.",
-                        "in": "path",
-                        "schema": {
-                            "type": "string",
-                            "example": "-arFt"
-                        },
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/recipe"
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorSchema"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/recipes/keyword/{keyword}": {
-            "get": {
-                "tags": ["recipes"],
-                "summary": "Kulcsszavas szűrés mindkét táblából.",
-                "description": "Azok a receptek, melyek leírásában, vagy postnevében megtalálható a megadott kulcsszó.",
-                "parameters": [
-                    {
-                        "name": "keyword",
-                        "description": "Kulcsszó, melyet keresünk a mezőkben (bárhol lehet egy-egy mezőn belül, OR kapcsolat).",
-                        "in": "path",
-                        "schema": {
-                            "type": "string",
-                            "example": "gép"
-                        },
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/recipe"
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorSchema"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/recipes/{offset}/{limit}/{field}": {
-            "get": {
-                "tags": ["recipes"],
-                "summary": "Paginált adatok lekérése.",
-                "description": "receptek lekérdezése lapozáshoz.",
-                "parameters": [
-                    {
-                        "name": "offset",
-                        "description": "Ennyi rekordot hagyunk el (skip) a lekérdezés 'elejéről'.",
-                        "in": "path",
-                        "schema": {
-                            "type": "number",
-                            "example": "5"
-                        },
-                        "required": true
-                    },
-                    {
-                        "name": "limit",
-                        "description": "Ennyi rekordot küld (take) maximum az API",
-                        "in": "path",
-                        "schema": {
-                            "type": "number",
-                            "example": "5"
-                        },
-                        "required": true
-                    },
-                    {
-                        "name": "field",
-                        "description": "Melyik mező szerint legyenek rendezve a rekordok. A kötőjel '-' karakter a csökkenő rendezést jelöli.",
-                        "in": "path",
-                        "schema": {
-                            "type": "string",
-                            "example": "-cim"
-                        },
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "count": {
-                                            "type": "number",
-                                            "description": "Az összes rekord száma.",
-                                            "example": "16"
-                                        },
-                                        "data": {
-                                            "type": "array",
-                                            "description": "A maximum {limit} számú rekord.",
-                                            "items": {
-                                                "$ref": "#/components/schemas/recipe"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorSchema"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/recipes/{offset}/{limit}/{field}/{filter}": {
-            "get": {
-                "tags": ["recipes"],
-                "summary": "Paginált adatok lekérése szűréssel.",
-                "description": "Receptek lekérdezése lapozáshoz szűréssel.",
-                "parameters": [
-                    {
-                        "name": "offset",
-                        "description": "Ennyi rekordot hagyunk el (skip) a lekérdezés 'elejéről'.",
-                        "in": "path",
-                        "schema": {
-                            "type": "number",
-                            "example": "0"
-                        },
-                        "required": true
-                    },
-                    {
-                        "name": "limit",
-                        "description": "Ennyi rekordot küld (take) maximum az API.",
-                        "in": "path",
-                        "schema": {
-                            "type": "number",
-                            "example": 2
-                        },
-                        "required": true
-                    },
-                    {
-                        "name": "field",
-                        "description": "Melyik mező szerint legyenek rendezve a rekordok. A kötőjel '-' karakter a csökkenő rendezést jelöli.",
-                        "in": "path",
-                        "schema": {
-                            "type": "string",
-                            "example": "-cim"
-                        },
-                        "required": true
-                    },
-                    {
-                        "name": "filter",
-                        "description": "Szűrő - a 'cim' és a 'leiras' mezőkben keressük.",
-                        "in": "path",
-                        "schema": {
-                            "type": "string",
-                            "example": "leves"
-                        },
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "count": {
-                                            "type": "number",
-                                            "description": "A szűrőnek megfelelő rekordok száma",
-                                            "example": "16"
-                                        },
-                                        "data": {
-                                            "type": "array",
-                                            "description": "A maximum {limit} számú, szűrőnek megfelelő rekord.",
-                                            "items": {
-                                                "$ref": "#/components/schemas/recipe"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorSchema"
                                 }
                             }
                         }
