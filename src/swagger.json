@@ -157,7 +157,8 @@
                         }
                     }
                 }
-            },
+            }
+        },
         "/users/{id}": {
             "get": {
                 "tags": ["users"],
@@ -319,31 +320,30 @@
             }
         },
         "/orders": {
-                "get": {
-                    "tags": ["orders"],
-                    "summary": "Összes rendelés lekérdezése.",
-                    "description": "Az összes rendelés adatát tudjuk lekérdezni.",
-                    "responses": {
-                        "200": {
-                            "description": "OK",
-                            "content": {
-                                "application/json": {
-                                    "schema": {
-                                        "type": "array",
-                                        "items": {
-                                            "$ref": "#/components/schemas/order"
-                                        }
+            "get": {
+                "tags": ["orders"],
+                "summary": "Összes rendelés lekérdezése.",
+                "description": "Az összes rendelés adatát tudjuk lekérdezni.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/order"
                                     }
                                 }
                             }
-                        },
-                        "400": {
-                            "description": "Bad Request",
-                            "content": {
-                                "application/json": {
-                                    "schema": {
-                                        "$ref": "#/components/schemas/ErrorSchema"
-                                    }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
                                 }
                             }
                         }
