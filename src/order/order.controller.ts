@@ -1,8 +1,6 @@
 import OrderWithThatIdAlreadyExistsException from "exceptions/OrderWithThatIdAlreadyExistsException";
 import { NextFunction, Request, Response, Router } from "express";
-import ISession from "interfaces/session.interface";
 import { Types } from "mongoose";
-import { stringify } from "querystring";
 
 import HttpException from "../exceptions/HttpException";
 import IdNotValidException from "../exceptions/IdNotValidException";
