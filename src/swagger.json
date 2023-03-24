@@ -984,6 +984,232 @@
                     }
                 }
             }
+        },
+        "/payments": {
+            "get": {
+                "tags": ["payments"],
+                "summary": "Összes payment lekérdezése.",
+                "description": "Az összes payment adatát tudjuk lekérdezni.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/payments"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": ["payments"],
+                "summary": "Új payment mentése.",
+                "description": "Az új payment mentése a 'payment' táblában",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "$ref": "#/components/schemas/payments"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK (Az új, elmentett payment tér vissza.)",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/payments"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/payments/{id}": {
+            "get": {
+                "tags": ["payments"],
+                "summary": "Egy payment részletének lekérdezése.",
+                "description": "Az id paraméterben megadott payment adatait kérdezhetjük le.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "A payment azonosítója.",
+                        "in": "path",
+                        "schema": {
+                            "type": "string",
+                            "example": "63917f60978e764a7e2c6dd1"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/payments"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Ezzel az azonosítóval (id) nincs payment!"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": ["payments"],
+                "summary": "Egy payment modositása.",
+                "description": "Egy payment adatát tudjuk modositani.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "A payment azonosítója.",
+                        "in": "path",
+                        "schema": {
+                            "type": "string",
+                            "example": "63917f60978e764a7e2c6dd1"
+                        },
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "$ref": "#/components/schemas/payments"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/payments"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["payments"],
+                "summary": "payment törlése.",
+                "description": "A paraméterben megadott payment törli a végpont.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "A törlendő payment azonosítója (PK).",
+                        "in": "path",
+                        "schema": {
+                            "type": "string",
+                            "example": "63917f60978e764a7e2c6dd1"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK (A payment törölve.)",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "OK"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "A megadott payment (id) nem létezik."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "security": [
@@ -1121,6 +1347,36 @@
                     }
                 }
             },
+            "card": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "description": "A kártya neve.",
+                        "example": "visa."
+                    },
+                    "lastFourNumbers": {
+                        "type": "string",
+                        "description": "A kártya utolso 4 számjegye.",
+                        "example": "4252"
+                    },
+                    "expiryMonth": {
+                        "type": "number",
+                        "description": "A lejárati honap.",
+                        "example": 12
+                    },
+                    "expiryYear": {
+                        "type": "number",
+                        "decription": "A tlejárati év",
+                        "example": 2026
+                    },
+                    "cbbVerified": {
+                        "type": "boolean",
+                        "decription": "A kártya cbb kód érvényesége",
+                        "example": true
+                    }
+                }
+            },
             "user": {
                 "type": "object",
                 "required": ["firstName", "lastName", "email", "email_verified", "auto_login", "roles"],
@@ -1204,17 +1460,49 @@
                     "archived_price": {
                         "type": "number",
                         "description": "A termék ára",
-                        "example": "1999"
+                        "example": 1900
                     },
                     "discount": {
                         "type": "number",
                         "description": "A termék leárazása",
-                        "example": "0"
+                        "example": 200
                     },
                     "quantity": {
                         "type": "number",
-                        "description": "A termék raktárban lévő példányszáma",
-                        "example": "1"
+                        "description": "A termék mennyisége",
+                        "example": 1
+                    }
+                }
+            },
+            "payments": {
+                "type": "object",
+                "required": ["type", "status"],
+                "properties": {
+                    "_id": {
+                        "type": "string",
+                        "description": "PK - A rendelés azonosítója (ObjectID).",
+                        "example": "63917f60978e764a7e2c6dd1"
+                    },
+                    "user_id": {
+                        "type": "string",
+                        "description": "FK - A termék id (ObjectID).",
+                        "example": "63fc807e3f944579a10703b5"
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "A payment fajtája (credit, cash).",
+                        "example": "credit"
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "A kártya érvényesége",
+                        "example": "verified"
+                    },
+                    "card": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/card",
+                        "description": "A felhasználó kártya adatai.",
+                        "example": true
                     }
                 }
             },
