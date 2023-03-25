@@ -92,7 +92,18 @@ export default class ProductController implements IController {
             next(new HttpException(400, error.message));
         }
     };
-
+    private CreateProduct = async (req: Request, res: Response, next: NextFunction) => {
+        try {
+            const productData = req.body;
+            const product = await this.product.create(productData);
+            console.log(product);
+            if (product) {
+                res.send(product);
+            }
+        } catch (error) {
+            next(new HttpException(400, error.message));
+        }
+    };
     private deleteProduct = async (req: Request, res: Response, next: NextFunction) => {
         try {
             const id = req.params.id;

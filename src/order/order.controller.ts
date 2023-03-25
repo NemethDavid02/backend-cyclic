@@ -89,24 +89,7 @@ export default class OrderController implements IController {
     private CreateOrder = async (req: Request, res: Response, next: NextFunction) => {
         try {
             const orderData = req.body;
-            console.log(
-                orderData.userId +
-                    " " +
-                    orderData.paymentStatus +
-                    " " +
-                    orderData.status +
-                    " " +
-                    orderData.shippingAddress +
-                    " " +
-                    orderData.billingAddress,
-            );
-            const order = await this.order.create({
-                userId: orderData.userId,
-                paymentStatus: orderData.paymentStatus,
-                status: orderData.status,
-                shippingAddress: orderData.shippingAddress,
-                billingAddress: orderData.billingAddress,
-            });
+            const order = await this.order.create(orderData);
             console.log(order);
             if (order) {
                 res.send(order);

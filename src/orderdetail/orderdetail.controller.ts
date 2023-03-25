@@ -25,7 +25,7 @@ export default class OrderDetailController implements IController {
     private initalizeRoutes() {
         this.router.get(`${this.path}/:id`, authMiddleware, this.getOrderDetailById);
         this.router.get(this.path, this.getAllOrderDetails);
-
+        this.router.post(this.path, this.CreateOrderDetail);
         this.router.patch(
             `${this.path}/:id`,
             [authMiddleware, roleCheckMiddleware(["admin"]), validationMiddleware(CreateOrderDetailDto, true)],
@@ -66,7 +66,18 @@ export default class OrderDetailController implements IController {
             next(new HttpException(400, error.message));
         }
     };
-
+    private CreateOrderDetail = async (req: Request, res: Response, next: NextFunction) => {
+        try {
+            const orderdetailData = req.body;
+            const orderdetail = await this.orderdetail.create(orderdetailData);
+            console.log(orderdetail);
+            if (orderdetail) {
+                res.send(orderdetail);
+            }
+        } catch (error) {
+            next(new HttpException(400, error.message));
+        }
+    };
     private modifyOrderDetail = async (req: Request, res: Response, next: NextFunction) => {
         try {
             const id = req.params.id;

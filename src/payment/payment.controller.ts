@@ -26,6 +26,7 @@ export default class PaymentController implements IController {
     private initializeRoutes() {
         this.router.get(`${this.path}/:id`, authMiddleware, this.getPaymentById);
         this.router.get(this.path, this.getAllPayments);
+        this.router.post(this.path, this.CreatePayment);
         this.router.patch(
             `${this.path}/:id`,
             [authMiddleware, roleCheckMiddleware(["admin"]), validationMiddleware(CreatePaymentDto, true)],
@@ -65,7 +66,18 @@ export default class PaymentController implements IController {
             next(new HttpException(400, error.message));
         }
     };
-
+    private CreatePayment = async (req: Request, res: Response, next: NextFunction) => {
+        try {
+            const paymentData = req.body;
+            const order = await this.payment.create(paymentData);
+            console.log(order);
+            if (order) {
+                res.send(order);
+            }
+        } catch (error) {
+            next(new HttpException(400, error.message));
+        }
+    };
     private modifyPayment = async (req: Request, res: Response, next: NextFunction) => {
         try {
             const id = req.params.id;
