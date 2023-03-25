@@ -641,9 +641,7 @@
                             "application/json": {
                                 "schema": {
                                     "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/product"
-                                    }
+                                    "$ref": "#/components/schemas/product"
                                 }
                             }
                         }
@@ -1486,7 +1484,7 @@
                         "example": "Borisz Sztrugackij - Arkagyij Sztrugackij"
                     },
                     "price": {
-                        "type": "integer",
+                        "type": "number",
                         "description": "A termék ára",
                         "example": "2990"
                     },
