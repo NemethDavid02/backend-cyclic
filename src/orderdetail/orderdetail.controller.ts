@@ -53,7 +53,7 @@ export default class OrderDetailController implements IController {
         try {
             const id = req.params.id;
             if (Types.ObjectId.isValid(id)) {
-                const product = await this.orderdetail.findById(id).populate("orders", "products");
+                const product = await this.orderdetail.findById(id).populate("orderId", "productId");
                 if (product) {
                     res.send(product);
                 } else {
