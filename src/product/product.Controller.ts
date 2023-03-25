@@ -26,6 +26,7 @@ export default class ProductController implements IController {
         this.router.get(`${this.path}/:id`, authMiddleware, this.getProductById);
         //this.router.get(`${this.path}/:num`, authMiddleware, this.getProductArray);
         this.router.get(this.path, this.getAllProducts);
+        this.router.post(this.path, this.CreateProduct);
 
         this.router.patch(
             `${this.path}/:id`,
