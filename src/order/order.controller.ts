@@ -53,7 +53,7 @@ export default class OrderController implements IController {
                 // if (request.query.withPosts === "true") {
                 //     userQuery.populate("posts").exec();
                 // }
-                const order = await this.order.findById(id).populate("users");
+                const order = await this.order.findById(id).populate("userId");
                 if (order) {
                     res.send(order);
                 } else {
