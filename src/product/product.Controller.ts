@@ -60,7 +60,7 @@ export default class ProductController implements IController {
         try {
             const id = req.params.id;
             if (Types.ObjectId.isValid(id)) {
-                const product = await (await this.product.findById(id)).populated("posts");
+                const product = await this.product.findById(id);
                 if (product) {
                     res.send(product);
                 } else {
