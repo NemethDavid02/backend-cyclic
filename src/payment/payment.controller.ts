@@ -53,7 +53,7 @@ export default class PaymentController implements IController {
                 // if (request.query.withPosts === "true") {
                 //     userQuery.populate("posts").exec();
                 // }
-                const payment = await this.payment.findById(id).populate("Users");
+                const payment = await this.payment.findById(id).populate("users");
                 if (payment) {
                     res.send(payment);
                 } else {
