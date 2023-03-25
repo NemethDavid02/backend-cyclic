@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response, Router } from "express";
-import { Types } from "mongoose";
+import { isObjectIdOrHexString, Mongoose, Schema, Types } from "mongoose";
 
 import HttpException from "../exceptions/HttpException";
 import IdNotValidException from "../exceptions/IdNotValidException";
@@ -25,6 +25,7 @@ export default class OrderController implements IController {
     private initializeRoutes() {
         this.router.get(`${this.path}/:id`, authMiddleware, this.getOrderById);
         this.router.get(this.path, this.getAllOrders);
+        this.router.post(this.path, this.CreateOrder);
         this.router.patch(
             `${this.path}/:id`,
             [authMiddleware, roleCheckMiddleware(["admin"]), validationMiddleware(CreateOrderDto, true)],
@@ -79,6 +80,36 @@ export default class OrderController implements IController {
                 }
             } else {
                 next(new IdNotValidException(id));
+            }
+        } catch (error) {
+            next(new HttpException(400, error.message));
+        }
+    };
+
+    private CreateOrder = async (req: Request, res: Response, next: NextFunction) => {
+        try {
+            const orderData = req.body;
+            console.log(
+                orderData.userId +
+                    " " +
+                    orderData.paymentStatus +
+                    " " +
+                    orderData.status +
+                    " " +
+                    orderData.shippingAddress +
+                    " " +
+                    orderData.billingAddress,
+            );
+            const order = await this.order.create({
+                userId: orderData.userId,
+                paymentStatus: orderData.paymentStatus,
+                status: orderData.status,
+                shippingAddress: orderData.shippingAddress,
+                billingAddress: orderData.billingAddress,
+            });
+            console.log(order);
+            if (order) {
+                res.send(order);
             }
         } catch (error) {
             next(new HttpException(400, error.message));
