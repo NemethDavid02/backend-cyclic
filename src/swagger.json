@@ -1224,7 +1224,7 @@
                         "description": "PK - A order azonosítója (ObjectID).",
                         "example": "63fc807e3f944579a52703b5"
                     },
-                    "user_id": {
+                    "userId": {
                         "type": "string",
                         "description": "FK - A order rendelöje (ObjectID).",
                         "example": "63fc807e3f944579a10703b5"
@@ -1238,12 +1238,6 @@
                         "type": "string",
                         "description": "FK - A order státusza (ObjectID).",
                         "example": "shipped"
-                    },
-                    "shippingAdress": {
-                        "type": "object",
-                        "$ref": "#/components/schemas/shippingAddress",
-                        "description": "A felhasználó szálitási címe.",
-                        "example": true
                     },
                     "billingAddress": {
                         "type": "object",
@@ -1403,12 +1397,12 @@
                         "description": "PK - A rendelés azonosítója (ObjectID).",
                         "example": "63b53db2d18321524471f789"
                     },
-                    "product_id": {
+                    "productId": {
                         "type": "string",
                         "description": "FK - A termék id (ObjectID).",
                         "example": "6395d17cb8f84c79593f4292"
                     },
-                    "order_id": {
+                    "orderId": {
                         "type": "string",
                         "description": "FK - A order id (ObjectID).",
                         "example": "6396d6fb9bd7d89ca308eb3f"
@@ -1439,7 +1433,7 @@
                         "description": "PK - A rendelés azonosítója (ObjectID).",
                         "example": "63917f60978e764a7e2c6dd1"
                     },
-                    "user_id": {
+                    "userId": {
                         "type": "string",
                         "description": "FK - A termék id (ObjectID).",
                         "example": "63fc807e3f944579a10703b5"
