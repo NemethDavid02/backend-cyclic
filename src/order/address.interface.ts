@@ -1,4 +1,4 @@
-export default interface IAddress {
+export default interface IBillingAddress {
     street: string;
     city: string;
     country: string;
