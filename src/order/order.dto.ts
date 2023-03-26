@@ -24,12 +24,6 @@ export default class CreateOrderDto implements IOrder {
     @IsString()
     public status: string;
 
-    // For validating nested object you must import reflect-metadata and define @Type:
-    @IsOptional()
-    @ValidateNested()
-    @Type(() => CreateShippingAddressDto)
-    public shippingAddress: CreateShippingAddressDto;
-
     @IsOptional()
     @ValidateNested()
     @Type(() => CreateBillingAddressDto)

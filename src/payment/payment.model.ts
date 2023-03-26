@@ -8,7 +8,7 @@ const CardSchema = new Schema(
         lastFourNumbers: String,
         expiryMonth: Number,
         expiryYear: Number,
-        cbbVerified: Number,
+        cbbVerified: Boolean,
     },
     { versionKey: false },
 );

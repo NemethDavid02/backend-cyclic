@@ -25,5 +25,5 @@ export default class CreatePaymentDto implements IPayment {
     @IsOptional()
     @ValidateNested()
     @Type(() => CreateCardDto)
-    public shippingAddress: CreateCardDto;
+    public card: CreateCardDto;
 }
