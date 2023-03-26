@@ -349,9 +349,7 @@
                         }
                     }
                 }
-            }
-        },
-        "/orders/orderSave": {
+            },
             "post": {
                 "tags": ["orders"],
                 "summary": "Új rendelés mentése.",
