@@ -4,7 +4,7 @@ import { Type } from "class-transformer";
 import { IsMongoId, IsOptional, IsString, ValidateNested } from "class-validator";
 import { Schema } from "mongoose";
 
-import CreateShippingAddressDto from "../user/shippingAddress.dto";
+// import CreateShippingAddressDto from "../user/shippingAddress.dto";
 // import { Match } from "./match.decorator";
 import CreateBillingAddressDto from "./address.dto";
 import IOrder from "./order.interface";
@@ -15,7 +15,7 @@ export default class CreateOrderDto implements IOrder {
     public _id: Schema.Types.ObjectId;
 
     @IsMongoId()
-    @IsOptional()
+    // @IsOptional()
     public userId: Schema.Types.ObjectId;
 
     @IsString()

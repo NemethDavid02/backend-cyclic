@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response, Router } from "express";
-import { isObjectIdOrHexString, Mongoose, Schema, Types } from "mongoose";
+import { Types } from "mongoose";
 
 import HttpException from "../exceptions/HttpException";
 import IdNotValidException from "../exceptions/IdNotValidException";
@@ -25,7 +25,11 @@ export default class OrderController implements IController {
     private initializeRoutes() {
         this.router.get(`${this.path}/:id`, authMiddleware, this.getOrderById);
         this.router.get(this.path, this.getAllOrders);
-        this.router.post(this.path, this.CreateOrder);
+        this.router.post(
+            this.path,
+            [authMiddleware, roleCheckMiddleware(["admin"]), validationMiddleware(CreateOrderDto)],
+            this.CreateOrder,
+        );
         this.router.patch(
             `${this.path}/:id`,
             [authMiddleware, roleCheckMiddleware(["admin"]), validationMiddleware(CreateOrderDto, true)],
