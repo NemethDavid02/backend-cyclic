@@ -1,7 +1,6 @@
 import "reflect-metadata";
 
-import { Type } from "class-transformer";
-import { IsInt, IsMongoId, IsOptional, IsString, ValidateNested } from "class-validator";
+import { IsInt, IsMongoId, IsOptional } from "class-validator";
 import { Schema } from "mongoose";
 
 import IOrderDetail from "./orderdetail.interface";

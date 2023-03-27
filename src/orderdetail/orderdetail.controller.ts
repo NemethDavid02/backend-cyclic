@@ -25,7 +25,11 @@ export default class OrderDetailController implements IController {
     private initalizeRoutes() {
         this.router.get(`${this.path}/:id`, authMiddleware, this.getOrderDetailById);
         this.router.get(this.path, this.getAllOrderDetails);
-        this.router.post(this.path, this.CreateOrderDetail);
+        this.router.post(
+            this.path,
+            [authMiddleware, roleCheckMiddleware(["admin"]), validationMiddleware(CreateOrderDetailDto)],
+            this.CreateOrderDetail,
+        );
         this.router.patch(
             `${this.path}/:id`,
             [authMiddleware, roleCheckMiddleware(["admin"]), validationMiddleware(CreateOrderDetailDto, true)],

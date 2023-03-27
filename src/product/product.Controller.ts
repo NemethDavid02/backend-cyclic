@@ -1,6 +1,5 @@
 import { NextFunction, Request, Response, Router } from "express";
 import { Types } from "mongoose";
-import { runInThisContext } from "vm";
 
 import HttpException from "../exceptions/HttpException";
 import IdNotValidException from "../exceptions/IdNotValidException";
@@ -26,7 +25,11 @@ export default class ProductController implements IController {
         this.router.get(`${this.path}/:id`, authMiddleware, this.getProductById);
         //this.router.get(`${this.path}/:num`, authMiddleware, this.getProductArray);
         this.router.get(this.path, this.getAllProducts);
-        this.router.post(this.path, this.CreateProduct);
+        this.router.post(
+            this.path,
+            [authMiddleware, roleCheckMiddleware(["admin"]), validationMiddleware(CreateProductDto)],
+            this.CreateProduct,
+        );
 
         this.router.patch(
             `${this.path}/:id`,
