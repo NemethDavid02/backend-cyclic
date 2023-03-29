@@ -13,7 +13,6 @@ export default class CreatePaymentDto implements IPayment {
     public _id: Schema.Types.ObjectId;
 
     @IsMongoId()
-    @IsOptional()
     public userId: Schema.Types.ObjectId;
 
     @IsString()
@@ -22,7 +21,6 @@ export default class CreatePaymentDto implements IPayment {
     @IsString()
     public status: string;
 
-    @IsOptional()
     @ValidateNested()
     @Type(() => CreateCardDto)
     public card: CreateCardDto;

@@ -43,12 +43,10 @@ export default class CreateUserDto implements IUser {
     public roles: string[];
 
     // For validating nested object you must import reflect-metadata and define @Type:
-    @IsOptional()
     @ValidateNested()
     @Type(() => CreateAddressDto)
     public address: CreateAddressDto;
 
-    @IsOptional()
     @ValidateNested()
     @Type(() => CreateShippingAddressDto)
     public shippingAddress: CreateShippingAddressDto;
