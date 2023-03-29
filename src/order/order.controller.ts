@@ -27,7 +27,7 @@ export default class OrderController implements IController {
         this.router.get(this.path, this.getAllOrders);
         this.router.post(
             this.path,
-            [authMiddleware, roleCheckMiddleware(["admin"]), validationMiddleware(CreateOrderDto)],
+            [authMiddleware, validationMiddleware(CreateOrderDto)],
             this.CreateOrder,
         );
         this.router.patch(
