@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { IsString, IsInt, IsBoolean } from "class-validator";
+import { IsBoolean, IsInt, IsString } from "class-validator";
 
 import ICard from "./card.interface";
 

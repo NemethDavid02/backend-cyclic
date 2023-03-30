@@ -27,14 +27,14 @@ describe("test API endpoints", () => {
                     country: "Hungary",
                     street: "4 Földes Gábor u.",
                     city: "Győr",
-                    zip: 9023
+                    zip: 9023,
                 },
                 shippingAddress: {
                     country: "Hungary",
                     street: "4 Bolyai Farkas utca",
                     city: "Győr",
-                    zip: 9023
-                }
+                    zip: 9023,
+                },
             });
         expect(response.statusCode).toEqual(400);
         expect(response.body.message).toEqual("User with email student001@jedlik.eu already exists");

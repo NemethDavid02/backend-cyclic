@@ -1,7 +1,16 @@
 import "reflect-metadata";
 
 import { Type } from "class-transformer";
-import { ArrayNotEmpty, IsArray, IsBoolean, IsEmail, IsMongoId, IsOptional, IsString, ValidateNested } from "class-validator";
+import {
+    ArrayNotEmpty,
+    IsArray,
+    IsBoolean,
+    IsEmail,
+    IsMongoId,
+    IsOptional,
+    IsString,
+    ValidateNested,
+} from "class-validator";
 import { Schema } from "mongoose";
 
 // import { Match } from "./match.decorator";

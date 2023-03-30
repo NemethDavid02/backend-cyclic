@@ -25,7 +25,11 @@ export default class RecipeController implements IController {
         this.router.get(this.path, authMiddleware, this.getAllRecipes);
         this.router.get(`${this.path}/:id`, authMiddleware, this.getRecipeById);
         this.router.get(`${this.path}/:offset/:limit/:order/:sort/:keyword?`, authMiddleware, this.getPaginatedRecipes);
-        this.router.patch(`${this.path}/:id`, [authMiddleware, validationMiddleware(CreateRecipeDto, true)], this.modifyRecipe);
+        this.router.patch(
+            `${this.path}/:id`,
+            [authMiddleware, validationMiddleware(CreateRecipeDto, true)],
+            this.modifyRecipe,
+        );
         this.router.delete(`${this.path}/:id`, authMiddleware, this.deleteRecipes);
         this.router.post(this.path, [authMiddleware, validationMiddleware(CreateRecipeDto)], this.createRecipe);
     }
