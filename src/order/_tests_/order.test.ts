@@ -13,8 +13,16 @@ beforeAll(async () => {
 
 describe("test API endpoints", () => {
     it("GET /orders", async () => {
+        const response = await request(server).get("/orders");
+        expect(response.statusCode).toEqual(200);
+    });
+    it("GET /orders/639757ec0c5330c7405f764d", async () => {
         const response = await request(server).get("/orders/639757ec0c5330c7405f764d");
-        expect(response.statusCode).toEqual(400);
+        expect(response.statusCode).toEqual(401);
+    });
+    it("GET /orders", async () => {
+        const response = await request(server).get("/orders/639757ec0c5330c7405f764d");
+        expect(response.statusCode).toEqual(200);
         expect(response.body._id).toEqual("639757ec0c5330c7405f764d");
         expect(response.body.userId).toEqual("63fc807e3f944579a10703b9");
         expect(response.body.paymentStatus).toEqual("processed");
