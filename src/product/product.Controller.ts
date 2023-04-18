@@ -23,7 +23,7 @@ export default class ProductController implements IController {
     }
     private initalizeRoutes() {
         this.router.get(`${this.path}/:id`, authMiddleware, this.getProductById);
-        //this.router.get(`${this.path}/:num`, authMiddleware, this.getProductArray);
+        this.router.get(`${this.path}/arr/:num`, authMiddleware, this.getProductArray);
         this.router.get(this.path, this.getAllProducts);
         this.router.post(
             this.path,
