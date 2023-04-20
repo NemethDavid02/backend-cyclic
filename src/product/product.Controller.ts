@@ -58,6 +58,9 @@ export default class ProductController implements IController {
             }
         }else if(num==0){
             const product=await this.product.find().limit(20);
+            if (product) {
+                res.send(product);
+            }
         }else {
             next(new ProductNotFoundException("" + num));
         }
