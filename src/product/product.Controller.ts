@@ -51,9 +51,8 @@ export default class ProductController implements IController {
     };
     private getProductArray = async (req: Request, res: Response, next: NextFunction) => {
         const num = parseInt(req.params.first);
-        const length=parseInt(req.params.length);
         if (num >= 0) {
-            const product = await this.product.find().skip(num).limit(length);
+            const product = await this.product.find().skip(num).limit(20);
             if (product) {
                 res.send(product);
             }
