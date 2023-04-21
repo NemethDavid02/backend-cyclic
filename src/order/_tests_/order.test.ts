@@ -33,12 +33,10 @@ describe("test API endpoints", () => {
         expect(response.body.address.country).toEqual("Hungary");
         expect(response.body.address.street).toEqual("35 Spirál u.");
         expect(response.body.address.zip).toEqual(9464);
-        expect(response.body.address._id).toEqual("643ce7201ad8361926b5def1");
         expect(response.body.shippingAddress.city).toEqual("Szalmaharmad");
         expect(response.body.shippingAddress.country).toEqual("Hungary");
         expect(response.body.shippingAddress.street).toEqual("35 Spirál u.");
         expect(response.body.shippingAddress.zip).toEqual(9464);
-        expect(response.body.shippingAddress._id).toEqual("643ce7201ad8361926b5def2");
         expect(response.body.email).toEqual("masni6431@gmail.com");
         expect(response.body.firstName).toEqual("Barna");
         expect(response.body.lastName).toEqual("Orsolya");

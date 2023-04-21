@@ -25,7 +25,7 @@ describe("test API endpoints", () => {
                 password: "student001",
                 address: {
                     country: "Hungary",
-                    street: "4 Földes Gábor utca",
+                    street: "4 Földes Gábor u.",
                     city: "Győr",
                     zip: 9023,
                 },
@@ -49,7 +49,7 @@ describe("test API endpoints", () => {
         expect(response.statusCode).toEqual(200);
         expect(response.body.address.city).toEqual("Győr");
         expect(response.body.address.country).toEqual("Hungary");
-        expect(response.body.address.street).toEqual("4 Földes Gábor utca");
+        expect(response.body.address.street).toEqual("4 Földes Gábor u.");
         expect(response.body.address.zip).toEqual(9023);
         expect(response.body.shippingAddress.city).toEqual("Győr");
         expect(response.body.shippingAddress.country).toEqual("Hungary");
