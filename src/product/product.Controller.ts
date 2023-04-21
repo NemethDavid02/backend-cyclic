@@ -22,8 +22,8 @@ export default class ProductController implements IController {
         this.initalizeRoutes();
     }
     private initalizeRoutes() {
-        this.router.get(`${this.path}/:id`, authMiddleware, this.getProductById);
-        this.router.get(`${this.path}/arr/:num`, authMiddleware, this.getProductArray);
+        this.router.get(`${this.path}/:id`, this.getProductById);
+        this.router.get(`${this.path}/arr/:num`, this.getProductArray);
         this.router.get(this.path, this.getAllProducts);
         this.router.post(
             this.path,
@@ -50,13 +50,18 @@ export default class ProductController implements IController {
         }
     };
     private getProductArray = async (req: Request, res: Response, next: NextFunction) => {
-        const num = parseInt(req.params.first);
-        if (num >= 0) {
-            const product = await this.product.find().skip(num).limit(20);
+        const num = parseInt(req.params.num);
+        if (num > 0) {
+            const product = await this.product.find({}).skip(num).limit(20);
             if (product) {
                 res.send(product);
             }
-        } else {
+        }else if(num==0){
+            const product=await this.product.find({}).limit(20);
+            if (product) {
+                res.send(product);
+            }
+        }else {
             next(new ProductNotFoundException("" + num));
         }
     };
