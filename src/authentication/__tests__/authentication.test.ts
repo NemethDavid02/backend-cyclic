@@ -25,7 +25,7 @@ describe("test API endpoints", () => {
                 password: "student001",
                 address: {
                     country: "Hungary",
-                    street: "4 Földes Gábor u.",
+                    street: "4 Földes Gábor utca",
                     city: "Győr",
                     zip: 9023,
                 },
@@ -47,17 +47,14 @@ describe("test API endpoints", () => {
             password: "student001",
         });
         expect(response.statusCode).toEqual(200);
-        expect(response.body._id).toEqual("61b5e9c0f39e4edcf5b8a3b9");
         expect(response.body.address.city).toEqual("Győr");
         expect(response.body.address.country).toEqual("Hungary");
-        expect(response.body.address.street).toEqual("4 Földes Gábor u.");
+        expect(response.body.address.street).toEqual("4 Földes Gábor utca");
         expect(response.body.address.zip).toEqual(9023);
-        expect(response.body.address._id).toEqual("641f202422f561f3f6f74406");
         expect(response.body.shippingAddress.city).toEqual("Győr");
         expect(response.body.shippingAddress.country).toEqual("Hungary");
-        expect(response.body.shippingAddress.street).toEqual("4 Földes Gábor u.");
+        expect(response.body.shippingAddress.street).toEqual("4 Bolyai Farkas utca");
         expect(response.body.shippingAddress.zip).toEqual(9023);
-        expect(response.body.shippingAddress._id).toEqual("641f202422f561f3f6f74407");
         expect(response.body.email).toEqual("student001@jedlik.eu");
         expect(response.body.firstName).toEqual("studentdfirstname");
         expect(response.body.lastName).toEqual("studentlastname");

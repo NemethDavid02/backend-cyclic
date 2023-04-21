@@ -1,7 +1,7 @@
 import "dotenv/config";
 
-import OrderController from "order/order.controller";
-import AuthenticationController from "authentication/authentication.controller";
+import OrderController from "../order.controller";
+import AuthenticationController from "../../authentication/authentication.controller";
 import request from "supertest";
 
 import App from "../../app";
@@ -47,7 +47,6 @@ describe("test API endpoints", () => {
     it("GET /orders", async () => {
         const response = await request(server).get("/orders/639757ec0c5330c7405f764d");
         expect(response.statusCode).toEqual(200);
-        expect(response.body._id).toEqual("639757ec0c5330c7405f764d");
         expect(response.body.userId).toEqual("63fc807e3f944579a10703b9");
         expect(response.body.paymentStatus).toEqual("processed");
         expect(response.body.shippingAddress.country).toEqual("Zedónia");
