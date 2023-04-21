@@ -95,7 +95,7 @@ export default class App {
         // modify session options for development:
         if (["development", "test"].includes(process.env.NODE_ENV)) {
             mySessionOptions.cookie.secure = false;
-            mySessionOptions.cookie.sameSite = "lax";
+            mySessionOptions.cookie.sameSite = true;
         }
         this.app.use(session(mySessionOptions));
 
