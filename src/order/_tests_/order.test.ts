@@ -28,6 +28,29 @@ describe("test API endpoints", () => {
         expect(response.statusCode).toEqual(401);
     });
 
+    it("POST /orders/", async () => {
+        const response = await request(server)
+            .post("/orders/")
+            .send({
+                userId: "63fc807e3f944579a10703b5",
+                paymentStatus: "processed",
+                status: "shipped,",
+                billingAddress: {
+                    street: "Szent István út 7.",
+                    city: "Győr",
+                    country: "Hungary",
+                    zip: 9023,
+                },
+            })
+            .set("Cookie", cookie);
+        expect(response.statusCode).toEqual(200);
+    });
+
+    it("DELETE /orders/644626d080590079a464b97d", async () => {
+        const response = await request(server).delete("/orders/644626d080590079a464b97d").set("Cookie", cookie);
+        expect(response.statusCode).toEqual(200);
+    });
+
     it("GET /orders/639757ec0c5330c7405f764d", async () => {
         const response = await request(server).get("/orders/639757ec0c5330c7405f764d").set("Cookie", cookie);
         expect(response.statusCode).toEqual(200);
