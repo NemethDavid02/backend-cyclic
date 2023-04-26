@@ -24,6 +24,7 @@ export default class ProductController implements IController {
     private initalizeRoutes() {
         this.router.get(`${this.path}/:id`, this.getProductById);
         this.router.get(`${this.path}/arr/:num`, this.getProductArray);
+        this.router.get(`${this.path}/arr/:num/:searchword`, this.getProductSearchArray);
         this.router.get(this.path, this.getAllProducts);
         this.router.post(
             this.path,
@@ -58,6 +59,23 @@ export default class ProductController implements IController {
             }
         }else if(num==0){
             const product=await this.product.find({}).limit(20);
+            if (product) {
+                res.send(product);
+            }
+        }else {
+            next(new ProductNotFoundException("" + num));
+        }
+    };
+    private getProductSearchArray = async (req: Request, res: Response, next: NextFunction) => {
+        const num = parseInt(req.params.num);
+        const searchword=req.params.searchword;
+        if (num > 0) {
+            const product = await this.product.find({name:new RegExp(searchword,'i')}).skip(num).limit(20);
+            if (product) {
+                res.send(product);
+            }
+        }else if(num==0){
+            const product=await this.product.find({name:new RegExp(searchword,'i')}).limit(20);
             if (product) {
                 res.send(product);
             }
