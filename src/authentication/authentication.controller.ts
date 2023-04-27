@@ -79,15 +79,6 @@ export default class AuthenticationController implements IController {
             } else {
                 next(new HttpException(404, "Please log in!"));
             }
-            // req.sessionStore.get(req.session.id, (error, s: ISession) => {
-            //     if (error || !s.user_email) {
-            //         next(new HttpException(404, "Please log in!"));
-            //     }
-            //     if (user && s.user_email) {
-            //         (req.session as ISession).isLoggedIn = true;
-            //         res.send(user);
-            //     }
-            // });
         } else {
             next(new HttpException(404, "Please log in!"));
         }
