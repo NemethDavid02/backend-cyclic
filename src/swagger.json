@@ -3,7 +3,7 @@
     "info": {
         "title": "REST API minta backend",
         "version": "1.0.0",
-        "description": "<img alt='DB_diagram' height='400px' width='600px' src='https://raw.githubusercontent.com/14F-E/others/main/ab-model.png' />"
+        "description": "<img alt='DB_diagram' height='400px' src='https://nitslaszlo.github.io/static/shopking/db_diagram.jpg' />"
     },
     "servers": [
         {
