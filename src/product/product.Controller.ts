@@ -26,6 +26,7 @@ export default class ProductController implements IController {
         this.router.get(`${this.path}/arr/:num`, this.getProductArray);
         this.router.get(`${this.path}/arr/:num/:searchword`, this.getProductSearchArray);
         this.router.get(this.path, this.getAllProducts);
+        this.router.get(`${this.path}/random/:amount`, this.getRandomProduct);
         this.router.post(
             this.path,
             [authMiddleware, roleCheckMiddleware(["admin"]), validationMiddleware(CreateProductDto)],
@@ -44,6 +45,16 @@ export default class ProductController implements IController {
     private getAllProducts = async (req: Request, res: Response, next: NextFunction) => {
         try {
             this.product.find().then(products => {
+                res.send(products);
+            });
+        } catch (error) {
+            next(new HttpException(400, error.message));
+        }
+    };
+    private getRandomProduct= async (req: Request, res: Response, next: NextFunction) => {
+        const amount=req.params.amount;
+        try {
+            this.product.aggregate([{$match:{quantity:{$gt:0}}},{$sample:{size:Number.parseInt(amount)}}]).then(products => {
                 res.send(products);
             });
         } catch (error) {
